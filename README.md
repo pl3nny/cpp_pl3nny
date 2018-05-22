@@ -1,2 +1,2 @@
-# c-_pl3nny
+# cpp_pl3nny
 c++ examples and problems
