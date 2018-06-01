@@ -16,7 +16,6 @@ int main(int argc, char* argv[])
 {
 	string fileName, line;
 	int selection;
-
 	menu();
 	cin >> selection;
 
