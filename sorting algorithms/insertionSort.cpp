@@ -1,3 +1,8 @@
+/*
+Author: Alexander Hernandez
+title: Insertion Sort
+Date: Summer 2018
+*/
 #include <iostream>
 #include <array>
 #include <string> 
@@ -7,6 +12,30 @@
 using namespace std;
 
 // warnings and errors...this doens't work
+
+void generateArray(int arr[], int size);
+void to_str(int arr[], int size);
+void insertionSort(int[], int size);
+
+int main()
+{
+	cout << "\tInsertion Sort\n" << endl;
+
+	// created integer array and initialized to zeroes
+	int randArray[100]={0};
+
+	// print out array currently initiliazed to zeroes
+	to_str(randArray, 100);
+
+	// filled array with random numbers from function
+	// "void generateArray(int arr[], int size)"
+	generateArray(randArray, 100);
+
+	// print out array filled with random numbers from prevous function call
+	to_str(randArray, 100);
+
+	return 0;
+}
 
 void generateArray(int arr[], int size)
 {
@@ -35,18 +64,7 @@ void to_str(int arr[], int size)
 	cout << endl;
 }
 
-int main()
+void insertionSort(int arr[], int size)
 {
-	cout << "\tInsertion Sort\n" << endl;
-
-	int randArray[100]={0};
-
-	to_str(randArray, 100);
-
-	generateArray(randArray, 100);
-
-	to_str(randArray, 100);
-
-	return 0;
+	
 }
-
