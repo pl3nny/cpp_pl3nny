@@ -13,9 +13,9 @@ using namespace std;
 
 // warnings and errors...this doens't work
 
-void generateArray(int arr[], int size);
-void to_str(int arr[], int size);
-void insertionSort(int[], int size);
+void generateArray(int [], int);
+void to_str(int [], int);
+void insertionSort(int[], int);
 
 int main()
 {
@@ -31,8 +31,21 @@ int main()
 	// "void generateArray(int arr[], int size)"
 	generateArray(randArray, 100);
 
+
+	cout << "Unsorted Array\n" << endl;
 	// print out array filled with random numbers from prevous function call
 	to_str(randArray, 100);
+
+	cout << "Sorted Array\n" << endl;
+	insertionSort(randArray, 100);
+	to_str(randArray, 100);
+
+	// int testArr [] ={3, 2, 1, 4, 5};
+
+	// to_str(testArr, 5);
+	// insertionSort(testArr, 5);
+	// to_str(testArr, 5);
+
 
 	return 0;
 }
@@ -45,7 +58,6 @@ void generateArray(int arr[], int size)
 	{
 		arr[i] = rand() % 100 + 1;
 	}
-
 }
 
 void to_str(int arr[], int size)
@@ -66,5 +78,18 @@ void to_str(int arr[], int size)
 
 void insertionSort(int arr[], int size)
 {
-	
+	int key, j;
+
+	for(int i = 1; i < size; i++)
+	{
+		key = arr[i];
+		j = i - 1;
+
+		while(j >= 0 && arr[j] > key)
+		{
+			arr[j+1] = arr[j];
+			j--;
+		}
+		arr[j+1] = key;
+	}
 }
