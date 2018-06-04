@@ -8,11 +8,8 @@ using namespace std;
 
 // warnings and errors...this doens't work
 
-int generateArray()
+void generateArray(int arr[], int size)
 {
-	int arr[100];
-	int size = sizeof(arr)/sizeof(*arr);
-
 	srand(time(NULL));
 
 	for(int i = 0; i < size; i++)
@@ -20,27 +17,35 @@ int generateArray()
 		arr[i] = rand() % 100 + 1;
 	}
 
-	return arr;
 }
 
-void to_str(int arr[])
+void to_str(int arr[], int size)
 {
-
+	int count = 1;
 	for(int i = 0; i < size; i++)
 	{
 		cout << arr[i] << " ";
-		if(size % 10 == 0)
+		if(count % 10 == 0)
 		{
 			cout << endl;
 		}
+		count++;
 	}
+
+	cout << endl;
 }
 
 int main()
 {
 	cout << "\tInsertion Sort\n" << endl;
 
-	to_str(generateArray());
+	int randArray[100]={0};
+
+	to_str(randArray, 100);
+
+	generateArray(randArray, 100);
+
+	to_str(randArray, 100);
 
 	return 0;
 }
