@@ -45,7 +45,7 @@ double solarSystem::calcVolume()
 
 double solarSystem::calcDiameter()
 {
-	return 0;
+	return 2 * radius;
 }
 
 double solarSystem::calcMass()

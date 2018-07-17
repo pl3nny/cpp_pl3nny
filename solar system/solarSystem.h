@@ -19,6 +19,7 @@ public:
 
 private:
 	double mass;
+	double density;
 	double volume;
 	double diameter;
 	double radius;
