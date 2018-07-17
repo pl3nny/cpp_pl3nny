@@ -1,10 +1,11 @@
 #include "solarSystem.h"
+#include <cmath>
 
-solarSystem::solarSystem(){}
+//solarSystem{}
 
 void solarSystem::setMass(double mass)
 {
-	this.mass = mass;
+	this->mass = mass;
 }
 
 double solarSystem::getMass()
@@ -14,7 +15,7 @@ double solarSystem::getMass()
 
 void solarSystem::setVolume(double volume)
 {
-	this.volume = volume;
+	this->volume = volume;
 }
 
 double solarSystem::getVolume()
@@ -24,7 +25,7 @@ double solarSystem::getVolume()
 
 void solarSystem::setRadius(double radius)
 {
-	this.radius = radius;
+	this->radius = radius;
 }
 
 double solarSystem::getRadius()
@@ -32,7 +33,12 @@ double solarSystem::getRadius()
 	return radius;
 }
 
-void calcVolume()
+double solarSystem::getPI()
 {
-	return 
+	return PI;
+}
+
+double calcVolume()
+{
+	return (4 / 3) * PI * pow(radius, 3);
 }

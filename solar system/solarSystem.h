@@ -1,3 +1,6 @@
+#ifndef SOLARSYSTEM_H
+#define SOLARSYSTEM_H
+
 class solarSystem
 {
 private:
@@ -5,7 +8,8 @@ private:
 	double volume;
 	double diameter;
 	double radius;
-	
+	const double PI = 3.141592653589793;
+
 public:
 	void setMass(double);
 	double getMass();
@@ -16,7 +20,11 @@ public:
 	void setRadius(double);
 	double getRadius();
 
-	void calcVolume();
-	void calcDiameter();
-	void calcMass();
+	double getPI();
+
+	double calcVolume();
+	// double calcDiameter();
+	// double calcMass();
 };
+
+#endif
