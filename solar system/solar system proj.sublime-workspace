@@ -19,7 +19,7 @@
 			"file": "main.cpp",
 			"settings":
 			{
-				"buffer_size": 197,
+				"buffer_size": 351,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -28,7 +28,8 @@
 			"file": "solarSystem.cpp",
 			"settings":
 			{
-				"buffer_size": 26,
+				"buffer_size": 530,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -36,7 +37,8 @@
 			"file": "solarSystem.h",
 			"settings":
 			{
-				"buffer_size": 70,
+				"buffer_size": 423,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -124,7 +126,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"find_in_files":
 	{
@@ -138,6 +140,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"this",
+			"int"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -164,15 +168,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 197,
+						"buffer_size": 351,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								184,
-								184
+								351,
+								351
 							]
 						],
 						"settings":
@@ -198,15 +202,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26,
+						"buffer_size": 530,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								452,
+								452
 							]
 						],
 						"settings":
@@ -232,15 +236,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 70,
+						"buffer_size": 423,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								423,
+								423
 							]
 						],
 						"settings":
@@ -259,7 +263,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"input":
 	{
@@ -314,7 +318,7 @@
 	"project": "solar system proj.sublime-project",
 	"replace":
 	{
-		"height": 90.0
+		"height": 58.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -351,7 +355,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 189.0,
 	"status_bar_visible": true,
 	"template_settings":

@@ -1,7 +1,7 @@
 #include "solarSystem.h"
 #include <cmath>
 
-//solarSystem{}
+solarSystem::solarSystem(){}
 
 void solarSystem::setMass(double mass)
 {
@@ -35,10 +35,20 @@ double solarSystem::getRadius()
 
 double solarSystem::getPI()
 {
-	return PI;
+	return pi;
 }
 
-double calcVolume()
+double solarSystem::calcVolume()
 {
-	return (4 / 3) * PI * pow(radius, 3);
+	return (4 / 3) * pi * pow(radius, 3);
+}
+
+double solarSystem::calcDiameter()
+{
+	return 0;
+}
+
+double solarSystem::calcMass()
+{
+	return 0;
 }
