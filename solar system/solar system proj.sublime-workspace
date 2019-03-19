@@ -107,7 +107,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/pl3nny/Documents/gitProjects/cpp/cpp_pl3nny/solar system"
+		"/Users/pl3nny/Documents/gitProjects/cpp/cpp_pl3nny/solar system"
 	],
 	"file_history":
 	[
@@ -126,7 +126,11 @@
 	],
 	"find":
 	{
+<<<<<<< HEAD
 		"height": 34.0
+=======
+		"height": 26.0
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 	},
 	"find_in_files":
 	{
@@ -176,8 +180,8 @@
 						"selection":
 						[
 							[
-								351,
-								351
+								0,
+								0
 							]
 						],
 						"settings":
@@ -210,19 +214,29 @@
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								0,
 								0
+=======
+								307,
+								307
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 0,
+=======
+					"stack_index": 2,
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 					"type": "text"
 				}
 			]
@@ -244,8 +258,13 @@
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								0,
 								0
+=======
+								62,
+								62
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 							]
 						],
 						"settings":
@@ -257,7 +276,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -265,7 +284,11 @@
 	],
 	"incremental_find":
 	{
+<<<<<<< HEAD
 		"height": 34.0
+=======
+		"height": 26.0
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 	},
 	"input":
 	{
@@ -320,7 +343,11 @@
 	"project": "solar system proj.sublime-project",
 	"replace":
 	{
+<<<<<<< HEAD
 		"height": 64.0
+=======
+		"height": 48.0
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -350,7 +377,11 @@
 		],
 		"width": 0.0
 	},
+<<<<<<< HEAD
 	"selected_group": 1,
+=======
+	"selected_group": 2,
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 	"settings":
 	{
 	},
