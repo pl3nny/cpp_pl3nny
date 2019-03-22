@@ -3,53 +3,45 @@ Author: Alexander Hernandez
 title: Bubble Sort
 Date: Spring 2019
 */
+
 #include <iostream>
 #include <array>
 
 using namespace std;
 
-int swap(int arr[], int index, int size);
-
-int main() 
+int main()
 {
-	cout << "Author: Alexander Hernandez" << endl;
-	cout << "\tBubbleSort\n" << endl;
 
-	int arr[] =  {10, 1, 4, 11, 20, -30, 8};
+	cout << "Author: Alexande Hernandez" << endl;
+	cout << "\tBubble Sort\n" << endl;
+
+	int arr[] = {-22, -10, 5, 1, 10, 20, 11};
+
+	int size = sizeof(arr)/sizeof(*arr);
 	int temp;
 
-	for (int i = 0; i < 7; ++i)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << endl;
+	cout << size << endl;
 
-	// BubbleSorting Algorithm
-
-	for (int i = 7 - 1; i > 0; i--)
+	for(int lastUnsortedIndex = size; lastUnsortedIndex > 0; lastUnsortedIndex--)
 	{
-		for (int j = 0; j < i; j++)
+		for (int i = 0; i < lastUnsortedIndex; ++i)
 		{
-			if(arr[j] > arr[j+1])
+			if(arr[i] > arr[i+1])
 			{
-				temp = arr[j];
-				arr[j] = arr[j+1];
-				arr[j+1] = temp;
+				temp = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = temp;
 			}
 		}
 	}
 
-	for (int i = 0; i < 7; ++i)
+	cout << endl;
+
+	for (int i = 0; i < size; ++i)
 	{
-		cout << arr[i] << " "; 
+		cout << arr[i] << " ";
 	}
 
 	cout << endl;
-
-	return 0;
-}
-
-int swap(int arr[], int index, int size) 
-{
 	return 0;
 }
