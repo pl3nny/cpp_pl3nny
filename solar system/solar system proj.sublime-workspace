@@ -19,7 +19,7 @@
 			"file": "main.cpp",
 			"settings":
 			{
-				"buffer_size": 351,
+				"buffer_size": 352,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -28,7 +28,7 @@
 			"file": "solarSystem.cpp",
 			"settings":
 			{
-				"buffer_size": 530,
+				"buffer_size": 663,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -37,7 +37,7 @@
 			"file": "solarSystem.h",
 			"settings":
 			{
-				"buffer_size": 423,
+				"buffer_size": 446,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -107,7 +107,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/pl3nny/Documents/gitProjects/cpp/cpp_pl3nny/solar system"
+		"/D/Users/pl3nny/Documents/gitProjects/cpp/cpp_pl3nny/solar system"
 	],
 	"file_history":
 	[
@@ -168,20 +168,55 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 351,
+						"buffer_size": 352,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								351,
-								351
+								352,
+								352
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "solarSystem.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -197,65 +232,32 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
-					"file": "solarSystem.cpp",
+					"buffer": 2,
+					"file": "solarSystem.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 530,
+						"buffer_size": 446,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								452,
-								452
+								446,
+								446
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 2,
-					"file": "solarSystem.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 423,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								423,
-								423
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -348,7 +350,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
