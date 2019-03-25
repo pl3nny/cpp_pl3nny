@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/pl3nny/Documents/gitProjects/cpp/cpp_pl3nny/procedural_programming/main.cpp
+iostream
+-
+string
+-
+array
+-
+

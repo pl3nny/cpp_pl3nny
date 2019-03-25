@@ -107,7 +107,11 @@
 	},
 	"expanded_folders":
 	[
+<<<<<<< HEAD
 		"/D/Users/pl3nny/Documents/gitProjects/cpp/cpp_pl3nny/solar system"
+=======
+		"/Users/pl3nny/Documents/gitProjects/cpp/cpp_pl3nny/solar system"
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 	],
 	"file_history":
 	[
@@ -126,7 +130,11 @@
 	],
 	"find":
 	{
-		"height": 31.0
+<<<<<<< HEAD
+		"height": 34.0
+=======
+		"height": 26.0
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 	},
 	"find_in_files":
 	{
@@ -140,6 +148,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"double",
 			"this",
 			"int"
 		],
@@ -175,8 +184,13 @@
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								352,
 								352
+=======
+								0,
+								0
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 							]
 						],
 						"settings":
@@ -187,7 +201,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 2,
+=======
+					"stack_index": 1,
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 					"type": "text"
 				}
 			]
@@ -209,8 +227,18 @@
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								166,
 								166
+=======
+<<<<<<< HEAD
+								0,
+								0
+=======
+								307,
+								307
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 							]
 						],
 						"settings":
@@ -222,7 +250,15 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 0,
+=======
+<<<<<<< HEAD
+					"stack_index": 0,
+=======
+					"stack_index": 2,
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 					"type": "text"
 				}
 			]
@@ -244,8 +280,18 @@
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								446,
 								446
+=======
+<<<<<<< HEAD
+								0,
+								0
+=======
+								62,
+								62
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 							]
 						],
 						"settings":
@@ -257,7 +303,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 1,
+=======
+					"stack_index": 0,
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 					"type": "text"
 				}
 			]
@@ -265,7 +315,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 31.0
+<<<<<<< HEAD
+		"height": 34.0
+=======
+		"height": 26.0
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 	},
 	"input":
 	{
@@ -320,7 +374,11 @@
 	"project": "solar system proj.sublime-project",
 	"replace":
 	{
-		"height": 58.0
+<<<<<<< HEAD
+		"height": 64.0
+=======
+		"height": 48.0
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -350,7 +408,15 @@
 		],
 		"width": 0.0
 	},
+<<<<<<< HEAD
 	"selected_group": 1,
+=======
+<<<<<<< HEAD
+	"selected_group": 1,
+=======
+	"selected_group": 2,
+>>>>>>> e57af57e39036da66e2a01da9762b2f4e786becc
+>>>>>>> e9ef6065b7c6bc32c865e3f66453e43f6f15f1b1
 	"settings":
 	{
 	},
