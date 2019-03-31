@@ -33,18 +33,29 @@ int main()
 		 	arr[i] = randNum;
 		 }
 		 else
-		 {
 		 	arr[i] = randNum;
-		 }
+
 		 cout << arr[i] << " ";
 	}
 	cout << "\n" <<  endl;
 
-	//INSERTION SORT ALGORITHM and output
-
-	for (int lastIndexNumber = size; i > 0; --i)
+	//INSERTION SORT ALGORITHM
+	for (int firstUnsortedIndex = 1; firstUnsortedIndex < size; ++firstUnsortedIndex)
 	{
-		
+		int newElement = arr[firstUnsortedIndex];
+		int i;
+		for (i = firstUnsortedIndex; i > 0 && arr[i - 1] > newElement; --i)
+		{
+			arr[i] = arr[i - 1]; //shifting elements from left to right
+		}
+
+		arr[i] = newElement;
+	}
+
+	cout << "Sorted array with Insertion Sort" << endl;
+	for (int i = 0; i < size; ++i)
+	{
+		cout << arr[i] << " ";
 	}
 
 	cout << endl;
