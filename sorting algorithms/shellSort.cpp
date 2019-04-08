@@ -46,9 +46,16 @@ int main()
 
 	//shell Sort Algorithm
 
-	for(int gap = size / 2; gap > 0; gap / 2)
+	for(int gap = size / 2; gap > 0; gap /= 2)
 	{
 		
+	}
+
+	cout << "\n" << endl;
+
+	for (int i = 0; i < size; ++i)
+	{
+		cout << arr[i] << " ";
 	}
 
 	cout << endl;
