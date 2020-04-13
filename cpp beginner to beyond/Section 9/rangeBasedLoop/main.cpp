@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    int scores[] {10, 20, 30};
+    int scores[]{10, 20, 30};
 
     // for(int score:scores)
     // {
@@ -24,7 +24,7 @@ int main()
     // vector<double> temperatures {87.9,77.9,80.0,72.5};
     // double average_temp{};
     // double total{};
-    
+
     // for(auto temp: temperatures)
     // {
     //     total += temp;
@@ -42,14 +42,31 @@ int main()
     // {
     //     cout << val << endl;
     // }
-    
+
     // C - style string
 
-    for(auto c: "This is a test")
-    {
-        if(c != ' ')
-            cout << c;
-    }
+    // for (auto c : "This is a test")
+    // {
+    //     if (c != ' ')
+    //         cout << c;
+    // }
+
+    // for (auto c : "This is a test")
+    //     if (c == ' ')
+    //         cout << "\t";
+    //     else
+    //         cout << c;
+
+    // excercise
+    vector<int> vec{1, 3, 5, 15, 16, 17, 18, 19, 20, 21, 25, 26, 27, 30, 50,
+                    55, 56, 58, 100, 200, 300, 400, 500, 600, 700};
+
+    int count{0};
+    for (auto num : vec)
+        if (num % 3 == 0 || num % 5 == 0)
+            ++count;
+
+    cout << "There are " << count << " numbers in vec divisible by 3 and 5" << endl;
 
     cout << endl;
     return 0;
