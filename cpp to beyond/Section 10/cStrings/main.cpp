@@ -23,5 +23,6 @@ int main()
     << last_name << ", is " << last_name_length 
     << " letters long. This means that the length of the whole name must be " 
     << whole_name_length << " letters long." << endl;
+    cout << endl;
     return 0;
 }
