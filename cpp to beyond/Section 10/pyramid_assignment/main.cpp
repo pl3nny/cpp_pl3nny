@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string> 
+#include <string>
 
 using namespace std;
 
@@ -11,15 +11,23 @@ int main()
 
     for (size_t i = 0; i < user_input.size(); i++)
     {
-
-        for (size_t j = 0; j <= i; j++)
+        for (size_t j = user_input.size() - 1; j > i; j--)
         {
-            cout << user_input.at(j);
+            cout << " ";
         }
+
+        for (size_t k = 0; k <= i; k++)
+        {
+            cout << user_input.at(k);
+        }
+
+        for (size_t l = i; l > 0; l--)
+        {
+            cout << user_input.at(l-1);
+        }
+
         cout << endl;
     }
-    
-    
 
     return 0;
 }
