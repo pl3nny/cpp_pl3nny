@@ -1,3 +1,7 @@
+/*
+    Author: pl3nny
+*/
+
 #include <iostream>
 #include <string>
 
@@ -11,7 +15,7 @@ int main()
 
     for (size_t i = 0; i < user_input.size(); i++)
     {
-        // print out white spaces
+        // print out spaces - 1
         for (size_t j = user_input.size() - 1; j > i; j--)
         {
             cout << " ";
