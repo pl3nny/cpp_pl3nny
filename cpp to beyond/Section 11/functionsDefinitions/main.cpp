@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//function prototypes
 void area_circle();
 double cal_area_circle(double radius);
 void volume_cylinder();
