@@ -23,15 +23,16 @@ int main()
 
 void clear_guest_list(string arr[], size_t size)
 {
+    cout << "clearing out guest list" << endl;
     for (size_t i = 0; i < size; i++)
     {
         arr[i] = " ";
     }
+    cout << "list is clear" << endl;
 }
 
 string print_guest_list(const string arr[], size_t size)
 {
-    string guest_list{};
 
     for (size_t i = 0; i < size; i++)
     {
