@@ -6,6 +6,8 @@ int fib(int num);
 int main()
 {
     cout << fib(10) << endl;
+    cout << "fib of 50: ";
+    cout << fib(50) << endl;
     return 0;
 }
 
