@@ -9,19 +9,21 @@
 using namespace std;
 
 void menu_ui();
-void print_list(const vector <int> &list);
-void add_number_to_list(vector <int> &list);
-void display_mean(const vector <int> &list);
-void display_smallest_number(const vector <int> &list);
-void display_largest_number(const vector <int> &list);
+void print_list(const vector<int> &list);
+void add_number_to_list(vector<int> &list);
+void display_mean(const vector<int> &list);
+void display_smallest_number(const vector<int> &list);
+void display_largest_number(const vector<int> &list);
+bool find(const vector<int> &list, int target);
+void find_number(const vector<int> &list);
 
 int main()
 {
-    vector <int> list {1, 2, 3, 4, 5};
-    char selection {}; // user input
+    vector<int> list{1, 2, 3, 4, 5};
+    char selection{}; // user input
     cout << endl;
 
-    while(selection != 'q' && selection != 'Q')
+    while (selection != 'q' && selection != 'Q')
     {
         menu_ui();
         cin >> selection;
@@ -34,7 +36,7 @@ int main()
         case 'p':
             print_list(list);
             break;
-        
+
         // add number to list
         case 'A':
         case 'a':
@@ -59,6 +61,11 @@ int main()
             display_largest_number(list);
             break;
 
+        case 'F':
+        case 'f':
+            find_number(list);
+            break;
+
         // quit program
         case 'Q':
         case 'q':
@@ -67,7 +74,8 @@ int main()
 
         // default option if user enters invalid option
         default:
-            cout << "\nEnter a valid option...\n" << endl;
+        cout << "\nEnter a valid option...\n"
+                 << endl;
             break;
         }
         cout << endl;
@@ -86,23 +94,24 @@ void menu_ui()
         << "M - Display mean of the numbers\n"
         << "S - Display the smallest number\n"
         << "L - Display the largest number\n"
+        << "F - Find number in list\n"
         << "Q - Quit\n\n"
         << "Enter your choice: ";
 }
 
-void print_list(const vector <int> &list)
+void print_list(const vector<int> &list)
 {
     cout << "[ ";
     for (auto &&i : list)
     {
         cout << i << " ";
     }
-    cout << "]" << endl;  
+    cout << "]" << endl;
 }
 
-void add_number_to_list(vector <int> &list)
+void add_number_to_list(vector<int> &list)
 {
-    int number {0};
+    int number{0};
     cout << "input --> ";
     cin >> number;
 
@@ -112,7 +121,7 @@ void add_number_to_list(vector <int> &list)
 
 void display_mean(const vector<int> &list)
 {
-    int mean {0};
+    int mean{0};
 
     for (auto &&i : list)
     {
@@ -120,28 +129,52 @@ void display_mean(const vector<int> &list)
     }
 
     mean /= list.size();
-    
+
     cout << "The mean is: " << mean << endl;
 }
 
-void display_smallest_number(const vector <int> &list)
+void display_smallest_number(const vector<int> &list)
 {
     int smallest = list.at(0);
     for (auto &&i : list)
     {
-        if(smallest > i)
+        if (smallest > i)
             smallest = i;
     }
     cout << "the smallest number in the list is: " << smallest << endl;
-} 
+}
 
-void display_largest_number(const vector <int> &list)
+void display_largest_number(const vector<int> &list)
 {
     int largest = list.at(0);
     for (auto &&i : list)
     {
-        if(largest < i)
+        if (largest < i)
             largest = i;
     }
     cout << "The largest number in the list is: " << largest << endl;
+}
+
+bool find(const vector<int> &list, int target)
+{
+    for (size_t i = 0; i < list.size(); i++)
+    {
+        if (target == list.at(i))
+            return true;
+    }
+
+    return false;
+}
+
+void find_number(const vector<int> &list)
+{
+    int target{0};
+    cout << "Enter number to find: " << endl;
+    cout << "--> ";
+    cin >> target;
+
+    if (find(list, target))
+        cout << "number found!" << endl;
+    else
+        cout << "number not found..." << endl;
 }
