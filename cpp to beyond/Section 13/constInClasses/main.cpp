@@ -17,5 +17,7 @@ class Player
 int main()
 {
 
+    cout << "Author: Alexander Hernandez" << endl;
+
     return 0;
 }
