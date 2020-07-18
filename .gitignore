@@ -32,6 +32,11 @@
 *.app
 
 # visual studio code 
-*.vscode
+*.viscid
 *.json
 *.pdb
+
+# jetbrais
+.idea
+
+.DS_Store
