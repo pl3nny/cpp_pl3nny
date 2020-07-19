@@ -53,9 +53,6 @@ int main()
     const Player villain {"Villian", 100, 155};
     Player hero {"Hero", 100, 15};
 
-    cout << hero.get_name() << endl;
-
-    display_player_name(villain);
-
+    
     return 0;
 } 
