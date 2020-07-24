@@ -20,6 +20,10 @@ int main()
     my_movies.increment_watched("aladdin");
 
     my_movies.display_movies();
+
+    my_movies.add_movie("Lord of the Rings", "pg-13", 25);
+
+    my_movies.display_movies();
     
     return 0;
 }

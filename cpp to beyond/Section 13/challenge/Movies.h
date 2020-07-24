@@ -1,10 +1,8 @@
 #ifndef _MOVIES_H_
 #define _MOVIES_H_
 
-#include <iostream>
-#include <string>
-#include <vector>
 #include "Movie.h"
+#include <vector>
 
 using namespace std;
 
