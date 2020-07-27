@@ -4,42 +4,48 @@ int Movies::number_of_movies_in_collection{0};
 
 Movies::Movies() {}
 
-void Movies::add_movie(std::string movie_name, std::string movie_raiting, int watched)
+void Movies::add_movie(string movie_name, string movie_raiting, int watched)
 {
 
     if (!in_movie_collection(movie_name))
     {
-        movie_collection.push_back(Movie(movie_name, movie_raiting, watched));
+        Movie temp (movie_name, movie_raiting, watched);
+        movie_collection.push_back(temp);
+        
         number_of_movies_in_collection++;
         cout << movie_name << " added" << endl;
     }
 }
 
-void Movies::display_movies()
+void Movies::display_movies() const
 {
+    cout << "\n===============================" << endl;
 
     if (number_of_movies_in_collection == 0)
     {
-        std::cout << "no movies in collection...\n"
+        cout << "no movies in collection...\n"
                   << endl;
     }
     else
     {
-        for (size_t i = 0; i < number_of_movies_in_collection; i++)
+        cout << "MY MOVIES" << endl;
+        for (const Movie &movie: movie_collection)
         {
-            cout << movie_collection.at(i).get_movie_details() << endl;
+            cout << movie.get_movie_details() << endl;
         }
     }
+
+    cout << "===============================\n" << endl;
 }
 
 // logic check if movie is already in collection
-bool Movies::in_movie_collection(std::string movie_name)
+bool Movies::in_movie_collection(string movie_name) const
 {
-    for (size_t i = 0; i < number_of_movies_in_collection; i++)
+    for (const Movie &movie: movie_collection)
     {
-        if (movie_name == movie_collection.at(i).get_movie_name())
+        if (movie_name == movie.get_movie_name())
         {
-            std::cout << movie_name << " already in your collection..." << std::endl;
+            cout << movie_name << " already in your collection..." << endl;
             return true;
         }
     }
@@ -47,13 +53,13 @@ bool Movies::in_movie_collection(std::string movie_name)
     return false;
 }
 
-void Movies::increment_watched(std::string movie_name)
+void Movies::increment_watched(string movie_name)
 {
-    for (size_t i = 0; i < number_of_movies_in_collection; i++)
+    for (Movie &movie: movie_collection)
     {
-        if (movie_name == movie_collection.at(i).get_movie_name())
+        if (movie_name == movie.get_movie_name())
         {
-            movie_collection.at(i).increment_watched();
+            movie.increment_watched();
         }
     }
 }

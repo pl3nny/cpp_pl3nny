@@ -14,8 +14,8 @@ private:
 public:
     Movies();
     void add_movie(std::string movie_name, std::string movie_raiting, int watched);
-    void display_movies();
-    bool in_movie_collection(std::string movie_name);
+    void display_movies() const;
+    bool in_movie_collection(std::string movie_name) const;
     void increment_watched(std::string movie_name);
     static int get_number_of_movies_in_collection();
     ~Movies();
