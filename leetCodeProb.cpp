@@ -39,7 +39,7 @@ int main() {
     }
 
     for(int i = 0; i < arr.size(); i++) {
-        binarySearch(arr, i, (arr.size() - 1), (arr[i] - target));
+        // binarySearch(arr, i, (arr.size() - 1), (arr[i] - target));
     }
 
     return 0;
