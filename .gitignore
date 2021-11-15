@@ -45,6 +45,7 @@
 *.json
 *.pdb
 *.ilk
+*.dSYM
 
 # jetbrais
 .idea
