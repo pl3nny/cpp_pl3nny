@@ -1,64 +1,25 @@
-/*
-* scratch paper or file to implement quitck algorithm checks
-* or anything for that matter actually. Goodluck - AlexH
-*/
-
-#include <iostream> 
+#include <iostream>
+#include <array>
 #include <vector>
 
 using namespace std;
 
-int main() {
+int main()
+{
+    vector <int> test_scores {100, 98, 89};
 
-    cout << "\t Section 7 Challenge Vectors\n" << endl;
+    for(int i = 0;i < test_scores.size(); i++) {
+        cout << "the tests scores are :" << test_scores.at(i) << endl;
+    }
 
-    // Decalre 2 empty vectors of integers named
-    // vector1 and vector2, respectively.
-    vector <int> vector_1;
-    vector <int> vector_2;
-    
-    //Add 10 and 20 to vector1 dynamically using push_back
-    vector_1.push_back(10);
-    vector_1.push_back(20);
-    //Display the elements in vector1 using the at() method as well as 
-    //its size using the size() method
-    cout << vector_1.at(0) << endl;
-    cout << vector_1.at(1) << endl;
-    cout << "size of vector_1: " << vector_1.size() << endl;
+    cout << "Add score: ";
+    int user_input = 0;
+    cin >> user_input;
+    test_scores.push_back(user_input);
 
-    cout << endl;
-
-    //Add 100 and 200 to vector2 dynamincally using push_back
-    vector_2.push_back(100);
-    vector_2.push_back(200);
-    //Display the elements in vector2 using the at() method as well as 
-    //its size using the size() method
-    cout << vector_2.at(0) << endl;
-    cout << vector_2.at(1) << endl;
-    cout << "size of vector_2: " << vector_2.size() << endl;
-
-    cout << endl;
-
-    //Declare an empty 2D vector called vector_2d
-    vector <vector<int>> vector_2d;    
-
-    //Add vector1 to vector_2d dynamically using push_back
-    vector_2d.push_back(vector_1);
-    
-    //Add vector2 to vector_2d dynamically using push_back
-    vector_2d.push_back(vector_2);
-
-    //Display the elements in vector_2d using the at() method
-    cout << vector_2d.at(0).at(0) << " " << vector_2d.at(0).at(1) <<endl;
-    cout << vector_2d.at(1).at(0) << " " << vector_2d.at(1).at(1) <<endl;
-
-    cout << endl;
-
-    //Change vector1.at(0) to 1000
-    vector_1.at(0) = 1000;
-
-    //Display the elements in vector1
-    cout << vector_1.at(0) << " " << vector_1.at(1) << endl;
+    for(int i = 0;i < test_scores.size(); i++) {
+        cout << "the tests scores are :" << test_scores.at(i) << endl;
+    }   
 
     return 0;
 }
