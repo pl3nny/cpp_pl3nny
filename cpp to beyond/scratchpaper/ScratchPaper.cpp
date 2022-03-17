@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -112,6 +114,7 @@ int main()
 
     // ******************************************************************************************************
 
+// Section 9
 
     // RANGE BASED FOR-LOOOP
     // introduced in c++11
@@ -124,6 +127,50 @@ int main()
         statements; // can use var_name
     }
     */
+
+//    cout << endl;
+//    cout << "\tRange Based For-Loop\n" << endl;
+
+//     int arr [] {1,2,3,4,5,6,7,8,9,10};
+
+//     int scores [] {100, 90, 97};
+
+//     for (auto score : scores) {
+//         cout << score << endl;
+//     }
+
+    // calculate the average temperature in the vector
+
+    // cout << endl;
+    // cout << "Temperature" << endl;
+    // cout << endl;
+
+    // vector<double> temps {87.2, 77.1, 80.0, 72.5};
+
+    // for(auto temp : temps) {
+    //     cout << temp << endl;
+    // }
+
+    // vector<double> temperature {87.9,77.9,80.0,72.5};
+    // double average_temperature {};
+    // double total{};
+
+    // for(auto temp : temperature){
+    //     cout << temp << " ";
+    //     total += temp;
+    // }
+
+    // cout << endl;
+
+    // if(temperature.size() != 0){
+    //     average_temperature = total / temperature.size();
+    // }
+
+
+    // cout << fixed << setprecision(1);
+    // cout << "The average temperature is: " << average_temperature << endl;
+
+    
 
     return 0;
 }
