@@ -170,7 +170,16 @@ int main()
     // cout << fixed << setprecision(1);
     // cout << "The average temperature is: " << average_temperature << endl;
 
+    double temp_high {100.78};
+    double temp_low {98.7878};
+
+    double adds_low_high = temp_high + temp_low;
+
+    cout << adds_low_high << endl;
     
+    cout << "setprecision by 2 " << fixed << setprecision(2) << adds_low_high << endl;
+
+    cout << "setprecision by 1 " << fixed << setprecision(1) << adds_low_high << endl;
 
     return 0;
 }
