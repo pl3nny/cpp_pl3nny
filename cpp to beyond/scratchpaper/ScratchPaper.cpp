@@ -170,16 +170,78 @@ int main()
     // cout << fixed << setprecision(1);
     // cout << "The average temperature is: " << average_temperature << endl;
 
-    double temp_high {100.78};
-    double temp_low {98.7878};
+    // double temp_high {100.78};
+    // double temp_low {98.7878};
 
-    double adds_low_high = temp_high + temp_low;
+    // double adds_low_high = temp_high + temp_low;
 
-    cout << adds_low_high << endl;
+    // cout << adds_low_high << endl;
     
-    cout << "setprecision by 2 " << fixed << setprecision(2) << adds_low_high << endl;
+    // cout << "setprecision by 2 " << fixed << setprecision(2) << adds_low_high << endl;
 
-    cout << "setprecision by 1 " << fixed << setprecision(1) << adds_low_high << endl;
+    // cout << "setprecision by 1 " << fixed << setprecision(1) << adds_low_high << endl;
+
+    // ******************************************************************************************************
+
+    // NESTED LOOPS
+
+    // cout << "multiplacation table\n" << endl;
+    // cout << endl;
+
+    // for (int i {1}; i <= 10; i++) {
+    //     for (int j {1}; j <= 10; j++) {
+    //         cout << i << " * " << j << " = " << i * j << endl;
+
+    //         if (j == 10) {
+    //         cout << "------------" << endl;
+    //         }
+    //     }
+    // }
+
+
+    // two dimensional arrays with nested loops
+
+   vector <vector <int>> vector_2d 
+   {
+       {1,2,3},
+       {10,20,30,40},
+       {100,200,300,400,500}
+   };
+
+   for(auto vec:vector_2d){
+       for(auto val:vec) {
+           cout << val << " ";
+       }
+       cout << endl;
+   }
+
+   // get and store  value of user inputs
+
+   int num_items{};
+
+   cout << "how many data item do you have? ";
+   cin >> num_items;
+
+   vector <int> data{};
+   int input{};
+
+   for(int i = 0; i < num_items; i++) {
+       cout << "Enter value: ";
+       cin >> input;
+       data.push_back(input);
+   }
+
+   cout << "\nDisplayig Histogram" << endl;
+
+   for(auto val:data){
+       for(int i = 1; i <= val; i++) {
+           cout << "-";
+           if (i % 5 == 0) {
+               cout << "*";
+           }
+       }
+       cout << endl;
+   }
 
     return 0;
 }
