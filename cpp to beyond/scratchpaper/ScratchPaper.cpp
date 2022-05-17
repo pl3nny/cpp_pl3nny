@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <string>
+#include <ctype.h>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -114,7 +118,7 @@ int main()
 
     // ******************************************************************************************************
 
-// Section 9
+    // Section 9
 
     // RANGE BASED FOR-LOOOP
     // introduced in c++11
@@ -128,16 +132,16 @@ int main()
     }
     */
 
-//    cout << endl;
-//    cout << "\tRange Based For-Loop\n" << endl;
+    //    cout << endl;
+    //    cout << "\tRange Based For-Loop\n" << endl;
 
-//     int arr [] {1,2,3,4,5,6,7,8,9,10};
+    //     int arr [] {1,2,3,4,5,6,7,8,9,10};
 
-//     int scores [] {100, 90, 97};
+    //     int scores [] {100, 90, 97};
 
-//     for (auto score : scores) {
-//         cout << score << endl;
-//     }
+    //     for (auto score : scores) {
+    //         cout << score << endl;
+    //     }
 
     // calculate the average temperature in the vector
 
@@ -166,7 +170,6 @@ int main()
     //     average_temperature = total / temperature.size();
     // }
 
-
     // cout << fixed << setprecision(1);
     // cout << "The average temperature is: " << average_temperature << endl;
 
@@ -176,7 +179,7 @@ int main()
     // double adds_low_high = temp_high + temp_low;
 
     // cout << adds_low_high << endl;
-    
+
     // cout << "setprecision by 2 " << fixed << setprecision(2) << adds_low_high << endl;
 
     // cout << "setprecision by 1 " << fixed << setprecision(1) << adds_low_high << endl;
@@ -198,50 +201,169 @@ int main()
     //     }
     // }
 
-
     // two dimensional arrays with nested loops
 
-   vector <vector <int>> vector_2d 
-   {
-       {1,2,3},
-       {10,20,30,40},
-       {100,200,300,400,500}
-   };
+    //    vector <vector <int>> vector_2d
+    //    {
+    //        {1,2,3},
+    //        {10,20,30,40},
+    //        {100,200,300,400,500}
+    //    };
 
-   for(auto vec:vector_2d){
-       for(auto val:vec) {
-           cout << val << " ";
-       }
-       cout << endl;
-   }
+    //    for(auto vec:vector_2d){
+    //        for(auto val:vec) {
+    //            cout << val << " ";
+    //        }
+    //        cout << endl;
+    //    }
 
-   // get and store  value of user inputs
+    //    // get and store  value of user inputs
 
-   int num_items{};
+    //    int num_items{};
 
-   cout << "how many data item do you have? ";
-   cin >> num_items;
+    //    cout << "how many data item do you have? ";
+    //    cin >> num_items;
 
-   vector <int> data{};
-   int input{};
+    //    vector <int> data{};
+    //    int input{};
 
-   for(int i = 0; i < num_items; i++) {
-       cout << "Enter value: ";
-       cin >> input;
-       data.push_back(input);
-   }
+    //    for(int i = 0; i < num_items; i++) {
+    //        cout << "Enter value: ";
+    //        cin >> input;
+    //        data.push_back(input);
+    //    }
 
-   cout << "\nDisplayig Histogram" << endl;
+    //    cout << "\nDisplayig Histogram" << endl;
 
-   for(auto val:data){
-       for(int i = 1; i <= val; i++) {
-           cout << "-";
-           if (i % 5 == 0) {
-               cout << "*";
-           }
-       }
-       cout << endl;
-   }
+    //    for(auto val:data){
+    //        for(int i = 1; i <= val; i++) {
+    //            cout << "-";
+    //            if (i % 5 == 0) {
+    //                cout << "*";
+    //            }
+    //        }
+    //        cout << endl;
+    //    }
+
+    /*
+        SECTION 9 CHALLENGE
+    */
+
+    struct Menu
+    {
+        void printMenu()
+        {
+            cout << "P - Pring numbers\n"
+                    "A - Add a number\n"
+                    "M - Display mean of the numbers \n"
+                    "S - Display the smallest number\n"
+                    "L - Display the largest number\n"
+                    "Q - Quit"
+                 << endl;
+        }
+    };
+
+    Menu menu;
+    char selection;
+    vector<int> vec_list;
+    int input{};
+    int mean{};
+    int smallest{};
+    int largest{};
+
+    menu.printMenu();
+
+    cout << "Enter your choice: ";
+    cin >> selection;
+
+    while (selection != 'q')
+    {
+        if (islower(selection))
+        {
+            selection = toupper(selection);
+        }
+
+        switch (selection)
+        {
+        case 'P':
+            if (vec_list.empty())
+            {
+                cout << "list is empty" << endl;
+            }
+            else
+            {
+                cout << "Printing number: " << endl;
+                for (auto vec : vec_list)
+                {
+                    cout << vec << " ";
+                }
+                cout << endl;
+            }
+            break;
+        case 'A':
+            cout << "enter integer to add to list: ";
+            cin >> input;
+            cout << "Adding number: " << input << endl;
+            vec_list.push_back(input);
+            break;
+        case 'M':
+            cout << "Calculating mean of the numbers" << endl;
+            for (auto vec : vec_list)
+            {
+                mean += vec;
+            }
+            mean /= vec_list.size();
+            cout << "mean = " << mean << endl;
+            break;
+        case 'S':
+            cout << "Displaying the smallest number" << endl;
+            if (vec_list.empty())
+            {
+                cout << "list is empty, add integers first..." << endl;
+            }
+            else
+            {
+                smallest = vec_list.at(0);
+                for (auto vec : vec_list)
+                {
+                    if (vec < smallest)
+                    {
+                        smallest = vec;
+                    }
+                }
+                cout << "smallest: " << smallest << endl;
+            }
+            break;
+        case 'L':
+            cout << "Displaying the largest number" << endl;
+            if (vec_list.empty())
+            {
+                cout << "list is empty, add integers first..." << endl;
+            }
+            else
+            {
+                largest = vec_list.at(0);
+                for (auto vec : vec_list)
+                {
+                    if (vec > largest)
+                    {
+                        largest = vec;
+                    }
+                }
+                cout << "largest: " << largest << endl;
+            }
+            break;
+        }
+
+        cout << endl;
+
+        menu.printMenu();
+        cout << "Enter your choice: ";
+        cin >> selection;
+        cout << endl;
+    }
+
+    cout << "Quitting program" << endl;
 
     return 0;
 }
