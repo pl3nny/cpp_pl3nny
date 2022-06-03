@@ -293,11 +293,12 @@ int main()
             else
             {
                 cout << "Printing number: " << endl;
+                cout << "[ ";
                 for (auto vec : vec_list)
                 {
                     cout << vec << " ";
                 }
-                cout << endl;
+                cout << "]" << endl;
             }
             break;
         case 'A':
