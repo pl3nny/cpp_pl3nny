@@ -434,16 +434,16 @@ int main()
 
     // CODING EXERCISE 19: USING C++ STRINGS - EXCERSICE 1
 
-//     string unformatted_full_name {"StephenHawking"};
-//     string first_name {};
-//     string last_name {};
-//     string formatted_full_name {};
+    // string unformatted_full_name {"StephenHawking"};
+    // string first_name {};
+    // string last_name {};
+    // string formatted_full_name {};
 
-//     first_name += unformatted_full_name.substr(0,7);
-//     last_name += unformatted_full_name.substr(7,unformatted_full_name.length());
-//     formatted_full_name = first_name + " " + last_name;
+    // first_name += unformatted_full_name.substr(0,7);
+    // last_name += unformatted_full_name.substr(7,unformatted_full_name.length());
+    // formatted_full_name = first_name + " " + last_name;
 
-//    cout << formatted_full_name << endl;
+    // cout << formatted_full_name << endl;
 
 
     // CODING EXERCISE 20: USING C++ STRINGS - EXERCISE 2
