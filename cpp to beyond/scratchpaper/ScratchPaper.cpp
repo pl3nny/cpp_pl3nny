@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <time.h>
+#include <cstring>
 
 using namespace std;
 
@@ -249,124 +250,208 @@ int main()
         SECTION 9 CHALLENGE
     */
 
-    struct Menu
-    {
-        void printMenu()
-        {
-            cout << "P - Pring numbers\n"
-                    "A - Add a number\n"
-                    "M - Display mean of the numbers \n"
-                    "S - Display the smallest number\n"
-                    "L - Display the largest number\n"
-                    "Q - Quit"
-                 << endl;
-        }
-    };
+    // struct Menu
+    // {
+    //     void printMenu()
+    //     {
+    //         cout << "P - Pring numbers\n"
+    //                 "A - Add a number\n"
+    //                 "M - Display mean of the numbers \n"
+    //                 "S - Display the smallest number\n"
+    //                 "L - Display the largest number\n"
+    //                 "Q - Quit"
+    //              << endl;
+    //     }
+    // };
 
-    Menu menu;
-    char selection;
-    vector<int> vec_list;
-    int input{};
-    int mean{};
-    int smallest{};
-    int largest{};
+    // Menu menu;
+    // char selection;
+    // vector<int> vec_list;
+    // int input{};
+    // int mean{};
+    // int smallest{};
+    // int largest{};
 
-    menu.printMenu();
+    // menu.printMenu();
 
-    cout << "Enter your choice: ";
-    cin >> selection;
+    // cout << "Enter your choice: ";
+    // cin >> selection;
 
-    while (selection != 'q')
-    {
-        if (islower(selection))
-        {
-            selection = toupper(selection);
-        }
+    // while (selection != 'q')
+    // {
+    //     if (islower(selection))
+    //     {
+    //         selection = toupper(selection);
+    //     }
 
-        switch (selection)
-        {
-        case 'P':
-            if (vec_list.empty())
-            {
-                cout << "list is empty" << endl;
-            }
-            else
-            {
-                cout << "Printing number: " << endl;
-                cout << "[ ";
-                for (auto vec : vec_list)
-                {
-                    cout << vec << " ";
-                }
-                cout << "]" << endl;
-            }
-            break;
-        case 'A':
-            cout << "enter integer to add to list: ";
-            cin >> input;
-            cout << "Adding number: " << input << endl;
-            vec_list.push_back(input);
-            break;
-        case 'M':
-            cout << "Calculating mean of the numbers" << endl;
-            for (auto vec : vec_list)
-            {
-                mean += vec;
-            }
-            mean /= vec_list.size();
-            cout << "mean = " << mean << endl;
-            break;
-        case 'S':
-            cout << "Displaying the smallest number" << endl;
-            if (vec_list.empty())
-            {
-                cout << "list is empty, add integers first..." << endl;
-            }
-            else
-            {
-                smallest = vec_list.at(0);
-                for (auto vec : vec_list)
-                {
-                    if (vec < smallest)
-                    {
-                        smallest = vec;
-                    }
-                }
-                cout << "smallest: " << smallest << endl;
-            }
-            break;
-        case 'L':
-            cout << "Displaying the largest number" << endl;
-            if (vec_list.empty())
-            {
-                cout << "list is empty, add integers first..." << endl;
-            }
-            else
-            {
-                largest = vec_list.at(0);
-                for (auto vec : vec_list)
-                {
-                    if (vec > largest)
-                    {
-                        largest = vec;
-                    }
-                }
-                cout << "largest: " << largest << endl;
-            }
-            break;
-        }
+    //     switch (selection)
+    //     {
+    //     case 'P':
+    //         if (vec_list.empty())
+    //         {
+    //             cout << "list is empty" << endl;
+    //         }
+    //         else
+    //         {
+    //             cout << "Printing number: " << endl;
+    //             cout << "[ ";
+    //             for (auto vec : vec_list)
+    //             {
+    //                 cout << vec << " ";
+    //             }
+    //             cout << "]" << endl;
+    //         }
+    //         break;
+    //     case 'A':
+    //         cout << "enter integer to add to list: ";
+    //         cin >> input;
+    //         cout << "Adding number: " << input << endl;
+    //         vec_list.push_back(input);
+    //         break;
+    //     case 'M':
+    //         cout << "Calculating mean of the numbers" << endl;
+    //         for (auto vec : vec_list)
+    //         {
+    //             mean += vec;
+    //         }
+    //         mean /= vec_list.size();
+    //         cout << "mean = " << mean << endl;
+    //         break;
+    //     case 'S':
+    //         cout << "Displaying the smallest number" << endl;
+    //         if (vec_list.empty())
+    //         {
+    //             cout << "list is empty, add integers first..." << endl;
+    //         }
+    //         else
+    //         {
+    //             smallest = vec_list.at(0);
+    //             for (auto vec : vec_list)
+    //             {
+    //                 if (vec < smallest)
+    //                 {
+    //                     smallest = vec;
+    //                 }
+    //             }
+    //             cout << "smallest: " << smallest << endl;
+    //         }
+    //         break;
+    //     case 'L':
+    //         cout << "Displaying the largest number" << endl;
+    //         if (vec_list.empty())
+    //         {
+    //             cout << "list is empty, add integers first..." << endl;
+    //         }
+    //         else
+    //         {
+    //             largest = vec_list.at(0);
+    //             for (auto vec : vec_list)
+    //             {
+    //                 if (vec > largest)
+    //                 {
+    //                     largest = vec;
+    //                 }
+    //             }
+    //             cout << "largest: " << largest << endl;
+    //         }
+    //         break;
+    //     }
 
-        cout << endl;
+    //     cout << endl;
 
-        menu.printMenu();
-        cout << "Enter your choice: ";
-        cin >> selection;
-        cout << endl;
-    }
+    //     menu.printMenu();
+    //     cout << "Enter your choice: ";
+    //     cin >> selection;
+    //     cout << endl;
+    // }
 
-    cout << "Quitting program" << endl;
+    // cout << "Quitting program" << endl;
 
     // SECTION CHALLENGE COMPLETED
+    // ************************************************************************************************
+    // ************************************************************************************************
+
+
+    // SECTION 10 - CHARACTERS AND STRINGS
+
+
+    // USING C STYLE STRINGS
+
+    // char str[80];
+
+    // strcpy(str, "Hello ");
+
+    // strcat(str,  "there ");
+
+    // cout << str << endl;
+
+
+    // WORKING WITH C STYLE STTINGS
+    // CREATE GREETING MESSAGE WITH CHARACTERS 
+
+    // char full_name[20] {};
+    // char first_name[20] {};
+    // char last_name[20]{};
+    // char temp [50] {};
+
+    // cout << "Enter your first name: ";
+    // cin >> first_name;
+    // cout << "Enter your last name: ";
+    // cin >> last_name;
+
+    // strcpy(full_name, first_name);
+    // strcat(full_name, " ");
+    // strcat(full_name, last_name);
+
+    // cout << "Hello " << full_name << " your first name has " << strlen(first_name) << " letters."
+    // << " your last name has " << strlen(last_name) << " letters." << endl;
+
+
+    // GET FULL USER INPUT GETLINE 
+
+    // cout << "Enter your full name: ";
+    // cin.getline(full_name, 50);
+
+    // cout << "your full name is "  << full_name << endl;
+
+
+    // CODING EXERCISE 18: USING C-STYLE STRINGS
+
+    // char first_name [20] {"Bjarne"};
+    // char last_name [20] {"Stroustrup"};
+    // char whole_name [50] {};
+
+    // size_t first_name_length {strlen(first_name)};
+    // size_t last_name_length {strlen(last_name)};
+    // size_t whole_name_length {strlen(first_name) + strlen(last_name) + 1};
+
+    // strcpy(whole_name, first_name);
+    // strcat(whole_name, " ");
+    // strcat(whole_name, last_name);
+
+    // cout << whole_name << endl;
+
+
+    // CODING EXERCISE 19: USING C++ STRINGS - EXCERSICE 1
+
+//     string unformatted_full_name {"StephenHawking"};
+//     string first_name {};
+//     string last_name {};
+//     string formatted_full_name {};
+
+//     first_name += unformatted_full_name.substr(0,7);
+//     last_name += unformatted_full_name.substr(7,unformatted_full_name.length());
+//     formatted_full_name = first_name + " " + last_name;
+
+//    cout << formatted_full_name << endl;
+
+
+    // CODING EXERCISE 20: USING C++ STRINGS - EXERCISE 2
+
+    
+
+    
+
     // ************************************************************************************************
     // ************************************************************************************************
 
