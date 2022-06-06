@@ -269,7 +269,7 @@ int main()
     // char selection;
     // vector<int> vec_list;
     // int input{};
-    // int mean{}; 
+    // int mean{};
     // int smallest{};
     // int largest{};
 
@@ -372,9 +372,7 @@ int main()
     // ************************************************************************************************
     // ************************************************************************************************
 
-
     // SECTION 10 - CHARACTERS AND STRINGS
-
 
     // USING C STYLE STRINGS
 
@@ -386,9 +384,8 @@ int main()
 
     // cout << str << endl;
 
-
     // WORKING WITH C STYLE STTINGS
-    // CREATE GREETING MESSAGE WITH CHARACTERS 
+    // CREATE GREETING MESSAGE WITH CHARACTERS
 
     // char full_name[20] {};
     // char first_name[20] {};
@@ -407,14 +404,12 @@ int main()
     // cout << "Hello " << full_name << " your first name has " << strlen(first_name) << " letters."
     // << " your last name has " << strlen(last_name) << " letters." << endl;
 
-
-    // GET FULL USER INPUT GETLINE 
+    // GET FULL USER INPUT GETLINE
 
     // cout << "Enter your full name: ";
     // cin.getline(full_name, 50);
 
     // cout << "your full name is "  << full_name << endl;
-
 
     // CODING EXERCISE 18: USING C-STYLE STRINGS
 
@@ -432,7 +427,6 @@ int main()
 
     // cout << whole_name << endl;
 
-
     // CODING EXERCISE 19: USING C++ STRINGS - EXCERSICE 1
 
     // string unformatted_full_name {"StephenHawking"};
@@ -446,26 +440,25 @@ int main()
 
     // cout << formatted_full_name << endl;
 
-
     // CODING EXERCISE 20: USING C++ STRINGS - EXERCISE 2
 
     /*
-    * In this exercise you will create a program that will be used in a digital library 
-    * to format and sort journal entries based on the authors last name. Each entry has
-    * room to store only the last name of the author.
-    * 
-    * Begin by removing the first name "Isaac" from the string variable journal_entry_1
-    * by using the string function erase. Do not forget to remove whitespace so that the
-    * string variable journal_entry_1 will then contain the string "Newton" with no 
-    * whitespaces.
-    * 
-    * Create an if statement so that if the last name contained within journal_entry_2 is
-    * alphabetically less than the last name contained within journal_entry_1, then the
-    * string values are swapped using the string function swap.
-    * 
-    * You may either of the comparison operators <> in the if statement but remember that
-    * following ASCII, "A" is lexicographically lower than "B".
-    */
+     * In this exercise you will create a program that will be used in a digital library
+     * to format and sort journal entries based on the authors last name. Each entry has
+     * room to store only the last name of the author.
+     *
+     * Begin by removing the first name "Isaac" from the string variable journal_entry_1
+     * by using the string function erase. Do not forget to remove whitespace so that the
+     * string variable journal_entry_1 will then contain the string "Newton" with no
+     * whitespaces.
+     *
+     * Create an if statement so that if the last name contained within journal_entry_2 is
+     * alphabetically less than the last name contained within journal_entry_1, then the
+     * string values are swapped using the string function swap.
+     *
+     * You may either of the comparison operators <> in the if statement but remember that
+     * following ASCII, "A" is lexicographically lower than "B".
+     */
 
     // string journal_entry_1 {"Isaac Newton"};
     // string journal_entry_2 {"Leibniz"};
@@ -486,79 +479,104 @@ int main()
     // ************************************************************************************************
     // ************************************************************************************************
 
-
     // SECTION 10 CHALLENGE QUESTION -- SUBSTITUTION CIPHER
 
     /*
-    * A simple and very old method of sending secret messages is the substitution cipyer. 
-    * You might have used this cipher with your friends when you were a kid.
-    * Basically, each letter of the alphabet gets replaced by another letter of the alphabet.
-    * For example, every 'a' gets replaced with an 'X', and every 'b' gets replaced with a 'Z', etc.
-    * 
-    * Write a program that asks a user to enter a secret message.
-    * 
-    * Encrypt this message using the substitution cipher and display the encrypted message. Then decryped
-    * the encrypted message back to the original message.
-    * 
-    * You may use 2 strings below for your substitution.
-    * For example, to encrypt you can replace the character at position n in alphabet
-    * with the character at position n in key.
-    * 
-    * To decrypt you can replace the character at position n in key with character at position n 
-    * in alphabet.
-    */
+     * A simple and very old method of sending secret messages is the substitution cipyer.
+     * You might have used this cipher with your friends when you were a kid.
+     * Basically, each letter of the alphabet gets replaced by another letter of the alphabet.
+     * For example, every 'a' gets replaced with an 'X', and every 'b' gets replaced with a 'Z', etc.
+     *
+     * Write a program that asks a user to enter a secret message.
+     *
+     * Encrypt this message using the substitution cipher and display the encrypted message. Then decryped
+     * the encrypted message back to the original message.
+     *
+     * You may use 2 strings below for your substitution.
+     * For example, to encrypt you can replace the character at position n in alphabet
+     * with the character at position n in key.
+     *
+     * To decrypt you can replace the character at position n in key with character at position n
+     * in alphabet.
+     */
 
+    //    string user_input_message {""};
+    //    string secret_message_encrypted {""};
+    //    string secret_message_decrypted {""};
 
-//    string user_input_message {""};
-//    string secret_message_encrypted {""};
-//    string secret_message_decrypted {""};
+    //    string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    //    string key {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
 
-//    string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-//    string key {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
+    //    cout << "Enter message to drecrypt: ";
+    //    getline(cin, user_input_message);
+    //    cout << endl;
 
-//    cout << "Enter message to drecrypt: ";
-//    getline(cin, user_input_message);
-//    cout << endl;
+    //    cout << "Your message: " << user_input_message << endl;
+    //    cout << "now encrypting your message" << endl;
 
-//    cout << "Your message: " << user_input_message << endl;
-//    cout << "now encrypting your message" << endl;
+    //    for (char c : user_input_message) {
+    //        size_t position = alphabet.find(c);
 
-//    for (char c : user_input_message) {
-//        size_t position = alphabet.find(c);
+    //        if(position != string::npos) {
+    //            secret_message_encrypted += key.at(position);
+    //        } else {
+    //            secret_message_encrypted += c;
+    //        }
+    //    }
 
-//        if(position != string::npos) {
-//            secret_message_encrypted += key.at(position);
-//        } else {
-//            secret_message_encrypted += c;
-//        }
-//    }
+    //     cout << "Encrypted message: " << secret_message_encrypted << endl;
+    //     cout << endl;
 
-//     cout << "Encrypted message: " << secret_message_encrypted << endl;
-//     cout << endl;
+    //     cout << "Decrypting message..." << endl;
 
-//     cout << "Decrypting message..." << endl;
+    //     for (char c : secret_message_encrypted) {
+    //         size_t position = key.find(c);
 
-//     for (char c : secret_message_encrypted) {
-//         size_t position = key.find(c);
+    //         if (position != string::npos) {
+    //             secret_message_decrypted += alphabet.at(position);
+    //         } else {
+    //             secret_message_decrypted += c;
+    //         }
+    //     }
 
-//         if (position != string::npos) {
-//             secret_message_decrypted += alphabet.at(position);
-//         } else {
-//             secret_message_decrypted += c;
-//         }
-//     }
+    //     cout << "Decrypted message: " << secret_message_decrypted << endl;
 
-//     cout << "Decrypted message: " << secret_message_decrypted << endl;
+    // *******************************************************************************************
+    // *******************************************************************************************
 
+    // SECTION 11
 
-// ************************************************************************************************
-// ************************************************************************************************
+    /*
+     * Coding exercise 21: Using Functions from the cmath Library
+     */
 
-// SECTION 11
+    double bill_total{102.78};
+    int number_of_guests{5};
 
+    // ********************************
 
-    
+    double individual_bill{bill_total / double(number_of_guests)};
 
+    cout << "individual bill not rounded: " << individual_bill << endl;
+    cout << endl;
+
+    // At location 1 - rounds down to nearest dollar
+    double individual_bill_1{floor(individual_bill)};
+    cout << "rounded down to nearest dollar: " << individual_bill_1 << endl;
+    cout << endl;
+
+    // At location 2 - rounds to the nearest dollar
+    double individual_bill_2{round(individual_bill)};
+    cout << "rounded to the nearest dollar: " << individual_bill_2 << endl;
+    cout << endl;
+
+    // At location 3 - rounds up to the neares cent.
+    double individual_bill_3{ceil((individual_bill * 100.00)) / 100.00};
+    cout << "rounded to the nearest cent: " << individual_bill_3 << endl;
+    cout << endl;
+
+    // *******************************************************************************************
+    // *******************************************************************************************
 
     return 0;
 }
