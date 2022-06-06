@@ -3,56 +3,57 @@
 
 using namespace std;
 
-int main() {
-    
-    string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    string key  {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
-    
-    string secret_message{};
-    cout << "Enter a secret message: ";
-    getline(cin, secret_message);
+int main()
+{
 
-    string encrypted_message{};
+    string alphabet{"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    string key{"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
 
-    cout << "\nEncrypting message..." << endl;
+    string user_input_message{""};
+    string secret_message_encrypted{""};
+    string secret_message_decrypted{""};
 
-    for (auto &&c : secret_message)
+    cout << "Enter message to drecrypt: ";
+    getline(cin, user_input_message);
+    cout << endl;
+
+    cout << "Your message: " << user_input_message << endl;
+    cout << "now encrypting your message" << endl;
+
+    for (char c : user_input_message)
     {
         size_t position = alphabet.find(c);
+
         if (position != string::npos)
         {
-            char new_char {key.at(position)};
-            encrypted_message += new_char;
+            secret_message_encrypted += key.at(position);
         }
         else
         {
-            encrypted_message += c;
+            secret_message_encrypted += c;
         }
     }
 
-    cout << "\nEncrypted message: " << encrypted_message << endl;
+    cout << "Encrypted message: " << secret_message_encrypted << endl;
+    cout << endl;
 
-    string decrypted_message{};
+    cout << "Decrypting message..." << endl;
 
-    cout << "\nDecrypting message..." << endl;
-    
-    for (auto &&c : encrypted_message)
+    for (char c : secret_message_encrypted)
     {
         size_t position = key.find(c);
+
         if (position != string::npos)
         {
-            char new_char {alphabet.at(position)};
-            decrypted_message += new_char;
+            secret_message_decrypted += alphabet.at(position);
         }
         else
         {
-            decrypted_message += c;
+            secret_message_decrypted += c;
         }
     }
-    
-    cout << "\ndecrypted message is: " << decrypted_message << endl;
 
-    cout << endl;
+    cout << "Decrypted message: " << secret_message_decrypted << endl;
+
     return 0;
 }
-
