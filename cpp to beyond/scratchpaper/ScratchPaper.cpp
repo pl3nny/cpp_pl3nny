@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <cstring>
+#include <unordered_map>
 
 using namespace std;
 
@@ -268,7 +269,7 @@ int main()
     // char selection;
     // vector<int> vec_list;
     // int input{};
-    // int mean{};
+    // int mean{}; 
     // int smallest{};
     // int largest{};
 
@@ -448,12 +449,112 @@ int main()
 
     // CODING EXERCISE 20: USING C++ STRINGS - EXERCISE 2
 
-    
+    /*
+    * In this exercise you will create a program that will be used in a digital library 
+    * to format and sort journal entries based on the authors last name. Each entry has
+    * room to store only the last name of the author.
+    * 
+    * Begin by removing the first name "Isaac" from the string variable journal_entry_1
+    * by using the string function erase. Do not forget to remove whitespace so that the
+    * string variable journal_entry_1 will then contain the string "Newton" with no 
+    * whitespaces.
+    * 
+    * Create an if statement so that if the last name contained within journal_entry_2 is
+    * alphabetically less than the last name contained within journal_entry_1, then the
+    * string values are swapped using the string function swap.
+    * 
+    * You may either of the comparison operators <> in the if statement but remember that
+    * following ASCII, "A" is lexicographically lower than "B".
+    */
 
-    
+    // string journal_entry_1 {"Isaac Newton"};
+    // string journal_entry_2 {"Leibniz"};
+
+    // cout << journal_entry_1 << endl;
+
+    // journal_entry_1.erase(0,6);
+
+    // cout << journal_entry_1 << endl;
+
+    // if (journal_entry_1 > journal_entry_2) {
+    //     journal_entry_1.swap(journal_entry_2);
+    // }
+
+    // cout << "journal entry 1: " << journal_entry_1 << endl;
+    // cout << "journal entry 2: " << journal_entry_2 << endl;
 
     // ************************************************************************************************
     // ************************************************************************************************
+
+
+    // SECTION 10 CHALLENGE QUESTION -- SUBSTITUTION CIPHER
+
+    /*
+    * A simple and very old method of sending secret messages is the substitution cipyer. 
+    * You might have used this cipher with your friends when you were a kid.
+    * Basically, each letter of the alphabet gets replaced by another letter of the alphabet.
+    * For example, every 'a' gets replaced with an 'X', and every 'b' gets replaced with a 'Z', etc.
+    * 
+    * Write a program that asks a user to enter a secret message.
+    * 
+    * Encrypt this message using the substitution cipher and display the encrypted message. Then decryped
+    * the encrypted message back to the original message.
+    * 
+    * You may use 2 strings below for your substitution.
+    * For example, to encrypt you can replace the character at position n in alphabet
+    * with the character at position n in key.
+    * 
+    * To decrypt you can replace the character at position n in key with character at position n 
+    * in alphabet.
+    */
+
+
+//    string user_input_message {""};
+//    string secret_message_encrypted {""};
+//    string secret_message_decrypted {""};
+
+//    string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+//    string key {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
+
+//    cout << "Enter message to drecrypt: ";
+//    getline(cin, user_input_message);
+//    cout << endl;
+
+//    cout << "Your message: " << user_input_message << endl;
+//    cout << "now encrypting your message" << endl;
+
+//    for (char c : user_input_message) {
+//        size_t position = alphabet.find(c);
+
+//        if(position != string::npos) {
+//            secret_message_encrypted += key.at(position);
+//        } else {
+//            secret_message_encrypted += c;
+//        }
+//    }
+
+//     cout << "Encrypted message: " << secret_message_encrypted << endl;
+//     cout << endl;
+
+//     cout << "Decrypting message..." << endl;
+
+//     for (char c : secret_message_encrypted) {
+//         size_t position = key.find(c);
+
+//         if (position != string::npos) {
+//             secret_message_decrypted += alphabet.at(position);
+//         } else {
+//             secret_message_decrypted += c;
+//         }
+//     }
+
+//     cout << "Decrypted message: " << secret_message_decrypted << endl;
+
+
+// ************************************************************************************************
+// ************************************************************************************************
+
+// SECTION 11
 
 
     
