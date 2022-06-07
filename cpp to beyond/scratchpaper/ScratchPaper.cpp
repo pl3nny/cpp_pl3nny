@@ -10,6 +10,11 @@
 
 using namespace std;
 
+void print_array(const int arr[], size_t size);
+void set_array(int arr[], size_t size, int value);
+void print_vector(const vector<int> &v);
+double a_penny_doubled_everyday(int days, double amount);
+
 int main()
 {
 
@@ -550,33 +555,97 @@ int main()
      * Coding exercise 21: Using Functions from the cmath Library
      */
 
-    double bill_total{102.78};
-    int number_of_guests{5};
+    // double bill_total{102.78};
+    // int number_of_guests{5};
 
-    // ********************************
+    // // ********************************
 
-    double individual_bill{bill_total / double(number_of_guests)};
+    // double individual_bill{bill_total / double(number_of_guests)};
 
-    cout << "individual bill not rounded: " << individual_bill << endl;
-    cout << endl;
+    // cout << "individual bill not rounded: " << individual_bill << endl;
+    // cout << endl;
 
-    // At location 1 - rounds down to nearest dollar
-    double individual_bill_1{floor(individual_bill)};
-    cout << "rounded down to nearest dollar: " << individual_bill_1 << endl;
-    cout << endl;
+    // // At location 1 - rounds down to nearest dollar
+    // double individual_bill_1{floor(individual_bill)};
+    // cout << "rounded down to nearest dollar: " << individual_bill_1 << endl;
+    // cout << endl;
 
-    // At location 2 - rounds to the nearest dollar
-    double individual_bill_2{round(individual_bill)};
-    cout << "rounded to the nearest dollar: " << individual_bill_2 << endl;
-    cout << endl;
+    // // At location 2 - rounds to the nearest dollar
+    // double individual_bill_2{round(individual_bill)};
+    // cout << "rounded to the nearest dollar: " << individual_bill_2 << endl;
+    // cout << endl;
 
-    // At location 3 - rounds up to the neares cent.
-    double individual_bill_3{ceil((individual_bill * 100.00)) / 100.00};
-    cout << "rounded to the nearest cent: " << individual_bill_3 << endl;
-    cout << endl;
+    // // At location 3 - rounds up to the neares cent.
+    // double individual_bill_3{ceil((individual_bill * 100.00)) / 100.00};
+    // cout << "rounded to the nearest cent: " << individual_bill_3 << endl;
+    // cout << endl;
+
+    // *******************************************************************************************
+    // *******************************************************************************************
+
+    // PASSING ARRAYS INTO FUNCTIONS
+
+    // int my_scores[] {100, 98, 90, 86, 84};
+
+    // print_array(my_scores,5);
+    // set_array(my_scores, 5, 100);
+    // print_array(my_scores, 5);
+
+
+
+    // *******************************************************************************************
+    // *******************************************************************************************
+
+    // PASSING VECTOR BY REFERENCE
+
+    // vector<int> my_vec {10, 4, 7, 10};
+
+    // print_vector(my_vec);
+
+
+    // *******************************************************************************************
+    // *******************************************************************************************
+
+    // RECURSIVE FUNCTIONS
+
+    cout << "a penny doubled for 25 days: " << a_penny_doubled_everyday(25, 0.01) << endl;
+
+
+
+
 
     // *******************************************************************************************
     // *******************************************************************************************
 
     return 0;
+}
+
+void print_array(const int arr[], size_t size) {
+    for(int i = 0; i < size; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+void set_array(int arr[], size_t size, int value) {
+    for(int i = 0; i < size; i++){
+        arr[i] = value;
+    }
+    cout << endl;
+}
+
+void print_vector(const vector<int> &v) {
+
+    for(auto vec : v) {
+        cout << vec << " ";
+    }
+    cout << endl;
+}
+
+double a_penny_doubled_everyday(int days, double amount) {
+
+    if (days == 1)
+        return amount;
+    
+    return a_penny_doubled_everyday(days - 1, amount * 2);
 }
