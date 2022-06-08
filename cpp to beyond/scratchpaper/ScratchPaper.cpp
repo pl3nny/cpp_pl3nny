@@ -608,10 +608,85 @@ int main()
 
     // RECURSIVE FUNCTIONS
 
-    cout << "a penny doubled for 25 days: " << a_penny_doubled_everyday(25, 0.01) << endl;
+    // cout << "a penny doubled for 25 days: " << a_penny_doubled_everyday(25, 0.01) << endl;
 
 
+    // *******************************************************************************************
+    // *******************************************************************************************
 
+    // POINTERS AND REFERENCES -- ran on Mac mini M1
+
+    // a pointer is a variable
+
+    // cout << endl;
+
+    // int *p;
+
+    // cout << "value of p is: " << p << endl; // 0x104842c8c - garbage
+
+    // cout << "Address of p is: " << &p << endl; // 0x16b5bf4b0
+
+    // cout << "sizeof of p is: " << sizeof(p) << endl; // 8
+
+    // p = nullptr;
+
+    // cout << "value of p is: " << p << endl; // 0x0
+
+    // // example with pointer
+
+    // int score {10};
+    // double high_temp {100.7};
+
+    // int *score_ptr {nullptr};
+
+    // score_ptr = &score;
+
+
+    // simple pointers
+
+    int num {10};
+    cout << "Value of num is: " << num << endl;
+    cout << "sizeof of num is: " << sizeof num << endl;
+    cout << "address of num is: " << &num << endl;
+    cout << endl;
+
+    int *p;
+    cout << "Value of p is: " << p << endl;
+    cout << "address of p is: " << &p << endl;
+    cout << "size of p is: " << sizeof p << endl;
+
+    p = nullptr;
+    cout << "value of p is: " << p << endl;
+    cout << endl;
+    cout << "************************************" << endl;
+    cout << endl;
+
+    int *p1 {nullptr};
+    double *p2 {nullptr};
+    unsigned long long *p3 {nullptr};
+    vector<string> *p4{nullptr};
+    string *p5 {nullptr};
+
+    cout << "size of p1: " << sizeof p1 << endl;
+    cout << "size of p2: " << sizeof p2 << endl;
+    cout << "size of p3: " << sizeof p3 << endl;
+    cout << "size of p4: " << sizeof p4 << endl;
+    cout << "size of p5: " << sizeof p5 << endl;
+    cout << endl;
+    cout << "************************************" << endl;
+    cout << endl;
+
+
+    // pointer points to address of type 
+
+    int score{10};
+    int *score_ptr {nullptr};
+
+    score_ptr = &score;
+
+    cout << "value of score: " << score << endl;
+    cout << "address of score: " << &score << endl;
+    cout << "value of score_ptr: " << score_ptr << endl; // should be the same as &score
 
 
     // *******************************************************************************************
