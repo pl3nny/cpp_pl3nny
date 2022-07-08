@@ -644,83 +644,87 @@ int main()
 
     // simple pointers
 
-    int num {10};
-    cout << "Value of num is: " << num << endl;
-    cout << "sizeof of num is: " << sizeof num << endl;
-    cout << "address of num is: " << &num << endl;
-    cout << endl;
+//     int num {10};
+//     cout << "Value of num is: " << num << endl;
+//     cout << "sizeof of num is: " << sizeof num << endl;
+//     cout << "address of num is: " << &num << endl;
+//     cout << endl;
 
-    int *p;
-    cout << "Value of p is: " << p << endl;
-    cout << "address of p is: " << &p << endl;
-    cout << "size of p is: " << sizeof p << endl;
+//     int *p;
+//     cout << "Value of p is: " << p << endl;
+//     cout << "address of p is: " << &p << endl;
+//     cout << "size of p is: " << sizeof p << endl;
 
-    p = nullptr;
-    cout << "value of p is: " << p << endl;
-    cout << endl;
-    cout << "************************************" << endl;
-    cout << endl;
+//     p = nullptr;
+//     cout << "value of p is: " << p << endl;
+//     cout << endl;
+//     cout << "************************************" << endl;
+//     cout << endl;
 
-    int *p1 {nullptr};
-    double *p2 {nullptr};
-    unsigned long long *p3 {nullptr};
-    vector<string> *p4{nullptr};
-    string *p5 {nullptr};
+//     int *p1 {nullptr};
+//     double *p2 {nullptr};
+//     unsigned long long *p3 {nullptr};
+//     vector<string> *p4{nullptr};
+//     string *p5 {nullptr};
 
-    cout << "size of p1: " << sizeof p1 << endl;
-    cout << "size of p2: " << sizeof p2 << endl;
-    cout << "size of p3: " << sizeof p3 << endl;
-    cout << "size of p4: " << sizeof p4 << endl;
-    cout << "size of p5: " << sizeof p5 << endl;
-    cout << endl;
-    cout << "************************************" << endl;
-    cout << endl;
-
-
-    // pointer points to address of type 
-
-    int score{10};
-    int *score_ptr {nullptr};
-
-    score_ptr = &score;
-
-    cout << "value of score: " << score << endl;
-    cout << "address of score: " << &score << endl;
-    cout << "value of score_ptr: " << score_ptr << endl; // should be the same as &score
+//     cout << "size of p1: " << sizeof p1 << endl;
+//     cout << "size of p2: " << sizeof p2 << endl;
+//     cout << "size of p3: " << sizeof p3 << endl;
+//     cout << "size of p4: " << sizeof p4 << endl;
+//     cout << "size of p5: " << sizeof p5 << endl;
+//     cout << endl;
+//     cout << "************************************" << endl;
+//     cout << endl;
 
 
-    // *******************************************************************************************
-    // *******************************************************************************************
+//     // pointer points to address of type 
+
+//     int score{10};
+//     int *score_ptr {nullptr};
+
+//     score_ptr = &score;
+
+//     cout << "value of score: " << score << endl;
+//     cout << "address of score: " << &score << endl;
+//     cout << "value of score_ptr: " << score_ptr << endl; // should be the same as &score
+
+
+//     // *******************************************************************************************
+//     // *******************************************************************************************
+
+
+    
+
 
     return 0;
 }
 
-void print_array(const int arr[], size_t size) {
-    for(int i = 0; i < size; i++){
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
+// void print_array(const int arr[], size_t size) {
+//     for(int i = 0; i < size; i++){
+//         cout << arr[i] << " ";
+//     }
+//     cout << endl;
+// }
 
-void set_array(int arr[], size_t size, int value) {
-    for(int i = 0; i < size; i++){
-        arr[i] = value;
-    }
-    cout << endl;
-}
+// void set_array(int arr[], size_t size, int value) {
+//     for(int i = 0; i < size; i++){
+//         arr[i] = value;
+//     }
+//     cout << endl;
+// }
 
-void print_vector(const vector<int> &v) {
+// void print_vector(const vector<int> &v) {
 
-    for(auto vec : v) {
-        cout << vec << " ";
-    }
-    cout << endl;
-}
+//     for(auto vec : v) {
+//         cout << vec << " ";
+//     }
+//     cout << endl;
+// }
 
-double a_penny_doubled_everyday(int days, double amount) {
+// double a_penny_doubled_everyday(int days, double amount) {
 
-    if (days == 1)
-        return amount;
+//     if (days == 1)
+//         return amount;
     
-    return a_penny_doubled_everyday(days - 1, amount * 2);
-}
+//     return a_penny_doubled_everyday(days - 1, amount * 2);
+// }
