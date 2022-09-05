@@ -679,14 +679,14 @@ int main()
 
 //     // pointer points to address of type 
 
-//     int score{10};
-//     int *score_ptr {nullptr};
+    int score{10};
+    int *score_ptr {nullptr};
 
-//     score_ptr = &score;
+    score_ptr = &score;
 
-//     cout << "value of score: " << score << endl;
-//     cout << "address of score: " << &score << endl;
-//     cout << "value of score_ptr: " << score_ptr << endl; // should be the same as &score
+    cout << "value of score: " << score << endl;
+    cout << "address of score: " << &score << endl;
+    cout << "value of score_ptr: " << score_ptr << endl; // should be the same as &score
 
 
 //     // *******************************************************************************************
