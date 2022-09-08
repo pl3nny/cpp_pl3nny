@@ -7,7 +7,7 @@ int main()
 {
     int scores[]{100, 95, 89};
 
-    // address of first element in array
+    // address of first element in arrayx
     cout << "Value of scores: " << scores << endl;
 
     int *score_ptr{scores};
