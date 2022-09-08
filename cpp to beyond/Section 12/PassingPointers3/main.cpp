@@ -1,20 +1,23 @@
 #include <iostream>
 #include <array>
 #include <vector>
+#include <string>
 
 using namespace std;
 
+void display(const vector <string> const*v) {
+    for(auto str : *v) {
+        cout << str << " ";
+    }
+    cout << endl;
+}
+
 int main() {
 
-    cout << "Passing Pointers\n" << endl;
+    vector <string> stooges {"Larry", "Moe", "Curly"};
 
-    int *int_ptr1 {nullptr}, *int_ptr2 {nullptr};
+    display(&stooges);
 
-    int value = 10;
-
-    cout << int_ptr1 << endl;
-    int_ptr1 = &value;
-    cout << *int_ptr1 << endl;
 
     return 0;
 }

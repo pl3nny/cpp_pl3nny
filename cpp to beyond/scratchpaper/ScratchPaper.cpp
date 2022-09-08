@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <cstring>
+#include <array>
 #include <unordered_map>
 
 using namespace std;
@@ -679,22 +680,51 @@ int main()
 
 //     // pointer points to address of type 
 
-    int score{10};
-    int *score_ptr {nullptr};
+    // int score{10};
+    // int *score_ptr {nullptr};
 
-    score_ptr = &score;
+    // score_ptr = &score;
 
-    cout << "value of score: " << score << endl;
-    cout << "address of score: " << &score << endl;
-    cout << "value of score_ptr: " << score_ptr << endl; // should be the same as &score
+    // cout << "value of score: " << score << endl;
+    // cout << "address of score: " << &score << endl;
+    // cout << "value of score_ptr: " << score_ptr << endl; // should be the same as &score
 
 
 //     // *******************************************************************************************
 //     // *******************************************************************************************
-
-
     
+// dynamic memory allocation
 
+
+int *int_ptr {nullptr};
+
+int_ptr = new int; // allocation memory
+
+cout << int_ptr << endl;
+
+cout << *int_ptr << endl;
+
+delete [] int_ptr;
+
+// create a continues block of memory on the heap
+// ask user how many doubles they need
+
+size_t size {0};
+double *temp_ptr {nullptr}; 
+
+cout << "How many temps? ";
+cin >> size; 
+cout << endl;
+
+temp_ptr = new double [size];
+
+cout << temp_ptr << endl;
+
+delete [] temp_ptr;
+
+
+//     // *******************************************************************************************
+//     // *******************************************************************************************
 
     return 0;
 }
