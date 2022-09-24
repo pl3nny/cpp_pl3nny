@@ -696,32 +696,62 @@ int main()
 // dynamic memory allocation
 
 
-int *int_ptr {nullptr};
+// int *int_ptr {nullptr};
 
-int_ptr = new int; // allocation memory
+// int_ptr = new int; // allocation memory
 
-cout << int_ptr << endl;
+// cout << int_ptr << endl;
 
-cout << *int_ptr << endl;
+// cout << *int_ptr << endl;
 
-delete [] int_ptr;
+// delete [] int_ptr;
 
-// create a continues block of memory on the heap
-// ask user how many doubles they need
+// // create a continues block of memory on the heap
+// // ask user how many doubles they need
 
-size_t size {0};
-double *temp_ptr {nullptr}; 
+// size_t size {0};
+// double *temp_ptr {nullptr}; 
 
-cout << "How many temps? ";
-cin >> size; 
+// cout << "How many temps? ";
+// cin >> size; 
+// cout << endl;
+
+// temp_ptr = new double [size];
+
+// cout << temp_ptr << endl;
+
+// delete [] temp_ptr;
+
+
+//     // *******************************************************************************************
+//     // *******************************************************************************************
+
+// Referecences
+
+int num {100};
+int &ref{num};
+
+
+cout << endl;
+cout << "display variable num: " << num << endl;
+cout << endl;
+cout << "display reference variable: " << ref << endl;
 cout << endl;
 
-temp_ptr = new double [size];
+vector<string> stooges {"larry", "moe", "curly"};
+vector<string> &refStooges{stooges};
 
-cout << temp_ptr << endl;
+for (auto str:stooges) {
+    cout << str << " ";
+}
+cout << endl;
+cout << endl;
 
-delete [] temp_ptr;
-
+cout << "displays refStooges " << endl;
+for(auto str:refStooges) {
+    cout << str << " ";
+}
+cout << endl;
 
 //     // *******************************************************************************************
 //     // *******************************************************************************************
