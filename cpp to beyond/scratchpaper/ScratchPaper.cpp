@@ -1,23 +1,23 @@
-#include <iostream>
-#include <vector>
-#include <iomanip>
-#include <string>
-#include <ctype.h>
-#include <stdlib.h>
-#include <time.h>
-#include <cstring>
-#include <array>
-#include <unordered_map>
+// #include <iostream>
+// #include <vector>
+// #include <iomanip>
+// #include <string>
+// #include <ctype.h>
+// #include <stdlib.h>
+// #include <time.h>
+// #include <cstring>
+// #include <array>
+// #include <unordered_map>
 
-using namespace std;
+// using namespace std;
 
-void print_array(const int arr[], size_t size);
-void set_array(int arr[], size_t size, int value);
-void print_vector(const vector<int> &v);
-double a_penny_doubled_everyday(int days, double amount);
+// void print_array(const int arr[], size_t size);
+// void set_array(int arr[], size_t size, int value);
+// void print_vector(const vector<int> &v);
+// double a_penny_doubled_everyday(int days, double amount);
 
-int main()
-{
+// int main()
+// {
 
     /*
     For this we'll be using US dollars and cents.
@@ -728,36 +728,36 @@ int main()
 
 // Referecences
 
-int num {100};
-int &ref{num};
+// int num {100};
+// int &ref{num};
 
 
-cout << endl;
-cout << "display variable num: " << num << endl;
-cout << endl;
-cout << "display reference variable: " << ref << endl;
-cout << endl;
+// cout << endl;
+// cout << "display variable num: " << num << endl;
+// cout << endl;
+// cout << "display reference variable: " << ref << endl;
+// cout << endl;
 
-vector<string> stooges {"larry", "moe", "curly"};
-vector<string> &refStooges{stooges};
+// vector<string> stooges {"larry", "moe", "curly"};
+// vector<string> &refStooges{stooges};
 
-for (auto str:stooges) {
-    cout << str << " ";
-}
-cout << endl;
-cout << endl;
+// for (auto str:stooges) {
+//     cout << str << " ";
+// }
+// cout << endl;
+// cout << endl;
 
-cout << "displays refStooges " << endl;
-for(auto str:refStooges) {
-    cout << str << " ";
-}
-cout << endl;
+// cout << "displays refStooges " << endl;
+// for(auto str:refStooges) {
+//     cout << str << " ";
+// }
+// cout << endl;
 
-//     // *******************************************************************************************
-//     // *******************************************************************************************
+// //     // *******************************************************************************************
+// //     // *******************************************************************************************
 
-    return 0;
-}
+//     return 0;
+// }
 
 // void print_array(const int arr[], size_t size) {
 //     for(int i = 0; i < size; i++){
@@ -788,3 +788,298 @@ cout << endl;
     
 //     return a_penny_doubled_everyday(days - 1, amount * 2);
 // }
+
+// Section 8 Challege
+/*
+    For this program I will be using US dollars and cents.
+
+    Write a program that asks the user to enter the following:
+    An integer representing the number of cents
+
+    You may assume that the number of cents entered is greater than or equal to zero
+
+    The program should then display how to provide that change to the user.
+
+    In the US:
+        1 Dollar is 100 cents
+        1 quarter is 25 cents
+        1 dime is 10 cents
+        1 nickel is 5 cents, and
+        1 penny is 1 cent.
+
+    Here is a sample run:
+
+    Enter an amount in cents: 92
+
+    You can provide this change as follows:
+    dollars: 0
+    quarters: 3
+    dimes: 1
+    nickels: 1
+    pennies: 2
+
+*/
+
+
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+
+//     const int s_dollars {1};
+//     const double s_quarters {0.25};
+//     const double s_dimes {0.1};
+//     const double s_nickels (0.05);
+//     const double s_pennies {0.01};
+//     double user_input {0};
+
+//     cout << "Enter an amout in cents: ";
+//     cin >> user_input;
+
+//     cout << "You can provide this change as follows:" << endl;
+//     cout << endl;
+
+//     cout << "dollars: " << user_input / s_dollars << endl;
+//     user_input -= (user_input / s_dollars);
+
+//     cout << "quarters: " << user_input / s_quarters << endl;
+//     user_input -= s_quarters * (user_input / s_quarters);
+
+//     cout << "dimes: " << user_input / s_dimes << endl;
+//     user_input -= s_dimes * (user_input / s_dimes);
+
+//     cout << "pennies: " << user_input / s_pennies << endl;
+//     user_input -= s_pennies * (user_input / s_pennies);
+
+//     return 0;
+// }
+
+// Section 6
+// Challenge
+
+/*
+Franks Carpet Cleaning Service 
+
+Charges:
+    $25 per small room
+    $35 per large room
+Sales tas rate is 6%
+Estimates are valid for 30 days
+
+Prompt the user for the number of small and large rooms they woule like cleaned
+and provide an estimate such as:
+
+Estimate for carpet cleaning service
+Number of small rooms: 3
+Number of large rooms: 1
+Price per small room: $25
+Price per large room: $35
+Cost: $110
+Tax: $6.6
+====================================================
+Total estimate $116.6
+This estimate is valid for 30 days
+*/
+
+
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+
+//     int num_of_small_rooms {0};
+//     int num_of_large_rooms {0};
+//     double small_room_price {25.00};
+//     double large_room_price {35.00};
+//     double tax_rate {0.06};
+//     double tax_amout {0};
+//     double total_before_taxes {0};
+//     double total_estimate {0};
+
+//     cout << "Hello, Welcome to Frank's Carpet Cleaning Service" << endl;
+//     cout << endl;
+
+//     cout << "How many small rooms would you like cleaned? ";
+//     cin >> num_of_small_rooms;
+//     cout << endl;
+
+//     cout << "How many large rooms would you like cleaned? ";
+//     cin >> num_of_large_rooms;
+//     cout << endl;
+
+//     // Calculate total cost
+//     total_before_taxes = (num_of_small_rooms * small_room_price) + (num_of_large_rooms * large_room_price);
+//     tax_amout = total_before_taxes * tax_rate;
+//     total_estimate = total_before_taxes + tax_amout;
+
+//     cout << "Estimate for carpet cleaning service" << endl;
+//     cout << "Number of small rooms: " << num_of_small_rooms << endl;
+//     cout << "Number of large rooms: " << num_of_large_rooms << endl;
+//     cout << "Price per small room: " << small_room_price << endl;
+//     cout << "Price per large room: " << large_room_price << endl;
+//     cout << "Cost: $" << total_before_taxes << endl;
+//     cout << "Tax: $" << tax_amout << endl;
+    
+//     for (int i = 1; i < 5; i++) {
+//         cout << "======";
+//     }
+//     cout << endl;
+
+//     cout << "Total estimate: $" << total_estimate << endl;
+//     cout << "This is valid for 30 Days" << endl;
+//     cout << endl;
+
+//     return 0;
+// }
+
+// Arrays / Vectors
+
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// int main () {
+//     int high_score_per_level[10] {};
+
+//     high_score_per_level[0] = 10;
+
+//     cout << high_score_per_level[0] << endl;
+
+
+//     int row {2};
+//     int col {3};
+
+//     vector <vector<int>> v_vector(row, vector<int>(col, 0));
+
+//     for(int i = 0; i < v_vector.size(); i++) {
+//         for(int j = 0; j<v_vector.at(i).size(); j++) {
+//             cout << v_vector[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+//     cout << endl;
+//     cout << "vector size: " << endl;
+
+//     cout << v_vector.size() << endl;
+
+//     cout << v_vector.at(1).at(0) << endl;
+
+//     vector <int> vec (5);
+
+//     cout << "vec size: " << endl;
+//     cout << vec.size() << endl;
+//     cout << endl;
+
+//     vec.at(vec.size() -1) = 1000;
+
+//     cout << "vec's last number" << endl;
+//     cout << vec.at(4);
+//     cout << endl;
+
+//     return 0;
+// }
+
+/*
+Section 7
+Challenge
+
+Write a C++ program as follows:
+
+Declare 2 empty vector of integers named 
+vector1 and vector2, respectively
+
+Add 10 and 20 to vector1 dynamically using puch_back
+Display the elements in vector1 using the at() method as well as its size using the size() method
+
+Add 100 and 200 to vector2 dynamilly using push_back
+Display the elements in vector2 using the at() method as well as its size using the size() method
+
+Declare an empty 2D vector called vector_2d
+Remember, that a 2D vecotr is a vector of vector<int>
+
+Add vector1 to vector_2d dynamically using push_back
+Add vector2 to vector_2d dynamically using pusch_back
+
+Display the elements in vector_2d using the at() method
+
+change vector1.at(0) to 1000
+
+Display the elements in vector_2d again using the at() method
+
+Display elements in vector1
+
+*/
+
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// int main() {
+//     vector<int> vector1;
+//     vector<int> vector2;
+
+//     vector1.push_back(10);
+//     vector1.push_back(20);
+
+//     cout << "vector1.at(0) is " << vector1.at(0) << endl;
+//     cout << "vector1.at(1) is " << vector1.at(1) << endl;
+//     cout << endl;
+
+//     vector2.push_back(100);
+//     vector2.push_back(200);
+
+//     cout << "vector2.at(0) is " << vector2.at(0) << endl;
+//     cout << "vector2.at(1) is " << vector2.at(1) << endl;
+//     cout << endl;
+
+//     vector <vector<int>> vector_2d;
+
+//     vector_2d.push_back(vector1);
+//     vector_2d.push_back(vector2);
+
+//     cout << "vectors added to vector_2d " << endl;
+//     cout << endl;
+
+//     cout << "Displaying vector_2d.at(0) : " << endl;
+//     for (size_t i = 0; i < vector_2d.at(0).size(); i++) {
+//         cout << vector_2d.at(0).at(i) << " ";
+//     }
+//     cout << endl << endl;
+
+//     cout << "Displaying vector_2d.at(1) : " << endl;
+//     for (size_t i = 0; i < vector_2d.at(1).size(); i++) {
+//         cout << vector_2d.at(1).at(i) << " ";
+//     }
+//     cout << endl << endl;
+
+//     // change vector1.at(0) to 1000
+//     vector1.at(0) = 1000;
+//     cout << "changed vector1.at(0) to 1000 " << endl << endl;
+
+//     cout << "Displaying vector_2d.at(0) again : " << endl;
+//     for (size_t i = 0; i < vector_2d.at(0).size(); i++) {
+//         cout << vector_2d.at(0).at(i) << " ";
+//     }
+//     cout << endl << endl;
+
+//     cout << "Displaying vector_2d.at(1) again : " << endl;
+//     for (size_t i = 0; i < vector_2d.at(1).size(); i++) {
+//         cout << vector_2d.at(1).at(i) << " ";
+//     }
+//     cout << endl << endl;
+
+//     cout << "Displaying the elements of vector1" << endl;
+    
+//     for (size_t i = 0; i < vector1.size(); i++ ) {
+//         cout << vector1.at(i) << " ";
+//     }
+//     cout << endl << endl;
+
+//     return 0;
+// }
+
+// REVIEW SECTION 8 
