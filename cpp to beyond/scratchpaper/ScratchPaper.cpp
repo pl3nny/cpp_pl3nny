@@ -1083,3 +1083,57 @@ Display elements in vector1
 // }
 
 // REVIEW SECTION 8 
+
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+
+//     bool equal_result {false};
+//     bool not_equal_result {false};
+
+//     int num1 {}, num2{};
+
+//     cout << boolalpha;
+
+
+
+//     return 0;
+// }
+
+// SEction 8 Challege
+/*
+
+For this program I will be suing US dollars and cents
+
+WRite a program that asks the user to enter the following:
+An integer representing the number of cents
+
+You may assume that the number of cents entered is greater than or euqual to zero
+
+The probram should then display how to provide that change to the user.
+
+In the US:
+    1 dollar is 100 cents
+    1 quarter is 25 cents
+    1 dime is 10 cents 
+    1 nickel is 5 cents, and
+    1 penny is 1 cent.
+
+Here is a sample run:
+
+Enter an amount in cents: 92
+
+You can provide this change as follows:
+dollars: 0
+quarters: 3
+dimes: 1
+nickels: 1
+pennies: 2
+
+
+Feel free to use your own currency system.
+Also, think of how you might solve the probam using the modulo operator
+
+*/
