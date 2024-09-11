@@ -1137,3 +1137,82 @@ Feel free to use your own currency system.
 Also, think of how you might solve the probam using the modulo operator
 
 */
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+
+    // dollar values
+    int one_dollar {1};
+    int five_dollar {5};
+    int ten_dollar {10};
+    int twenty_dollar {20};
+    int fifty_dollar {50};
+    int one_hundred_dollar {100};
+
+    // cent values
+    double pennies {0.01};
+    double nickel {0.05};
+    double dime {0.1};
+    double quarter {0.25};
+
+    double user_amount;
+
+
+    cout << "Enter an amount in $ Dollar or Cents: ";
+    cin >> user_amount;
+    cout << endl << endl;
+
+    cout << "You can provide this change as follows:" << endl << endl;
+
+    cout << "one hundred dollars: " << static_cast<int>(user_amount / one_hundred_dollar) << endl;
+    
+    user_amount -= one_hundred_dollar * static_cast<int>(user_amount / one_hundred_dollar);
+
+    cout << "fifty dollars: " << static_cast<int>(user_amount / fifty_dollar) << endl;
+
+    user_amount -= fifty_dollar * static_cast<int>(user_amount / fifty_dollar);
+
+    cout << "twnty dollars: " << static_cast<int>(user_amount / twenty_dollar) << endl;
+
+    user_amount -= twenty_dollar * static_cast<int>(user_amount / twenty_dollar);
+
+    cout << "ten dollars: " << static_cast<int>(user_amount / ten_dollar) << endl;
+    
+    user_amount -= ten_dollar * static_cast<int>(user_amount / ten_dollar);
+
+    cout << "five dollars: " << static_cast<int>(user_amount / five_dollar) << endl;
+
+    user_amount -= five_dollar * static_cast<int>(user_amount / five_dollar);
+
+    cout << "one dollars: " << static_cast<int>(user_amount / one_dollar) << endl;
+
+    user_amount -= one_dollar * static_cast<int>(user_amount / one_dollar);
+
+    for (size_t i = 1; i < 10; i++) {
+        cout << "===";
+    }
+    cout << endl << endl;
+
+    cout << "Remainding in cents: " << user_amount << endl << endl;
+
+    cout << "quarters: " << static_cast<int>(user_amount / quarter) << endl;
+
+    user_amount -= quarter * static_cast<int>(user_amount / quarter);
+
+    cout << "dime: " << static_cast<int>(user_amount / dime) << endl;
+
+    user_amount -= dime * static_cast<int>(user_amount / dime);
+
+    cout << "nickel: " << static_cast<int>(user_amount / nickel) << endl;
+
+    user_amount -= nickel * static_cast<int>(user_amount / nickel);
+
+    cout << "pennies: " << user_amount << endl << endl;    
+
+
+    return 0;
+}
