@@ -1219,3 +1219,5 @@ Also, think of how you might solve the probam using the modulo operator
 
 
 // Section 9: Controlling Program Flow
+
+// work on coding exercise 13: Switch statement - Day of the week 
