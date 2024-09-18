@@ -1221,3 +1221,68 @@ Also, think of how you might solve the probam using the modulo operator
 // Section 9: Controlling Program Flow
 
 // work on coding exercise 13: Switch statement - Day of the week 
+
+
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+
+//     int day_code {0};
+
+//     switch (day_code)
+//     {
+//     case 0:
+//         cout << "day_code " << day_code << endl;
+//         break;
+    
+//     default:
+//         break;
+//     }
+
+//     return 0;
+// }
+
+
+// Conditional Operator
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    // condition.  if true | false
+    // (cond_expr) ? expr1 : expr2
+
+    // int num {0};
+    
+    // cout << "Enter an integer: ";
+    // cin >> num;
+
+    // if(num % 2 == 0)
+    //     cout << num << " is even" << endl;
+    // else
+    //     cout << num << " is odd" << endl;
+
+    // cout << endl;
+
+    // cout << num << " is " << (num % 2 == 0 ? "even" : "odd") << endl;
+
+//     int num1{}, num2{};
+
+//     cout << "Enter two integers separated by a space: ";
+//     cin >> num1 >> num2;
+
+//     if(num1 != num2) {
+//         cout << "Largest: " << (num1 > num1 ? num1 : num2) << endl;
+//         cout << "smallest: " << (num1 < num2 ? num1 : num2) << endl;
+//     } else {
+//         cout << "the numbers are teh same" << endl;
+//     }
+//     return 0;
+// }
+
+
+// Review looping and try out coding excersise 14
