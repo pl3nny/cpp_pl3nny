@@ -1247,11 +1247,11 @@ Also, think of how you might solve the probam using the modulo operator
 
 // Conditional Operator
 
-#include <iostream>
+// #include <iostream>
 
-using namespace std;
+// using namespace std;
 
-int main() {
+// int main() {
 
     // condition.  if true | false
     // (cond_expr) ? expr1 : expr2
@@ -1286,3 +1286,136 @@ int main() {
 
 
 // Review looping and try out coding excersise 14
+
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+
+//     int sum {0};
+    
+//     for (int i = 1; i <= 15; i++) {
+//         if(i % 2 == 0) {
+//         } else {
+//             sum += i;
+//         }
+//     }
+
+//     cout << "sum: " << sum << endl;
+
+//     return 0;
+// }
+
+// Range For - Loop <vectors>
+
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// int main() {
+
+//      vector<int> vec {1,3,5,15,16,17,18,19,20,21,25,26,27,30,50,55,56,58,100,200,300,400,500,600,700};
+    
+//     int count {0};
+    
+//     for(auto x : vec) {
+//         if(x % 3 == 0 || x % 5 == 0) {
+//             count++;
+//         }
+//     }
+
+//     cout << "count: " << count << endl;
+
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// int main() {
+
+//     vector<int> vec {1,3,5,15,16,17,18,19,20,21,25,26,27,30,50,55,56,58,100,200,300,400,500,600,-99,700};
+
+//     int count {0};
+
+//     while(count < vec.size()) {
+//         if (vec.at(count) == -99) {
+//             break;
+//         }
+
+//         count++;
+//     }
+
+//     cout << vec.size() - 1 << endl;
+//     cout << vec.at(count) << endl;
+
+//     return 0;
+// }
+
+
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// int main() {
+
+//     vector<int> vec {1,2,3};
+
+//     int result {};
+    
+//     if(vec.size() == 0 || vec.size() == 1) {
+//         result = 0;
+//     } else {
+//         for(int i = 0; i < vec.size() - 1; i++) {
+//             for(int j = i+1; j < vec.size(); j++) {
+//                 result += (vec.at(i) * vec.at(j));
+//             }
+//         }
+//     }
+
+//     cout << "result: " << result << endl;
+
+//     return 0;
+// }
+
+// Section 9 Challenge 
+
+
+/*
+This challenge is about using a collection (list) of integers and allowing the user
+to select options from a menu to perform operation on the list.
+
+Your program shoud display a menu optins to the user as follows:
+
+
+P - Print numbers
+A - Add a number
+M - Display mean of the numbers
+S - Display the smallest number
+L - Display the largest number
+Q - Quit
+
+Enter your choice: 
+
+The program should only accept valid voices from the user, both uper and lowercase selections should be allowed.
+If an illegal choice is made, you should display, "Unknown selection, please try again" and the menu options shold be
+displayed again.
+
+
+If the user enters 'P' or 'p' you should display all of the elemens (ints) in the list.
+If the list is empty you should display "[] - the list is empty"
+If the list is not empty then all the list elements should be displayed in side square brakets separated by a space.
+For example, [ 1 2 3 4 5 ]
+
+If hte user enters 'A' or 'a' then you should prompot the user for an integer to add to the list
+which you will add to the list and then display it was added. For example, if the user enters 5
+You should display, "5 added".
+
+
+and yade-yade-yade-yada
+*/
