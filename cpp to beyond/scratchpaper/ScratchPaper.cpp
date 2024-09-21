@@ -1420,139 +1420,177 @@ You should display, "5 added".
 and yade-yade-yade-yada
 */
 
-#include <iostream>
-#include <vector>
+// #include <iostream>
+// #include <vector>
 
-using namespace std;
+// using namespace std;
 
-int main() {
+// int main() {
 
-    char user_input {};
-    vector <int> vec  {1, 2, 3, 4, 5 };
-    int add_num_to_vector {};
-    bool quit {false};
-    int mean_of_numbers {};
-    int smallest_number_in_list {};
-    int largest_number_in_list {};
+//     char user_input {};
+//     vector <int> vec  {1, 2, 3, 4, 5 };
+//     int add_num_to_vector {};
+//     bool quit {false};
+//     int mean_of_numbers {};
+//     int smallest_number_in_list {};
+//     int largest_number_in_list {};
 
-    while(!quit) {
+//     while(!quit) {
 
-        cout << endl;
-        cout << "P - Print numbers" << endl;
-        cout << "A - Add a number" << endl;
-        cout << "M - Display mean of the numbers" << endl;
-        cout << "S - Display the smallest number" << endl;
-        cout << "L - Display the largest number" << endl;
-        cout << "Q - Quit" << endl << endl;
+//         cout << endl;
+//         cout << "P - Print numbers" << endl;
+//         cout << "A - Add a number" << endl;
+//         cout << "M - Display mean of the numbers" << endl;
+//         cout << "S - Display the smallest number" << endl;
+//         cout << "L - Display the largest number" << endl;
+//         cout << "Q - Quit" << endl << endl;
 
-        cout << "Enter your choice: ";
-        cin >> user_input;
+//         cout << "Enter your choice: ";
+//         cin >> user_input;
 
-        switch (user_input) {
-            case 'P': 
-                cout << "[ ";
-                for (size_t i = 0; i < vec.size(); i++){
-                    cout << vec.at(i) << " ";
-                }
-                cout << "]" << endl;
-                break;
-            case 'p':
-                cout << "[ ";
-                for (size_t i = 0; i < vec.size(); i++){
-                    cout << vec.at(i) << " ";
-                }
-                cout << "]" << endl;
-                break;
+//         switch (user_input) {
+//             case 'P': 
+//                 cout << "[ ";
+//                 for (size_t i = 0; i < vec.size(); i++){
+//                     cout << vec.at(i) << " ";
+//                 }
+//                 cout << "]" << endl;
+//                 break;
+//             case 'p':
+//                 cout << "[ ";
+//                 for (size_t i = 0; i < vec.size(); i++){
+//                     cout << vec.at(i) << " ";
+//                 }
+//                 cout << "]" << endl;
+//                 break;
 
-            case 'A':
-                cout << "Enter number to add to list: ";
-                cin >> add_num_to_vector;
-                vec.push_back(add_num_to_vector);
-                break;
-            case 'a':
-                cout << "Enter number to add to list: ";
-                cin >> add_num_to_vector;
-                vec.push_back(add_num_to_vector);
-                break;
+//             case 'A':
+//                 cout << "Enter number to add to list: ";
+//                 cin >> add_num_to_vector;
+//                 vec.push_back(add_num_to_vector);
+//                 break;
+//             case 'a':
+//                 cout << "Enter number to add to list: ";
+//                 cin >> add_num_to_vector;
+//                 vec.push_back(add_num_to_vector);
+//                 break;
 
-            case 'M':
-                for(size_t i = 0; i < vec.size(); i++){
-                    mean_of_numbers += vec.at(i);
-                }
-                mean_of_numbers /= vec.size();
-                cout << "Mean: " << mean_of_numbers << endl;
-                break;
-            case 'm':
-                for(size_t i = 0; i < vec.size(); i++){
-                    mean_of_numbers += vec.at(i);
-                }
-                mean_of_numbers /= vec.size();
-                cout << "Mean: " << mean_of_numbers << endl;
-                break;
+//             case 'M':
+//                 for(size_t i = 0; i < vec.size(); i++){
+//                     mean_of_numbers += vec.at(i);
+//                 }
+//                 mean_of_numbers /= vec.size();
+//                 cout << "Mean: " << mean_of_numbers << endl;
+//                 break;
+//             case 'm':
+//                 for(size_t i = 0; i < vec.size(); i++){
+//                     mean_of_numbers += vec.at(i);
+//                 }
+//                 mean_of_numbers /= vec.size();
+//                 cout << "Mean: " << mean_of_numbers << endl;
+//                 break;
 
-            case 'S':
-                smallest_number_in_list = vec.at(0);
+//             case 'S':
+//                 smallest_number_in_list = vec.at(0);
 
-                for(size_t i = 1; i < vec.size(); i++){
-                    if(smallest_number_in_list > vec.at(i)){
-                        smallest_number_in_list = vec.at(i);
-                    } else {
-                        // do nothing
-                    }
-                }
-                cout << "smallest number: " << smallest_number_in_list << endl;
-                break;
-            case 's':
-                smallest_number_in_list = vec.at(0);
+//                 for(size_t i = 1; i < vec.size(); i++){
+//                     if(smallest_number_in_list > vec.at(i)){
+//                         smallest_number_in_list = vec.at(i);
+//                     } else {
+//                         // do nothing
+//                     }
+//                 }
+//                 cout << "smallest number: " << smallest_number_in_list << endl;
+//                 break;
+//             case 's':
+//                 smallest_number_in_list = vec.at(0);
 
-                for(size_t i = 1; i < vec.size(); i++){
-                    if(smallest_number_in_list > vec.at(i)){
-                        smallest_number_in_list = vec.at(i);
-                    } else {
-                        // do nothing
-                    }
-                }
-                cout << "smallest number: " << smallest_number_in_list << endl;
-                break;
+//                 for(size_t i = 1; i < vec.size(); i++){
+//                     if(smallest_number_in_list > vec.at(i)){
+//                         smallest_number_in_list = vec.at(i);
+//                     } else {
+//                         // do nothing
+//                     }
+//                 }
+//                 cout << "smallest number: " << smallest_number_in_list << endl;
+//                 break;
 
-            case 'L':
-                largest_number_in_list = vec.at(0);
+//             case 'L':
+//                 largest_number_in_list = vec.at(0);
 
-                for(size_t i = 1; i < vec.size(); i++){
-                    if(largest_number_in_list < vec.at(i)){
-                        largest_number_in_list = vec.at(i);
-                    } else {
-                        // do nothing
-                    }
-                }
-                cout << "largest number: " << largest_number_in_list << endl;
-                break;
-            case 'l':
-                largest_number_in_list = vec.at(0);
+//                 for(size_t i = 1; i < vec.size(); i++){
+//                     if(largest_number_in_list < vec.at(i)){
+//                         largest_number_in_list = vec.at(i);
+//                     } else {
+//                         // do nothing
+//                     }
+//                 }
+//                 cout << "largest number: " << largest_number_in_list << endl;
+//                 break;
+//             case 'l':
+//                 largest_number_in_list = vec.at(0);
 
-                for(size_t i = 1; i < vec.size(); i++){
-                    if(largest_number_in_list < vec.at(i)){
-                        largest_number_in_list = vec.at(i);
-                    } else {
-                        // do nothing
-                    }
-                }
-                cout << "largest number: " << largest_number_in_list << endl;
-                break;
+//                 for(size_t i = 1; i < vec.size(); i++){
+//                     if(largest_number_in_list < vec.at(i)){
+//                         largest_number_in_list = vec.at(i);
+//                     } else {
+//                         // do nothing
+//                     }
+//                 }
+//                 cout << "largest number: " << largest_number_in_list << endl;
+//                 break;
 
-            case 'Q':
-                quit = true;
-                break;
-            case 'q':
-                quit = true;
-                break;
+//             case 'Q':
+//                 quit = true;
+//                 break;
+//             case 'q':
+//                 quit = true;
+//                 break;
 
-            default:
-                break;
-        }
-    }
-    cout << endl;
-    cout << "Program terminated" << endl;
+//             default:
+//                 cout << "incorrect input, please try again.." << endl;
+//                 break;
+//         }
+//     }
+//     cout << endl;
+//     cout << "Program terminated" << endl;
 
-    return 0;
-}
+//     return 0;
+// }
+
+
+// ======================================================================
+// SECTION 10 OVERVIEW / REVIEW
+//      CHARACTER AND STRINGS
+// ======================================================================
+
+// #include <iostream>
+// #include <cstring>
+
+// using namespace std;
+
+// int main () {
+
+//     char first_name [20] {"Alexander"};
+//     char last_name [20] {"Hernandez"};
+//     char whole_name [50] {};
+
+//     cout << first_name << " " << last_name << endl;
+
+//     cout << "Fist Name: " << first_name << " " << "Last Name: " << last_name << endl;
+//     cout << "First name length: " << strlen(first_name) << " " << "Last name length: " << strlen(last_name) << endl;
+//     cout << "first and last name together: ";
+
+//     strcpy(whole_name, first_name);
+//     strcat(whole_name, " ");
+//     strcat(whole_name, last_name);
+
+//     cout << whole_name << endl;
+//     cout << "Whole name length: " << strlen(whole_name) << endl;
+
+//     return 0;
+// }
+
+
+// STRINGS
+
