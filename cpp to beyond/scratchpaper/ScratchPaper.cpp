@@ -1594,3 +1594,172 @@ and yade-yade-yade-yada
 
 // STRINGS
 
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+
+//     string full_name = "Alexander Hernandez";
+
+//     cout << endl;
+//     cout << "My name is " << full_name << endl << endl;
+
+//     cout << "extracting first name..." << endl;    
+
+//     string first_name {full_name, 0, (full_name.find(" "))};
+
+//     cout << "white space position: " << full_name.find(" ") << endl;
+
+//     cout << "fist_name: " << first_name << endl;
+
+//     string last_name {full_name, (full_name.find(" ") + 1), full_name.length()};
+
+//     cout << "last_name: " << last_name << endl;
+
+//     cout << "erasing last name from: " << full_name << endl;
+
+//     full_name = full_name.erase(full_name.find(" ") + 1, full_name.length());
+
+//     cout << "last name erased..." << endl << endl;
+
+//     cout << "full_name: " << full_name << endl;
+
+//     // get first name
+
+//     getline(cin, first_name);
+//     cout << "first_name: " << first_name << endl;
+//     return 0;
+// }
+
+
+// CODING EXERCISE 20: USING C++ STRINGS EXERCISE 1
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+
+//     string unformated_full_name {"StephenHawking"};
+
+//     string first_name {};
+//     string last_name {};
+//     string formatted_full_name {};
+
+//     first_name = unformated_full_name.substr(0,unformated_full_name.find("H"));
+//     last_name = unformated_full_name.substr(first_name.length(), unformated_full_name.length());
+
+//     cout << endl;
+//     cout << "first name: " << first_name << endl;
+//     cout << "last name: " << last_name << endl;
+
+//     formatted_full_name = first_name + last_name;
+//     formatted_full_name.insert(first_name.length(), " ");
+
+//     cout << "formateed full name: " << formatted_full_name << endl;
+
+//     return 0;
+// }
+
+
+// CODING EXERCISE 20: USING C++ STRINGS EXERCISE 2
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+
+//     string journal_entry_1 {"Isaac Newton"};
+//     string journal_entry_2 {"Leibniz"};
+
+//     cout << "journal entry 1: " << journal_entry_1 << endl;
+//     cout << "jounral entry 2: " << journal_entry_2 << endl << endl;
+
+//     cout << "erasing first name from journal entry 1.." << endl;
+//     journal_entry_1.erase(0, journal_entry_1.find("N"));
+//     cout << "journal entry 1: " << journal_entry_1 << ", length: " << journal_entry_1.length() << endl;
+
+//     if(journal_entry_1.at(0) > journal_entry_2.at(0)) {
+//         swap(journal_entry_1, journal_entry_2);
+//     }
+
+//     cout << "journal entry 1: " << journal_entry_1 << endl;
+//     cout << "journal entry 2: " << journal_entry_2 << endl;
+
+//     return 0;
+// }
+
+
+// SECTION 10 CHALLENGE - SUBSTITUTION CIPHER
+
+/*
+A simple and very old method of sending secret messages is the substitution cipher.
+You might have used this cipher with your friends when you were a kid. 
+Basically, wach letter of the alphaber gets replaced by another letter of the alphabet.
+For example, every 'a' gets replaced with an 'X', and every 'b' gets replaced with a 'Z', etc..
+
+
+Write a program that asks a user to enter a secret message.
+
+Encrypt this message using the substition cipher and display the encrypted message.
+Then decryped the encrypted message back to the original message.
+
+You may use the 2 strings below for your substitution.
+For exmaple, to exrypt you can repace the character at position n in alphabet with the character
+at position n in key.
+
+To decrypt you can replace the character at psotiion n in key
+with the character at position n in alphabet.
+
+Currently the cipher only substitutes letters - you could easily add digits, puncuation, whitespace,
+and so forth. Also, currenctly the cipher always substitues a lowercase letter with an uppercase letter
+and vice versa. This could also be improved.
+
+Remember, the less code you write the less code you have to test!
+Resuse existing functionality in libraries and in the std::string class
+*/
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+
+//     string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "};
+//     string key {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjkqdyvtkfuompciasr,"};
+
+
+//     string user_secret_message {};
+
+//     cout << "Enter your secret message: ";
+//     getline(cin, user_secret_message);
+
+//     cout << endl;
+//     cout << user_secret_message << endl;
+
+//     cout << " encrypting message " << endl;
+
+//     for(size_t i = 0; i < user_secret_message.length(); i++) {
+//         user_secret_message.at(i) = key.at(alphabet.find(user_secret_message.at(i)));
+//     }
+
+//     cout << "message encrypted: " << user_secret_message << endl << endl;
+
+//     cout << "un-encrypting message.." << endl;
+
+//     for(size_t i = 0; i < user_secret_message.length(); i++) {
+//         user_secret_message.at(i) = alphabet.at(key.find(user_secret_message.at(i)));
+//     }
+
+//     cout << "finished decrypting message: " << user_secret_message << endl;
+//     cout << endl;
+
+
+//     return 0;
+// }
