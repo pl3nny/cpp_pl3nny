@@ -1763,3 +1763,66 @@ Resuse existing functionality in libraries and in the std::string class
 
 //     return 0;
 // }
+
+
+// =============================================================================
+// SECTION 11 FUNCTIONS
+// =============================================================================
+
+// #include <iostream>
+// #include <cmath>
+
+// using namespace std;
+
+// int main() {
+
+//     double num {};
+
+//     cout << "enter a number: ";
+//     cin >> num;
+
+//     cout << "the sqrt of " << num << " is: " << sqrt(num) << endl;
+//     cout << "the cubed of " << num << " is: " << cbrt(num) << endl;
+//     cout << endl;
+//     cout << "The sine of " << num << " is: " << sin(num) << endl;
+//     cout << "the cosine of " << num << " is: " << cos(num) << endl;
+//     cout << endl;
+//     cout << "the Ceil of " << num << " is: " << ceil(num) << endl;
+//     cout << "the floor of " << num << " is: " << floor(num) << endl;
+//     cout << "the round of " << num << " is: " << round(num) << endl;
+//     cout << endl;
+
+//     double power {};
+
+//     cout << "Enter a power to raise " << num << " to: ";
+//     cin >> power;
+
+//     cout << endl;
+//     cout << num << " raised to the " << power << " power is. " << pow(num,power) << endl;
+
+//     return 0;
+// }
+
+
+// #include <iostream>
+
+// using namespace std;
+
+// int raise_to_power(int, int);
+
+// int main() {
+
+//     cout << 2 << " to the power of " << 5 << " : " << raise_to_power(2,5) << endl;
+
+//     return 0;
+// }
+// int raise_to_power(int num1, int num2) {
+//     int result = num1;
+//     int raise_to_power = num2;
+
+//     for(size_t i = 0; i < num2; i++){
+//        result *= raise_to_power;
+//     }
+
+//     return result;
+// }
