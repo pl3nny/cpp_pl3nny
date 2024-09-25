@@ -1826,3 +1826,199 @@ Resuse existing functionality in libraries and in the std::string class
 
 //     return result;
 // }
+
+// CODING EXERCISE 23: FUNCTIONS AND PROTOTYPES CONVERTING TEMPERATURES
+
+/*
+In this exercise you will create a program that will be used to convert Fahrenheit temperatures to
+Celsius and Kelvin temperatures through the use of two functions.
+
+For this program, assume that temperature will be represented as a double value.
+
+Begin by defining the function prototypes for the functions fahrenheit_to_celsius and
+fahrenheit_to_kelvin which are both passed a double value and return a double value.
+
+Now, at the bottom of the file, write the full definitions of both functions.
+
+The function fahrenheit_to_celsius is passed a Fahrenheit temperature and returns a rounded
+Celsius temperature. You may use the <cmath> function round in order to round the return value.
+The formula to convert Fahrenheit to Celsius is (5.0/9.0)*(temperature - 32). 
+
+The function fahrenheit_to_kelvin is passed a Fahrenheit temperature and returns a rounded Kelvin
+temperature. The formula to convert Fahrenheit to Kelvin is (5.0/9.0)*(temperature - 32) + 273.
+
+Remember the rules of PEMDAS when defining the body of your functions.
+
+Now, from the temperature_conversion function, declare and initialize the variables celsius_temperature
+and kelvin_temperature by calling the appropriate functions which you have just defined and passing the
+variable fahrenheit_temperature.
+
+You do not need to declare or initialize fahrenheit_temperature as it is already available to you as a
+parameter of the temperature_conversion function.
+*/
+
+// #include <iostream>
+// #include <string>
+// #include <cmath>
+
+// double fahrenheit_to_celsius(double);
+// double fahrenheit_to_kelvin(double);
+
+// using namespace std;
+
+// int main() {
+
+//     cout << "Author: Alexander Hernandez" << endl << endl;
+
+//     cout << "\tConverting Temperatures" << endl << endl;
+
+//     double fahrenheit_temperature {};
+//     cout << "enter a temperature: ";
+//     cin >> fahrenheit_temperature;
+
+//     cout << endl << endl;
+
+//     cout << "the temperature for " << fahrenheit_temperature << " in celsius is " << fahrenheit_to_celsius(fahrenheit_temperature)
+//         << " and the temperature in kelvin is " << fahrenheit_to_kelvin(fahrenheit_temperature) << endl;
+
+//     return 0;
+// }
+
+// // (5.0/9.0)*(temperature - 32)
+
+// double fahrenheit_to_celsius(double f_value) {
+//     return round((5.0/9.0)*(f_value - 32));
+// }
+// double fahrenheit_to_kelvin (double f_value) {
+//     return round((5.0/9.0)*(f_value - 32) + 273);
+// }
+
+/*
+Overloading Functions - Calculating Area
+In this exercise you will create a program that computes the area of two shapes, a square and a
+rectangle, by calling the overloaded function find_area.
+
+Begin by declaring the function prototypes for the square find_area function and the rectangle
+find_area function.
+
+The square find_area function is passed an integer value and returns an integer value.
+
+The rectangle find_area function is passed two double values and returns a double value.
+
+Remember that both function prototypes should have the same function name find_area.
+
+Now that the function prototypes have been declared,  at the bottom of the file define both functions.
+
+The square find_area function will be passed the argument side_length and return the area of the square.
+The formula for the area of a square is side_length*side_length . You may use the <cmath> function pow
+to compute this value if you wish.
+
+The rectangle find_area function will be passed the arguments length and width and return the area of
+the rectangle. The formula for the area of a rectangle is length*width.
+
+Now, from the function body of area_calc, declare and initialize the variables square_area and
+rectangle_area by calling the find_area function and passing the appropriate arguments which are
+listed below.
+
+The square has a side_length of 2.
+
+The rectangle has a length of 4.5 and a width of 2.3.
+
+You can find my solution by clicking on the solution.txt file on the left pane. But please make sure
+you give it a go yourself first, and only check the solution if you really get stuck.
+*/
+
+// #include <iostream>
+// #include <cmath>
+
+// using namespace std;
+
+// int find_area(int);
+// double find_area(double, double);
+
+// int main() {
+
+//     int side_length {};
+//     double length, width {};
+
+//     cout << "enter side length: ";
+//     cin >> side_length;
+//     cout << "Enter length and width: ";
+//     cin >> length >> width;
+
+//     cout << endl << endl;
+//     cout << "the area of a square is: " << find_area(side_length) << endl;
+//     cout << "the are of a rectangle is: " << find_area(length, width) << endl;
+//     return 0;
+// }
+
+// int find_area(int value) {
+//     return pow(value, 2);
+// }
+
+// double find_area(double length, double width) {
+//     return length * width;
+// }
+
+#include <iostream>
+
+using namespace std;
+
+long long int getsfactorial(int);
+long long int fibunacci(int);
+
+int main() {
+
+    int number {5};
+    cout << "factorial of " << number << " : " << getsfactorial(number) << endl;
+    cout << "testing complete .. " << endl << endl;
+
+    cout << "Input a number to get factial: ";
+    cin >> number;
+
+    while (number != -1) {
+        cout << endl << endl;
+        cout << "result: " << getsfactorial(number) <<endl;
+        cout << "Input a number to get factial: ";
+        cin >> number;
+    }
+
+    cout << endl;
+    cout << "now starign fibunacci program.." << endl << endl;
+
+    int fib_number {5};
+    cout << "fibunacci of " << fib_number << " : " << fibunacci(fib_number) << endl;
+    cout << "testing complete for fibunacci.." << endl << endl;
+
+    cout << "input a number to get fibunacci :";
+    cin >> fib_number;
+
+    while(fib_number != -1) {
+        cout << endl << endl;
+        cout << "result : " << fibunacci(fib_number) <<endl;
+        cout << "input a number to get fibunacci :";
+        cin >> fib_number;
+    }
+
+    return 0;
+}
+
+long long getsfactorial(int fac_num) {
+    if(fac_num == 0) {
+        return 1;
+    } else if (fac_num == 1) {
+        return 1;
+    } else {
+        return fac_num * getsfactorial(fac_num - 1);
+    }
+}
+
+long long fibunacci(int fib_num) {
+    if(fib_num == 0) {
+        return 0;
+    } else if( fib_num == 1) {
+        return 1;
+    } else {
+        return fibunacci(fib_num-1) + fibunacci(fib_num-2);
+    }
+}
