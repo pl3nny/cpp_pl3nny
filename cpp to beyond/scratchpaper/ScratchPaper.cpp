@@ -1960,65 +1960,98 @@ you give it a go yourself first, and only check the solution if you really get s
 //     return length * width;
 // }
 
-#include <iostream>
+// #include <iostream>
 
+// using namespace std;
+
+// long long int getsfactorial(int);
+// long long int fibunacci(int);
+
+// int main() {
+
+//     int number {5};
+//     cout << "factorial of " << number << " : " << getsfactorial(number) << endl;
+//     cout << "testing complete .. " << endl << endl;
+
+//     cout << "Input a number to get factial: ";
+//     cin >> number;
+
+//     while (number != -1) {
+//         cout << endl << endl;
+//         cout << "result: " << getsfactorial(number) <<endl;
+//         cout << "Input a number to get factial: ";
+//         cin >> number;
+//     }
+
+//     cout << endl;
+//     cout << "now starign fibunacci program.." << endl << endl;
+
+//     int fib_number {5};
+//     cout << "fibunacci of " << fib_number << " : " << fibunacci(fib_number) << endl;
+//     cout << "testing complete for fibunacci.." << endl << endl;
+
+//     cout << "input a number to get fibunacci :";
+//     cin >> fib_number;
+
+//     while(fib_number != -1) {
+//         cout << endl << endl;
+//         cout << "result : " << fibunacci(fib_number) <<endl;
+//         cout << "input a number to get fibunacci :";
+//         cin >> fib_number;
+//     }
+
+//     return 0;
+// }
+
+// long long getsfactorial(int fac_num) {
+//     if(fac_num == 0) {
+//         return 1;
+//     } else if (fac_num == 1) {
+//         return 1;
+//     } else {
+//         return fac_num * getsfactorial(fac_num - 1);
+//     }
+// }
+
+// long long fibunacci(int fib_num) {
+//     if(fib_num == 0) {
+//         return 0;
+//     } else if( fib_num == 1) {
+//         return 1;
+//     } else {
+//         return fibunacci(fib_num-1) + fibunacci(fib_num-2);
+//     }
+// }
+
+#include <iostream>
 using namespace std;
 
-long long int getsfactorial(int);
-long long int fibunacci(int);
+int sum_of_digits(int);
 
 int main() {
 
-    int number {5};
-    cout << "factorial of " << number << " : " << getsfactorial(number) << endl;
-    cout << "testing complete .. " << endl << endl;
-
-    cout << "Input a number to get factial: ";
-    cin >> number;
-
-    while (number != -1) {
-        cout << endl << endl;
-        cout << "result: " << getsfactorial(number) <<endl;
-        cout << "Input a number to get factial: ";
-        cin >> number;
-    }
+    int num {1234};
 
     cout << endl;
-    cout << "now starign fibunacci program.." << endl << endl;
+    cout << "mod operator gets the last digit of the number: " << num << " % " << 10 << " = " << num % 10 << endl;
+    cout << "div operator removes the last digit of the number: " << num << " / " << 10 << " = " << num % 10 << " = " << num / 10 << endl;
 
-    int fib_number {5};
-    cout << "fibunacci of " << fib_number << " : " << fibunacci(fib_number) << endl;
-    cout << "testing complete for fibunacci.." << endl << endl;
+    cout << endl << endl;
 
-    cout << "input a number to get fibunacci :";
-    cin >> fib_number;
-
-    while(fib_number != -1) {
-        cout << endl << endl;
-        cout << "result : " << fibunacci(fib_number) <<endl;
-        cout << "input a number to get fibunacci :";
-        cin >> fib_number;
-    }
+    cout << "\tsum of digits" << endl;
+    cout << "Enter number to get sum of digits for: ";
+    cin >> num;
+    cout << endl;
+    cout << "results: " << sum_of_digits(num) << endl; 
 
     return 0;
 }
 
-long long getsfactorial(int fac_num) {
-    if(fac_num == 0) {
-        return 1;
-    } else if (fac_num == 1) {
-        return 1;
+int sum_of_digits(int n) {
+    
+    if(n <= 9) {
+        return n;
     } else {
-        return fac_num * getsfactorial(fac_num - 1);
-    }
-}
-
-long long fibunacci(int fib_num) {
-    if(fib_num == 0) {
-        return 0;
-    } else if( fib_num == 1) {
-        return 1;
-    } else {
-        return fibunacci(fib_num-1) + fibunacci(fib_num-2);
+        return (n % 10) + sum_of_digits((n / 10));
     }
 }
