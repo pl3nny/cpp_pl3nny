@@ -2023,35 +2023,178 @@ you give it a go yourself first, and only check the solution if you really get s
 //     }
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// int sum_of_digits(int);
+// double a_penny_doubled_everyday (int days, double amount = 0.01);
+
+// int main() {
+
+//     int num {1234};
+
+//     cout << endl;
+//     cout << "mod operator gets the last digit of the number: " << num << " % " << 10 << " = " << num % 10 << endl;
+//     cout << "div operator removes the last digit of the number: " << num << " / " << 10 << " = " << num % 10 << " = " << num / 10 << endl;
+
+//     cout << endl << endl;
+
+//     cout << "\tsum of digits" << endl;
+//     cout << "Enter number to get sum of digits for: ";
+//     cin >> num;
+//     cout << endl;
+//     cout << "results: " << sum_of_digits(num) << endl; 
+
+//     cout << endl << endl;
+
+//     cout << "save a penny for how many days? ";
+//     cin >> num;
+//     cout << endl;
+//     cout << "results: " << a_penny_doubled_everyday(num) << endl;
+
+//     return 0;
+// }
+
+// int sum_of_digits(int n) {
+    
+//     if(n <= 9) {
+//         return n;
+//     } else {
+//         return (n % 10) + sum_of_digits((n / 10));
+//     }
+// }
+
+// double a_penny_doubled_everyday (int days, double amount) {
+//     if(days <= 1){
+//         return amount;
+//     }
+
+//     return a_penny_doubled_everyday(days - 1, amount * 2.0);
+// }
+
+
+// SECTION 11 CHALLENGE
+
 #include <iostream>
+#include <vector>
+#include <string>
+#include <cctype>
+
 using namespace std;
 
-int sum_of_digits(int);
+void display_menu();
+void check_user_input(char&);
+void print_vector_list(const vector <int>&);
+int find_mean(const vector <int>&);
+int find_smallest(const vector <int>&);
+int find_largest(const vector <int>&);
 
 int main() {
 
-    int num {1234};
+    char user_input {};
+    vector <int> vec  {1, 2, 3, 4, 5 };
+    int add_num_to_vector {};
+    bool quit {false};
+    int mean_of_numbers {};
+    int smallest_number_in_list {};
+    int largest_number_in_list {};
 
+    while(!quit) {
+
+        display_menu();
+
+        cout << "Enter your choice: ";
+        cin >> user_input;
+
+        check_user_input(user_input);
+
+        switch (user_input) {
+            case 'P': 
+                print_vector_list(vec);
+                break;
+
+            case 'A':
+                cout << "Enter number to add to list: ";
+                cin >> add_num_to_vector;
+                vec.push_back(add_num_to_vector);
+                break;
+
+            case 'M':
+                cout << "Mean: " << find_mean(vec) << endl;
+                break;
+
+            case 'S':
+                cout << "smallest number: " << find_smallest(vec) << endl;
+                break;
+
+            case 'L':
+                cout << "largest number: " << find_largest(vec) << endl;
+                break;
+
+            case 'Q':
+                quit = true;
+                break;
+
+            default:
+                cout << "incorrect input, please try again.." << endl;
+                break;
+        }
+    }
     cout << endl;
-    cout << "mod operator gets the last digit of the number: " << num << " % " << 10 << " = " << num % 10 << endl;
-    cout << "div operator removes the last digit of the number: " << num << " / " << 10 << " = " << num % 10 << " = " << num / 10 << endl;
-
-    cout << endl << endl;
-
-    cout << "\tsum of digits" << endl;
-    cout << "Enter number to get sum of digits for: ";
-    cin >> num;
-    cout << endl;
-    cout << "results: " << sum_of_digits(num) << endl; 
+    cout << "Program terminated" << endl;
 
     return 0;
 }
 
-int sum_of_digits(int n) {
-    
-    if(n <= 9) {
-        return n;
-    } else {
-        return (n % 10) + sum_of_digits((n / 10));
+void display_menu() {
+    cout << endl;
+    cout << "P - Print numbers" << endl;
+    cout << "A - Add a number" << endl;
+    cout << "M - Display mean of the numbers" << endl;
+    cout << "S - Display the smallest number" << endl;
+    cout << "L - Display the largest number" << endl;
+    cout << "Q - Quit" << endl << endl;
+}
+
+void check_user_input(char& input) {
+    if(islower(input)) {
+        input = toupper(input);
     }
+}
+
+void print_vector_list(const vector <int>& list) {
+    cout << "[ ";
+    for(size_t i = 0; i < list.size(); i++) {
+        cout << list.at(i) << " ";
+    }
+    cout << "]" << endl;
+}
+
+int find_mean(const vector <int>& list) {
+    int mean {0};
+    for(size_t i = 0; i < list.size(); i++) {
+        mean += list.at(i);
+    }
+    mean /= list.size();
+    return mean;
+}
+
+int find_smallest(const vector <int>& list) {
+    int smallest = list.at(0);
+    for(size_t i = 1; i < list.size(); i++) {
+        if(smallest > list.at(i)) {
+            smallest = list.at(i);
+        }
+    }
+    return smallest;
+}
+
+int find_largest(const vector <int>& list) {
+    int largest = list.at(0);
+    for(size_t i = 1; i < list.size(); i++) {
+        if(largest < list.at(i)) {
+            largest = list.at(i);
+        }
+    }
+    return largest;
 }
