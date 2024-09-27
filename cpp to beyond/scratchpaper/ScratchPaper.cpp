@@ -2599,3 +2599,10 @@ Result: [ 10 20 30 40 50 20 40 60 80 100 30 60 90 120 150]
 //     }
 //     return new_array;
 // }
+
+// #include <iostream>
+// using namespace std;
+// int main() {
+//     cout << "hello world" << endl;
+//     return 0;
+// }
