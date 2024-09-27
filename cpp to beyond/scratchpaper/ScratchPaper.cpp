@@ -2068,133 +2068,534 @@ you give it a go yourself first, and only check the solution if you really get s
 //     if(days <= 1){
 //         return amount;
 //     }
-
 //     return a_penny_doubled_everyday(days - 1, amount * 2.0);
 // }
 
 
 // SECTION 11 CHALLENGE
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <cctype>
+// #include <iostream>
+// #include <vector>
+// #include <string>
+// #include <cctype>
 
-using namespace std;
+// using namespace std;
 
-void display_menu();
-void check_user_input(char&);
-void print_vector_list(const vector <int>&);
-int find_mean(const vector <int>&);
-int find_smallest(const vector <int>&);
-int find_largest(const vector <int>&);
+// void display_menu();
+// void check_user_input(char&);
+// void print_vector_list(const vector <int>&);
+// int find_mean(const vector <int>&);
+// int find_smallest(const vector <int>&);
+// int find_largest(const vector <int>&);
 
-int main() {
+// int main() {
 
-    char user_input {};
-    vector <int> vec  {1, 2, 3, 4, 5 };
-    int add_num_to_vector {};
-    bool quit {false};
-    int mean_of_numbers {};
-    int smallest_number_in_list {};
-    int largest_number_in_list {};
+//     char user_input {};
+//     vector <int> vec  {1, 2, 3, 4, 5 };
+//     int add_num_to_vector {};
+//     bool quit {false};
+//     int mean_of_numbers {};
+//     int smallest_number_in_list {};
+//     int largest_number_in_list {};
 
-    while(!quit) {
+//     while(!quit) {
 
-        display_menu();
+//         display_menu();
 
-        cout << "Enter your choice: ";
-        cin >> user_input;
+//         cout << "Enter your choice: ";
+//         cin >> user_input;
 
-        check_user_input(user_input);
+//         check_user_input(user_input);
 
-        switch (user_input) {
-            case 'P': 
-                print_vector_list(vec);
-                break;
+//         switch (user_input) {
+//             case 'P': 
+//                 print_vector_list(vec);
+//                 break;
 
-            case 'A':
-                cout << "Enter number to add to list: ";
-                cin >> add_num_to_vector;
-                vec.push_back(add_num_to_vector);
-                break;
+//             case 'A':
+//                 cout << "Enter number to add to list: ";
+//                 cin >> add_num_to_vector;
+//                 vec.push_back(add_num_to_vector);
+//                 break;
 
-            case 'M':
-                cout << "Mean: " << find_mean(vec) << endl;
-                break;
+//             case 'M':
+//                 cout << "Mean: " << find_mean(vec) << endl;
+//                 break;
 
-            case 'S':
-                cout << "smallest number: " << find_smallest(vec) << endl;
-                break;
+//             case 'S':
+//                 cout << "smallest number: " << find_smallest(vec) << endl;
+//                 break;
 
-            case 'L':
-                cout << "largest number: " << find_largest(vec) << endl;
-                break;
+//             case 'L':
+//                 cout << "largest number: " << find_largest(vec) << endl;
+//                 break;
 
-            case 'Q':
-                quit = true;
-                break;
+//             case 'Q':
+//                 quit = true;
+//                 break;
 
-            default:
-                cout << "incorrect input, please try again.." << endl;
-                break;
-        }
-    }
-    cout << endl;
-    cout << "Program terminated" << endl;
+//             default:
+//                 cout << "incorrect input, please try again.." << endl;
+//                 break;
+//         }
+//     }
+//     cout << endl;
+//     cout << "Program terminated" << endl;
 
-    return 0;
-}
+//     return 0;
+// }
 
-void display_menu() {
-    cout << endl;
-    cout << "P - Print numbers" << endl;
-    cout << "A - Add a number" << endl;
-    cout << "M - Display mean of the numbers" << endl;
-    cout << "S - Display the smallest number" << endl;
-    cout << "L - Display the largest number" << endl;
-    cout << "Q - Quit" << endl << endl;
-}
+// void display_menu() {
+//     cout << endl;
+//     cout << "P - Print numbers" << endl;
+//     cout << "A - Add a number" << endl;
+//     cout << "M - Display mean of the numbers" << endl;
+//     cout << "S - Display the smallest number" << endl;
+//     cout << "L - Display the largest number" << endl;
+//     cout << "Q - Quit" << endl << endl;
+// }
 
-void check_user_input(char& input) {
-    if(islower(input)) {
-        input = toupper(input);
-    }
-}
+// void check_user_input(char& input) {
+//     if(islower(input)) {
+//         input = toupper(input);
+//     }
+// }
 
-void print_vector_list(const vector <int>& list) {
-    cout << "[ ";
-    for(size_t i = 0; i < list.size(); i++) {
-        cout << list.at(i) << " ";
-    }
-    cout << "]" << endl;
-}
+// void print_vector_list(const vector <int>& list) {
+//     cout << "[ ";
+//     for(size_t i = 0; i < list.size(); i++) {
+//         cout << list.at(i) << " ";
+//     }
+//     cout << "]" << endl;
+// }
 
-int find_mean(const vector <int>& list) {
-    int mean {0};
-    for(size_t i = 0; i < list.size(); i++) {
-        mean += list.at(i);
-    }
-    mean /= list.size();
-    return mean;
-}
+// int find_mean(const vector <int>& list) {
+//     int mean {0};
+//     for(size_t i = 0; i < list.size(); i++) {
+//         mean += list.at(i);
+//     }
+//     mean /= list.size();
+//     return mean;
+// }
 
-int find_smallest(const vector <int>& list) {
-    int smallest = list.at(0);
-    for(size_t i = 1; i < list.size(); i++) {
-        if(smallest > list.at(i)) {
-            smallest = list.at(i);
-        }
-    }
-    return smallest;
-}
+// int find_smallest(const vector <int>& list) {
+//     int smallest = list.at(0);
+//     for(size_t i = 1; i < list.size(); i++) {
+//         if(smallest > list.at(i)) {
+//             smallest = list.at(i);
+//         }
+//     }
+//     return smallest;
+// }
 
-int find_largest(const vector <int>& list) {
-    int largest = list.at(0);
-    for(size_t i = 1; i < list.size(); i++) {
-        if(largest < list.at(i)) {
-            largest = list.at(i);
-        }
-    }
-    return largest;
-}
+// int find_largest(const vector <int>& list) {
+//     int largest = list.at(0);
+//     for(size_t i = 1; i < list.size(); i++) {
+//         if(largest < list.at(i)) {
+//             largest = list.at(i);
+//         }
+//     }
+//     return largest;
+// }
+
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+
+//     int *int_ptr {nullptr};
+//     int_ptr = new int;
+//     cout << int_ptr <<endl;
+//     delete int_ptr;
+
+//     size_t size {0};
+//     double *temp_ptr{nullptr};
+
+//     cout << "How many temps? ";
+//     cin >> size;
+
+//     temp_ptr = new double[size];
+
+//     cout << temp_ptr << endl;
+
+//     delete [] temp_ptr;
+//     return 0;
+// }
+
+// SWAP VALUES USING POINTERS
+
+// #include <iostream>
+
+// using namespace std;
+
+// void swap_pointers(int*, int*);
+
+// int main() {
+
+//     int a = 10;
+//     int b = 20;
+
+//     int *ptrA = &a;
+//     int *ptrB = &b;
+
+//     cout << "a: " << a << endl;
+//     cout << "b: " << b << endl << endl;
+
+//     cout << "calling fucntion: swap_pointers(a, b).." << endl << endl;
+//     swap_pointers(ptrA, ptrB);
+
+//     cout << "a: " << a << endl;
+//     cout << "b: " << b << endl;
+
+//     return 0;
+// }
+
+// void swap_pointers(int *ptr_1, int *ptr_2) {
+
+//     cout << "inside the fucntion.." << endl << endl;
+//     cout << "ptr_1: " << *ptr_1 << endl;
+//     cout << "ptr_2: " << * ptr_2 << endl << endl;
+
+//     *ptr_1 = *ptr_1 + *ptr_2;
+//     cout << "*ptr_1 = *ptr_1 + *ptr_2: " << *ptr_1 << endl;
+    
+//     *ptr_2 = *ptr_1 - *ptr_2;
+//     cout << "*ptr_2 = *ptr_1 - *ptr_2: " << *ptr_2 << endl;
+
+//     *ptr_1 = *ptr_1 - *ptr_2;
+//     cout << "*ptr_1 = *ptr_1 - *ptr2: " << *ptr_1 << endl << endl;
+//     cout << "leaving the function call .. " << endl << endl;
+// }
+
+// RETURNING A POINTER FROM A FUNCTION
+
+// #include <iostream>
+
+// using namespace std;
+
+// int *create_array(size_t size, int init_value = 0);
+// void print_array(const int *const, size_t);
+
+// int main () {
+
+//     size_t size {};
+//     int *my_array {nullptr};
+
+//     cout << "Enter size of array: ";
+//     cin >> size;
+//     cout << endl;
+
+//     cout << "creating new array.." << endl;
+//     my_array = create_array(size);
+//     cout << "new array created.. " << endl;
+
+//     cout << "outputing Array.. " << endl;
+//     print_array(my_array, size);
+
+//     delete [] my_array;
+
+//     return 0;
+// }
+
+// int *create_array(size_t size, int init_value) {
+
+//     int *new_array {nullptr};
+
+//     new_array = new int[size];
+
+//     for(size_t i = 0; i < size; i++){
+//         *(new_array + i) = init_value; 
+//     }
+//     return new_array;
+// }
+
+// void print_array(const int *const arr, size_t size) {
+//     for(size_t i = 0; i < size; i++){
+//         cout << *(arr + i) << " ";
+//     }
+//     cout << endl;
+// }
+
+// CODING EXERCISE 31: Passing a Pointer to a Function
+
+/*
+Pointers are a fundamental aspect of C++. They allow for flexible and efficient programming by
+giving direct access to memory. You are tasked with writing a function that uses a pointer to
+multiply an integer value.
+Write a function:
+
+void multiply_with_pointer(int* ptr, int multiplier);
+
+Input:
+A pointer to an integer (int* ptr). This integer will be between 1 and 100, inclusive.
+An integer (int multiplier) which is the multiplier. This integer will be between 1 and 100, inclusive.
+
+// coding exercise 32
+Write a C++ function find_max_element that takes an integer array and its size as input and returns
+the maximum element in the array using pointers.
+
+// coding exercise 33
+Write a C++ function reverse_array that takes an integer array and its size as input and reverses the
+order of the elements in the array. The function should modify the array in-place.
+
+*/
+
+
+// #include <iostream>
+
+// using namespace std;
+
+// void multiply_with_pointer(int *, int);
+// int findMaxElement(int *arr, int size);
+// void print_array(int *, int size);
+// void reverse_array(int *, int);
+// string reverse_string(const std::string &);
+
+// int main() {
+
+//     int user_input {0};
+//     int score {10};
+//     int *score_ptr {nullptr};
+//     score_ptr = &score;
+
+//     cout << "score: " << score << endl;
+//     cout << "enter a number to multiply " << score << " by: ";
+//     cin >> user_input;
+//     cout << endl;
+
+//     cout << "Calling function..." << endl;
+//     multiply_with_pointer(score_ptr, user_input);
+//     cout << "end of fucntion call.." << endl;
+//     cout << "score: " << score << endl << endl;
+
+//     cout << "Find the max element" << endl << endl;
+
+//     int arr[] = {12, 45, 67, 23, 9};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+
+//     cout << "Printing Array.." << endl;
+//     print_array(arr, size);
+
+//     cout << "getting max element.." << endl;
+//     int maxElement = findMaxElement(arr, size);
+//     cout << "maxElement: " << maxElement << endl;
+
+//     cout << endl;
+//     cout << "Reversing and Array" << endl << endl;
+
+//     int arr_33[] = {1, 2, 3, 4, 5};
+//     int size_33 = sizeof(arr_33) / sizeof(arr_33[0]);
+
+//     cout << "Printing array.." << endl;
+
+//     print_array(arr_33, size_33);
+
+//     cout << "Passing arr_33 to funciont: reverse_array" << endl;
+//     reverse_array(arr_33, size_33);
+//     cout << "end of reverse_array fucntion call" << endl;
+//     cout << "printing array again ..." << endl;
+//     print_array(arr_33, size_33);
+//     cout << endl << endl;
+
+//     cout << "reversing string" << endl;
+//     cout << endl;
+
+//     std::string input = "Hello, World!";
+//     std::string reverse_str = reverse_string(input);
+
+//     cout << reverse_str << endl;
+
+//     return 0;
+// }
+
+// void multiply_with_pointer(int *ptr, int multiplier) {
+//     *ptr *= multiplier;
+// }
+
+// // CODING EXERCISE 32
+// int findMaxElement(int * arr, int size) {
+//     int max = *arr;
+
+//     for(size_t i = 1; i < size; i++){
+//         if(max < *(arr + i)) {
+//             max = *(arr + i);
+//         }
+//     }
+
+//     return max;
+// }
+
+// void print_array(int *arr, int size) {
+//     cout << "[ ";
+//     for(size_t i = 0; i < size; i++) {
+//         cout << *(arr + i) << " ";
+//     }
+//     cout << "] " << endl;
+// }
+
+// // CODING EXERCISE 33
+
+// void reverse_array(int * arr, int size) {
+//     int *reverse_array {nullptr};
+//     reverse_array = new int [size];
+
+//     for(size_t i = 0; i < size; i++) {
+//         *(reverse_array + ((size - 1) - i)) = *(arr + i);
+//     }
+
+//     for(size_t i = 0; i < size; i++) {
+//         *(arr + i) = *(reverse_array + i);
+//     }
+// }
+
+// // CODING EXERCISE 34
+
+// string reverse_string(const std::string &str) {
+//     const char *start = str.c_str();
+//     const char *end = str.c_str() + str.size();
+
+//     cout << "*start = " << *start << endl;
+//     cout << "*end = " << *end << endl;
+//     cout << endl;
+
+//     std::string reversed {};
+
+//     while(end >= start) {
+//         cout << "pushing back: " << *end << endl;
+//         reversed.push_back(*end);
+//         end--;
+//     }
+
+//     return reversed;
+// }
+
+// #include <iostream>
+
+// using namespace std;
+
+// int main() {
+
+//     int num {100};
+//     int &ref_to_num = num;
+
+//     cout << "num: " << num << endl;
+//     cout << "ref_to_num: " << ref_to_num << endl;
+
+//     cout << "changing ref_to_num to 10: " << endl;
+//     ref_to_num = 10;
+
+//     cout << "num: " << num << endl;
+//     cout << "ref_to_num: " << ref_to_num << endl;
+
+//     int list_of_nums [] = {1,2,3,4,5,6,7,8,9};
+
+
+//     cout << "copies.." << endl;
+//     // makes a copy of the element
+//     for(auto num : list_of_nums) {
+//         cout << num << endl;
+//     }
+
+//     cout << "reference.. " << endl;
+
+//     // references elements
+//     for(auto &num : list_of_nums) {
+//         cout << num << endl;
+//     }
+
+//     return 0;
+// }
+
+// SECTOIN 12
+// CHALLENGE
+
+/*
+Write a C++ function named apply_all that expects two arrays of integers and their sizes and 
+dynamically allocates a new array of integers whose size is the prodct o0f the 2 array sizes
+
+The function should loop through the second array and multiply each element across each element of array 1 and 
+store the product in the newly created array.
+
+The function shoudl return a pointer tothe newly allocated array.
+
+You can also write a print function that expects a pointer to an array of integers and its size and display the elements
+in the array.
+
+For example:
+
+Below i the output from the following code which would be in main:
+
+    int array1[] {1,2,3,4,5};
+    int array2[] {10,20,30};
+
+    cout << "Array1: ";
+    print_array(array1, 5);
+
+    cout << "Array2: ";
+    print_array(array2, 3);
+
+    int *result = apply_all(array1, 5, array2, 3);
+    cout << "Result: ";
+    print(results, 15);
+
+Output
+---------------------------
+Array1: [ 1 2 3 4 5 ]
+Array2: [ 10 20 30 ]
+Result: [ 10 20 30 40 50 20 40 60 80 100 30 60 90 120 150]
+
+*/
+
+// #include <iostream>
+
+// using namespace std;
+
+// void print_array(const int *const, size_t);
+// int *apply_all(const int *const,  size_t, const int *const, size_t);
+
+// int main() {
+
+//     int array1[] {1,2,3,4,5};
+//     int array2[] {10,20,30};
+
+//     cout << "Array1: ";
+//     print_array(array1, 5);
+
+//     cout << "Array2: ";
+//     print_array(array2, 3);
+
+//     int *result = apply_all(array1, 5, array2, 3);
+//     cout << "Result: ";
+//     print_array(result, 15);
+
+//     return 0;
+// }
+// void print_array(const int *const arr, size_t size) {
+//     cout << "[ ";
+//     for(size_t i = 0; i < size; i++){
+//         cout << *(arr + i) << " ";
+//     }
+//     cout << "]" << endl;
+// }
+// int *apply_all(const int *const arr1,  size_t size_1, const int *const arr2, size_t size_2) {
+//     int *new_array {nullptr};
+//     size_t new_size {size_1 * size_2};
+//     int count {0};
+
+//     new_array = new int [new_size];
+
+//     for(size_t i = 0; i < new_size; i++){
+//         *(new_array + i) = 0;
+//     }
+
+//     while(count < 15) {
+//         for(size_t i = 0; i < size_2; i++){
+//             for(size_t j = 0; j < size_1; j++) {
+//                 *(new_array + count) = (*(arr1 + j)) * (*(arr2 + i));
+//                 count++;
+//             }
+//         }
+//     }
+//     return new_array;
+// }
