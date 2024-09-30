@@ -2606,3 +2606,123 @@ Result: [ 10 20 30 40 50 20 40 60 80 100 30 60 90 120 150]
 //     cout << "hello world" << endl;
 //     return 0;
 // }
+
+// // SECTION 13 OBJECT ORIENTED PROGRAMMING -  CLASSES AND OBJECTS
+
+// #include <iostream>
+// #include <string> 
+// #include <vector>
+
+// using namespace std;
+
+// class Player {
+//     // attributes
+//     string name {"Player"};
+//     int health {100};
+//     int xp {3};
+
+//     // methods
+//     void talk(string);
+//     bool is_dead();
+// };
+
+// class Account {
+//     // attributes
+//     string name {"account_name"};
+//     double balance {0};
+
+//     // methods
+//     bool deposit(double);
+//     bool withdraw(double);
+
+// };
+
+// int main() {
+//     Account pl3nny_acount;
+//     Account jim_account;
+   
+//     Player pl3nny;
+//     Player hero;
+
+//     Player players [] {pl3nny, hero};
+//     vector<Player> player_vec {pl3nny};
+//     player_vec.push_back(hero);
+
+//     Player *enemey {nullptr};
+//     enemey = new Player;
+
+//     delete enemey;
+
+//     return 0;
+// }
+
+
+// Accessing Class Members
+
+// #include <iostream>
+// #include <string> 
+// #include <vector>
+
+// using namespace std;
+
+// class Player {
+// public:
+//     // attributes
+//     string name {"Player"};
+//     int health {100};
+//     int xp {3};
+
+//     // methods
+//     void talk(string text_to_say) {cout << name << " says " << text_to_say << endl;}
+//     bool is_dead();
+// };
+
+// class Account {
+// public:
+//     // attributes
+//     string name {"account_name"};
+//     double balance {0};
+
+//     // methods
+//     bool deposit(double bal){balance += bal; cout << "In deposit" << endl;}
+//     bool withdraw(double bal){balance -= bal; cout << "In withdraw" << endl;}
+//     void displayBalance() {cout << "\t" << name << endl; cout << "Your balance is: " << balance << endl << endl;}
+
+// };
+
+// int main() {
+//     Account pl3nny_account;
+//     pl3nny_account.name = "pl3nny's account";
+//     pl3nny_account.balance = 5000.0;
+//     pl3nny_account.displayBalance();
+//     pl3nny_account.deposit(1000.0);
+//     pl3nny_account.withdraw(500.0);
+//     pl3nny_account.displayBalance();
+
+//     Account *marys_account = new Account;
+//     marys_account->name = "Mary's Account";
+//     marys_account->balance = 1000.0;
+//     marys_account->displayBalance();
+//     marys_account->withdraw(500.0);
+//     marys_account->displayBalance();
+
+
+
+//     Player pl3nny;
+//     pl3nny.name = "pl3nny";
+//     pl3nny.health = 100;
+//     pl3nny.xp = 12;
+//     pl3nny.talk("Hi there");
+
+//     Player *enemy = new Player;
+//     enemy->name = "enemy";
+//     enemy->health = 100;
+//     enemy->xp = 15;
+
+//     enemy->talk("I will destroy you!");
+
+//     return 0;
+// }
+
+
+// Section 13: Implementing Member Methods..
