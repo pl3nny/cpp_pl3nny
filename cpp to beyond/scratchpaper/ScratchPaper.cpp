@@ -2726,3 +2726,109 @@ Result: [ 10 20 30 40 50 20 40 60 80 100 30 60 90 120 150]
 
 
 // Section 13: Implementing Member Methods..
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Account {
+
+    private:
+        double balance {0};
+        string name;
+
+    public:
+        void set_balance(double bal) {balance = bal;}
+        
+        // will be declared outside class decleration
+        void set_name(string n);
+        string get_name();
+        double get_balance();
+
+        bool deposit(double amount);
+        bool withdraw(double amount);
+};
+
+void Account::set_name(string n) {
+    name = n;
+}
+
+string Account::get_name() {
+    return name;
+}
+
+double Account::get_balance() {
+    return balance;
+}
+
+bool Account::deposit(double amount) {
+    balance += amount;
+    return true;
+}
+
+bool Account::withdraw(double amount) {
+    if(balance - amount >= 0) {
+        balance -= amount;
+    } else {
+        cout << "unable to withdraw that amount.." << endl;
+        return false;
+    }
+
+    return true;
+}
+
+int main() {
+
+    cout << endl;
+    cout << "\tAccount Class" << endl << endl;
+
+    Account pl3nny;
+
+    pl3nny.set_name("pl3nny");
+    pl3nny.set_balance(2000);
+
+    int selection;
+    int amount {0};
+
+    cout << "1. Deposit" << endl;
+    cout << "2. Withdraw" << endl;
+    cout << "3. View Balance" << endl;
+    cout << "-> ";
+    cin >> selection;
+
+    while (selection != 0) {
+        switch (selection)
+        {
+        case 1:
+            cout << "Enter amount to deposit: ";
+            cin >> amount;
+            pl3nny.deposit(amount);
+            cout << endl;
+            cout << "Your new balance is " << pl3nny.get_balance() << endl << endl;
+            break;
+
+        case 2:
+            cout << "Enter amount to withdraw: ";
+            cin >> amount;
+            pl3nny.withdraw(amount);
+            cout << endl;
+            cout << "Your balance is now " << pl3nny.get_balance() << endl << endl;
+            break;
+
+        case 3:
+            cout << "Your current balance is " << pl3nny.get_balance() << endl << endl;
+            break;
+        default:
+            cout << "Wrong input...enter 0 to quit" << endl << endl;
+            break;
+        }
+
+        cout << "1. Deposit" << endl;
+        cout << "2. Withdraw" << endl;
+        cout << "-> ";
+        cin >> selection;
+    }
+
+    return 0;
+}
