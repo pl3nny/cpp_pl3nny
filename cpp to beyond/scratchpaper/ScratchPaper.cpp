@@ -2727,108 +2727,407 @@ Result: [ 10 20 30 40 50 20 40 60 80 100 30 60 90 120 150]
 
 // Section 13: Implementing Member Methods..
 
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// class Account {
+
+//     private:
+//         double balance {0};
+//         string name;
+
+//     public:
+//         void set_balance(double bal) {balance = bal;}
+        
+//         // will be declared outside class decleration
+//         void set_name(string n);
+//         string get_name();
+//         double get_balance();
+
+//         bool deposit(double amount);
+//         bool withdraw(double amount);
+// };
+
+// void Account::set_name(string n) {
+//     name = n;
+// }
+
+// string Account::get_name() {
+//     return name;
+// }
+
+// double Account::get_balance() {
+//     return balance;
+// }
+
+// bool Account::deposit(double amount) {
+//     balance += amount;
+//     return true;
+// }
+
+// bool Account::withdraw(double amount) {
+//     if(balance - amount >= 0) {
+//         balance -= amount;
+//     } else {
+//         cout << "unable to withdraw that amount.." << endl;
+//         return false;
+//     }
+
+//     return true;
+// }
+
+// int main() {
+
+//     cout << endl;
+//     cout << "\tAccount Class" << endl << endl;
+
+//     Account pl3nny;
+
+//     pl3nny.set_name("pl3nny");
+//     pl3nny.set_balance(2000);
+
+//     int selection;
+//     int amount {0};
+
+//     cout << "1. Deposit" << endl;
+//     cout << "2. Withdraw" << endl;
+//     cout << "3. View Balance" << endl;
+//     cout << "-> ";
+//     cin >> selection;
+
+//     while (selection != 0) {
+//         switch (selection)
+//         {
+//         case 1:
+//             cout << "Enter amount to deposit: ";
+//             cin >> amount;
+//             pl3nny.deposit(amount);
+//             cout << endl;
+//             cout << "Your new balance is " << pl3nny.get_balance() << endl << endl;
+//             break;
+
+//         case 2:
+//             cout << "Enter amount to withdraw: ";
+//             cin >> amount;
+//             pl3nny.withdraw(amount);
+//             cout << endl;
+//             cout << "Your balance is now " << pl3nny.get_balance() << endl << endl;
+//             break;
+
+//         case 3:
+//             cout << "Your current balance is " << pl3nny.get_balance() << endl << endl;
+//             break;
+//         default:
+//             cout << "Wrong input...enter 0 to quit" << endl << endl;
+//             break;
+//         }
+
+//         cout << "1. Deposit" << endl;
+//         cout << "2. Withdraw" << endl;
+//         cout << "-> ";
+//         cin >> selection;
+//     }
+
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// class Player {
+
+// private:
+//     string name;
+//     int health;
+//     int xp;
+
+// public:
+//     Player();
+//     Player(string name_val);
+//     Player(string name_val, int health_val, int xp_val);
+
+//     // void set_name(string name);
+//     // void set_xp(int xp);
+//     // void set_health(int health);
+
+//     // string get_name();
+//     // int get_xp();
+//     // int get_health();
+// };
+
+// Player::Player() 
+//     :name{"none"}, health{0}, xp{0} {
+
+// }
+
+// Player::Player(string name_val) 
+//     :name{name_val}, health{0}, xp{0} {
+
+// }
+
+// Player::Player(string name_val, int health_val, int xp_val) 
+//     :name{name_val}, health{health_val}, xp{xp_val} {
+
+// }
+
+// int main() {
+
+//     Player empty;
+//     Player pl3nny{"Pl3nny"};
+//     Player villain {"villain", 100, 55};
+
+//     return 0;
+// }
+
+// DELEGATING CONSTRUCTORS
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// class Player {
+
+// private:
+//     string name;
+//     int health;
+//     int xp;
+
+// public:
+//     Player();
+//     Player(string name_val);
+//     Player(string name_val, int health_val, int xp_val);
+// };
+
+// Player::Player() 
+//     : Player{"none", 0,0} {
+//         cout << "no-arg constructor" << endl;
+//     }
+
+// Player::Player(string name_val) 
+//     : Player{name_val, 0,0} {
+//         cout << "one-arg constructor" << endl;
+//     }
+
+// Player::Player(string name_val, int health_val, int xp_val) 
+//     : name{name_val}, health {health_val}, xp {xp_val} {
+//         cout << "three arg constructor" << endl;
+//     }
+
+// int main () {
+
+//     Player empty;
+//     Player pl3nny{"pl3nny"};
+//     Player villain{"villain", 100, 55};
+
+//     return 0;
+// }
+
+// CONSTRUCTOR AND DEFAULT VALUES
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// class Player {
+
+// private:
+//     string name;
+//     int health;
+//     int xp;
+
+// public:
+//     Player(string nam_val = "none", int health_val = 0, int xp_val = 0);
+// };
+
+// Player::Player(string name_val, int health_val, int xp_val) 
+//     : name {name_val}, health {health_val}, xp {xp_val} {
+//         cout << "three args constructor" << endl;
+//     }
+
+// int main () {
+
+//     Player empty;
+//     Player pl3nny {"pl3nny"};
+//     Player hero {"Hero", 100};
+//     Player villain {"Villain", 100, 55};
+
+//     return 0;
+// }
+
+
+// COPY CONSTRUCTORS
+
+/*
+Type::Type(const Type &source) {
+    // code or initialization list to copy the object
+}
+*/
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// class Player {
+
+// private:
+//     string name;
+//     int health;
+//     int xp;
+
+// public:
+//     string get_name();
+//     int get_health();
+//     int get_xp();
+//     Player(string name_val = "None", int health_val = 0, int xp_val = 0);
+//     // copy constructor
+//     Player(const Player &source);
+//     void display_player(Player p);
+//     // destructor
+//     ~Player() {cout << "destructor called for: " << name << endl;}
+
+// };
+
+// string Player::get_name() {return name;}
+// int Player::get_health() {return health;}
+// int Player::get_xp() {return xp;}
+
+// Player::Player(string name_val, int health_val, int xp_val)
+//     : name {name_val}, health {health_val}, xp {xp_val} {}
+
+// // Player::Player(const Player &source) 
+// //     : name{source.name}, health {source.health}, xp {source.xp} {
+// //         cout << "copy constructor - made copy of: " << source.name << endl;
+// //     }
+
+// // OR DELEGATE CONSTRUCTOR
+
+// Player::Player(const Player &source) : Player{source.name, source.health, source.xp} {
+//     cout << "copy constructor - made copy of: " << source.name << endl;
+// }
+
+
+// void Player::display_player(Player p) {
+//     cout << "Name: " << p.get_name() << endl;
+//     cout << "Health: " << p.get_health() << endl;
+//     cout << "XP: " << p.get_xp() << endl;
+// }
+
+// int main() {
+
+//     Player empty;
+
+//     empty.display_player(empty);
+
+//     Player pl3nny {"Pl3nny"};
+//     Player hero {"Hero", 100};
+//     Player villain {"Villain", 100, 55};
+
+//     return 0;
+// }
+
+// always use deep copies when dealing with raw c++ pointers
+
+// SHALLOW COPY EXAMPLE
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-class Account {
-
+class Shallow {
     private:
-        double balance {0};
-        string name;
-
+        int *data;
     public:
-        void set_balance(double bal) {balance = bal;}
-        
-        // will be declared outside class decleration
-        void set_name(string n);
-        string get_name();
-        double get_balance();
-
-        bool deposit(double amount);
-        bool withdraw(double amount);
+        Shallow(int d);
+        Shallow(const Shallow &source);
+        ~Shallow();
+        int get_shallow();
+        void set_data_value (int d);
 };
 
-void Account::set_name(string n) {
-    name = n;
+Shallow::Shallow(int d) {
+    data = new int;
+    *data = d;
 }
 
-string Account::get_name() {
-    return name;
+Shallow::Shallow(const Shallow &source) : data {source.data} {}
+
+Shallow::~Shallow() {
+    delete data;
 }
 
-double Account::get_balance() {
-    return balance;
-}
+int Shallow::get_shallow() {return *data;}
 
-bool Account::deposit(double amount) {
-    balance += amount;
-    return true;
-}
+void Shallow::set_data_value(int d) {*data = d;}
 
-bool Account::withdraw(double amount) {
-    if(balance - amount >= 0) {
-        balance -= amount;
-    } else {
-        cout << "unable to withdraw that amount.." << endl;
-        return false;
-    }
-
-    return true;
-}
+void display_shallow(Shallow s) {cout << s.get_shallow() << endl;}
 
 int main() {
 
-    cout << endl;
-    cout << "\tAccount Class" << endl << endl;
+    Shallow obj1 {100};
+    display_shallow(obj1);
 
-    Account pl3nny;
-
-    pl3nny.set_name("pl3nny");
-    pl3nny.set_balance(2000);
-
-    int selection;
-    int amount {0};
-
-    cout << "1. Deposit" << endl;
-    cout << "2. Withdraw" << endl;
-    cout << "3. View Balance" << endl;
-    cout << "-> ";
-    cin >> selection;
-
-    while (selection != 0) {
-        switch (selection)
-        {
-        case 1:
-            cout << "Enter amount to deposit: ";
-            cin >> amount;
-            pl3nny.deposit(amount);
-            cout << endl;
-            cout << "Your new balance is " << pl3nny.get_balance() << endl << endl;
-            break;
-
-        case 2:
-            cout << "Enter amount to withdraw: ";
-            cin >> amount;
-            pl3nny.withdraw(amount);
-            cout << endl;
-            cout << "Your balance is now " << pl3nny.get_balance() << endl << endl;
-            break;
-
-        case 3:
-            cout << "Your current balance is " << pl3nny.get_balance() << endl << endl;
-            break;
-        default:
-            cout << "Wrong input...enter 0 to quit" << endl << endl;
-            break;
-        }
-
-        cout << "1. Deposit" << endl;
-        cout << "2. Withdraw" << endl;
-        cout << "-> ";
-        cin >> selection;
-    }
+    obj1.set_data_value(1000);
+    Shallow obj2 {obj1};
+    cout << "hellow world" << endl;
 
     return 0;
 }
+
+
+// DEEP COPY
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// class Deep {
+//     private:
+//         int *data;
+//     public:
+//         Deep(int d);
+//         Deep(const Deep &source);
+//         ~Deep();
+//         int get_deep();
+//         void set_data_value (int d);
+// };
+
+// Deep::Deep(int d) {
+//     data = new int;
+//     *data = d;
+// }
+
+// Deep::Deep(const Deep &source) {
+//     data = new int;
+//     *data = *source.data;
+// }
+
+// Deep::~Deep() {
+//     delete data;
+// }
+
+// int Deep::get_deep() {return *data;}
+
+// void Deep::set_data_value(int d) {*data = d;}
+
+// void display_deep(Deep d) {cout << d.get_deep() << endl;}
+
+// int main() {
+
+//     Deep obj1 {100};
+//     display_deep(obj1);
+
+//     obj1.set_data_value(1000);
+//     Deep obj2 {obj1};
+//     cout << "hellow world" << endl;
+
+//     return 0;
+// }
