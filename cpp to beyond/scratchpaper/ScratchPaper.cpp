@@ -3036,50 +3036,50 @@ Type::Type(const Type &source) {
 
 // SHALLOW COPY EXAMPLE
 
-#include <iostream>
-#include <string>
+// #include <iostream>
+// #include <string>
 
-using namespace std;
+// using namespace std;
 
-class Shallow {
-    private:
-        int *data;
-    public:
-        Shallow(int d);
-        Shallow(const Shallow &source);
-        ~Shallow();
-        int get_shallow();
-        void set_data_value (int d);
-};
+// class Shallow {
+//     private:
+//         int *data;
+//     public:
+//         Shallow(int d);
+//         Shallow(const Shallow &source);
+//         ~Shallow();
+//         int get_shallow();
+//         void set_data_value (int d);
+// };
 
-Shallow::Shallow(int d) {
-    data = new int;
-    *data = d;
-}
+// Shallow::Shallow(int d) {
+//     data = new int;
+//     *data = d;
+// }
 
-Shallow::Shallow(const Shallow &source) : data {source.data} {}
+// Shallow::Shallow(const Shallow &source) : data {source.data} {}
 
-Shallow::~Shallow() {
-    delete data;
-}
+// Shallow::~Shallow() {
+//     delete data;
+// }
 
-int Shallow::get_shallow() {return *data;}
+// int Shallow::get_shallow() {return *data;}
 
-void Shallow::set_data_value(int d) {*data = d;}
+// void Shallow::set_data_value(int d) {*data = d;}
 
-void display_shallow(Shallow s) {cout << s.get_shallow() << endl;}
+// void display_shallow(Shallow s) {cout << s.get_shallow() << endl;}
 
-int main() {
+// int main() {
 
-    Shallow obj1 {100};
-    display_shallow(obj1);
+//     Shallow obj1 {100};
+//     display_shallow(obj1);
 
-    obj1.set_data_value(1000);
-    Shallow obj2 {obj1};
-    cout << "hellow world" << endl;
+//     obj1.set_data_value(1000);
+//     Shallow obj2 {obj1};
+//     cout << "hellow world" << endl;
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 // DEEP COPY
@@ -3131,3 +3131,6 @@ int main() {
 
 //     return 0;
 // }
+
+// Move Constructors
+
