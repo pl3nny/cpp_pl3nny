@@ -3132,5 +3132,144 @@ Type::Type(const Type &source) {
 //     return 0;
 // }
 
-// Move Constructors
+// Move Constructors & Const & Static Class members
 
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// class Player {
+
+//     private:
+//         string name;
+//         int xp;
+//         int health;
+//         static int num_players;
+    
+//     public:
+//         string get_name() const;
+//         void set_name(string name_val);
+//         int get_health() const;
+//         void set_health(int health_val);
+//         int get_xp() const;
+//         void set_xp(int xp_val);
+//         Player();
+//         Player(string name_val, int health_val, int xp_val);
+//         Player(const Player &source);
+//         ~Player();
+        
+//         static int get_num_players();
+// };
+
+// int Player::num_players{0};
+
+// string Player::get_name() const{
+//     return name;
+// }
+
+// void Player::set_name(string name_val) {
+//     name = name_val;
+// }
+
+// int Player::get_health() const{
+//     return health;
+// }
+
+// void Player::set_health(int health_val){
+//     health = health_val;
+// }
+
+// int Player::get_xp() const{
+//     return xp;
+// }
+
+// void Player::set_xp(int xp_val){
+//     xp = xp_val;
+// }
+
+// Player::Player()
+//     : Player("None",0,0) {
+// }
+
+// Player::Player(string name_val, int health_val, int xp_val)
+//     : name{name_val}, health{health_val}, xp{xp_val} {
+//         ++num_players;
+//     }
+
+// Player::Player(const Player &source)
+//     : name{source.name}, health{source.health}, xp{source.xp} {
+// }
+
+// Player::~Player(){
+//     --num_players;
+// }
+
+// int Player::get_num_players() {
+//     return num_players;
+// }
+
+
+// void display_active_players() {
+//     cout << "Active Players: " << Player::get_num_players() << endl;
+// }
+
+// int main() {
+
+//     display_active_players();
+
+//     const Player villain{"Villain",100,55};
+//     cout << "created villain Player " << endl;
+//     display_active_players();
+//     Player hero {"Hero", 100, 15};
+//     cout << "created hero Player " << endl;
+//     display_active_players();
+//     Player pl3nny;
+//     cout << "created pl3nny Player " << endl;
+
+//     cout << "entering new scope.." << endl;
+
+//     {
+//         Player hero2;
+//         cout << "created hero2 " << endl;
+//         display_active_players();
+//     }
+
+//     cout << "exiting scope.." << endl;
+
+//     display_active_players();
+
+//     Player *enemy = new Player("Enemy", 100, 100);
+//     cout << "creating enemey Player " << endl;
+//     display_active_players();
+//     cout << "Deleting enemy Player.." << endl;
+//     delete enemy;
+//     display_active_players();
+
+
+//     return 0;
+// }
+
+
+// Structs vs Classes
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// struct Person {
+//     string name;
+//     string get_name(); // why create a function to get name if name is already public because struct attributes are public by default
+// };
+
+// int main() {
+
+//     Person pl3nny;
+
+//     pl3nny.name = "Pl3nny";
+
+//     cout << "name: " << pl3nny.name << endl;
+
+//     return 0;
+// }
