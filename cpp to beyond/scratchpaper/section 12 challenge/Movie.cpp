@@ -17,7 +17,7 @@ string Movie::get_rating() const {
 }
 
 void Movie::set_watched(int watched) {
-    this->watched = watched;
+    this->watched += watched;
 }
 
 int Movie::get_watched() const {
