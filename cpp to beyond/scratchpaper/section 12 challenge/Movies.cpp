@@ -20,10 +20,9 @@ bool Movies::increment_watched(string movie_name) {
         }
     }
 
-    cout << "Movie not in library.." << endl;
+    cout << "Movie not in library..";
     return false;
 }
-
 
 bool Movies::add_movie(string movie_name, string rating, int watched) {
 
@@ -50,6 +49,7 @@ void Movies::display() const{
             cout << movie_list.at(i).get_movie_name() << ", ";
         }
     }
+    cout << endl;
 }
 
 Movies::Movies(){}
