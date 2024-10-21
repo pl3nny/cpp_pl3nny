@@ -24,6 +24,14 @@ int Movie::get_watched() const {
     return this->watched;
 }
 
+void Movie::increment_watched() {
+    ++watched;
+}
+
+void Movie::display() const{
+    cout << movie_name << ", " << rating << ", " << watched << endl;
+}
+
 Movie::Movie(){}
 
 Movie::Movie(string movie_name, string rating, int watched) {

@@ -18,6 +18,8 @@ class Movie {
         string get_rating() const;
         void set_watched(int watched);
         int get_watched() const;
+        void increment_watched();
+        void display() const;
         Movie();
         Movie(string movie_name, string rating, int watched);
         ~Movie();

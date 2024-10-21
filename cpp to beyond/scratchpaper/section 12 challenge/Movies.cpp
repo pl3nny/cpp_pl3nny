@@ -3,19 +3,10 @@
 bool Movies::increment_watched(string movie_name) {
 
     if(movie_list.size() > 0){
-        if(movie_list.at(0).get_movie_name() == movie_name) {
-            movie_list.at(0).set_watched(1);
-            cout << "sucess" << endl;
-            return true;
-        } else {
-            for(size_t i = 1; i < movie_list.size(); i++){
-                if(movie_list.at(i).get_movie_name() == movie_name){
-                    movie_list.at(i).set_watched(1);
-                    cout << "sucess" << endl;
-                    return true;
-                } else {
-                    // do nothing
-                }
+        for(auto &movie : movie_list){
+            if(movie.get_movie_name() == movie_name){
+                movie.increment_watched();
+                return true;
             }
         }
     }
@@ -26,14 +17,10 @@ bool Movies::increment_watched(string movie_name) {
 
 bool Movies::add_movie(string movie_name, string rating, int watched) {
 
-    if(movie_list.size() > 0){
-        if(movie_list.at(0).get_movie_name() == movie_name){
-            return false;
-        } else {
-            for(size_t i = 1; i < movie_list.size(); i++){
-                if(movie_list.at(i).get_movie_name() == movie_name){
-                    return false;
-                }
+    if(movie_list.size() > 0) {
+        for(const auto &movie : movie_list){
+            if(movie.get_movie_name() == movie_name){
+                return false;
             }
         }
     }
@@ -44,12 +31,17 @@ bool Movies::add_movie(string movie_name, string rating, int watched) {
 }
 
 void Movies::display() const{
-    if(movie_list.size() > 0){
-        for(size_t i = 0; i < movie_list.size(); i++){
-            cout << movie_list.at(i).get_movie_name() << ", ";
+    if(movie_list.size() == 0){
+        cout << "Sorry, no movies to display\n" << endl;
+    } else {
+        cout << "\n===================================================" << endl;
+
+        for(const auto &movie : movie_list) {
+            movie.display();
         }
+
+        cout << "\n===================================================" << endl;
     }
-    cout << endl;
 }
 
 Movies::Movies(){}
