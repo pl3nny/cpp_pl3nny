@@ -13,7 +13,6 @@ class Movies {
         bool add_movie(string movie_name, string rating, int watched);
         void display() const;
         Movies();
-        Movies(string movie_name, string rating, int watched);
         ~Movies();
 };
 #endif
