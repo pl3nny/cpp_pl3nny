@@ -6,13 +6,14 @@
 
 class Movies {
     private:
-        vector <Movie> movie_list;
+        vector<Movie> *movie_list;
 
     public:
         bool increment_watched(string name);
         bool add_movie(string movie_name, string rating, int watched);
         void display() const;
         Movies();
+        Movies(const Movies &source);
         ~Movies();
 };
 #endif

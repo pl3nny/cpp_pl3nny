@@ -73,5 +73,12 @@ int main() {
     
     increment_watched(my_movies,"XXX");         // XXX not found
 
+
+    cout << "\n*copy my_movies to another_movies*\n" << endl;
+    Movies another_movies(my_movies);
+
+    cout << "display another_movies" << endl;
+    another_movies.display();
+
 	return 0;
 }
