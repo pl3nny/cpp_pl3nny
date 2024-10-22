@@ -57,9 +57,22 @@ Movies::Movies(const Movies &source){
     cout << "\ncopy constructor called\n" << endl;
 }
 
+Movies::Movies(Movies &&source) noexcept{
+    movie_list = source.movie_list;
+    source.movie_list = nullptr;
+
+    cout << "Move constructor - moving resource" << endl;
+}
+
 Movies::~Movies(){
-    delete movie_list;
-    movie_list = nullptr;
 
     cout << "\ndeconstructor called\n" << endl;
+
+    if(movie_list != nullptr){
+        cout << "destroying... movie_list" << endl;
+    } else {
+        cout << "destroying nullptrs" << endl;
+    }
+
+    delete movie_list;
 }

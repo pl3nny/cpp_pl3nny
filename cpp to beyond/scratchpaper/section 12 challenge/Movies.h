@@ -14,6 +14,7 @@ class Movies {
         void display() const;
         Movies();
         Movies(const Movies &source);
+        Movies(Movies &&source) noexcept;
         ~Movies();
 };
 #endif
