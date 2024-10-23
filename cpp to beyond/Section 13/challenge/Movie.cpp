@@ -1,50 +1,43 @@
 #include "Movie.h"
 
-Movie::Movie()
-{
-    this->watched = 0;
-}
-
-Movie::Movie(std::string movie_name, std::string movie_raiting, int watched)
-{
-    this->movie_name = movie_name;
-    this->movie_rating = movie_raiting;
-    this->watched= watched; 
-}
-
-void Movie::set_movie_name(std::string movie_name)
-{
+void Movie::set_movie_name(string movie_name) {
     this->movie_name = movie_name;
 }
 
-std::string Movie::get_movie_name() const
-{
-    return movie_name;
+string Movie::get_movie_name() const {
+    return this->movie_name;
 }
 
-void Movie::set_movie_rating(std::string movie_rating)
-{
-    this->movie_rating = movie_rating;
+void Movie::set_rating(string rating) {
+    this->rating = rating;
 }
 
-std::string Movie::get_movie_rating() const
-{
-    return movie_name;
+string Movie::get_rating() const {
+    return this->rating;
 }
 
-void Movie::increment_watched()
-{
-    watched++;
+void Movie::set_watched(int watched) {
+    this->watched += watched;
 }
 
-int Movie::get_watched_count() const
-{
-    return watched;
+int Movie::get_watched() const {
+    return this->watched;
 }
 
-std::string Movie::get_movie_details() const
-{
-    return movie_name + ", " + movie_rating + ", " + std::to_string(watched);
+void Movie::increment_watched() {
+    ++watched;
+}
+
+void Movie::display() const{
+    cout << movie_name << ", " << rating << ", " << watched << endl;
+}
+
+Movie::Movie(){}
+
+Movie::Movie(string movie_name, string rating, int watched) {
+    this->movie_name = movie_name;
+    this->rating = rating;
+    this->watched = watched;
 }
 
 Movie::~Movie(){}

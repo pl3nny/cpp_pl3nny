@@ -1,25 +1,20 @@
 #ifndef _MOVIES_H_
 #define _MOVIES_H_
 
-#include "Movie.h"
 #include <vector>
+#include "Movie.h"
 
-using namespace std;
+class Movies {
+    private:
+        vector<Movie> *movie_list;
 
-class Movies
-{
-private:
-    static int number_of_movies_in_collection;
-    vector<Movie> movie_collection;
-public:
-    Movies();
-    void add_movie(std::string movie_name, std::string movie_raiting, int watched);
-    void display_movies() const;
-    bool in_movie_collection(std::string movie_name) const;
-    void increment_watched(std::string movie_name);
-    static int get_number_of_movies_in_collection();
-    ~Movies();
+    public:
+        bool increment_watched(string name);
+        bool add_movie(string movie_name, string rating, int watched);
+        void display() const;
+        Movies();
+        Movies(const Movies &source);
+        Movies(Movies &&source) noexcept;
+        ~Movies();
 };
-
-
 #endif

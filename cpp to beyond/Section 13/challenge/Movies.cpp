@@ -1,72 +1,78 @@
 #include "Movies.h"
 
-int Movies::number_of_movies_in_collection{0};
+bool Movies::increment_watched(string movie_name) {
 
-Movies::Movies() {}
-
-void Movies::add_movie(string movie_name, string movie_raiting, int watched)
-{
-
-    if (!in_movie_collection(movie_name))
-    {
-        Movie temp (movie_name, movie_raiting, watched);
-        movie_collection.push_back(temp);
-        
-        number_of_movies_in_collection++;
-        cout << movie_name << " added" << endl;
-    }
-}
-
-void Movies::display_movies() const
-{
-    cout << "\n===============================" << endl;
-
-    if (number_of_movies_in_collection == 0)
-    {
-        cout << "no movies in collection...\n"
-                  << endl;
-    }
-    else
-    {
-        cout << "MY MOVIES" << endl;
-        for (const Movie &movie: movie_collection)
-        {
-            cout << movie.get_movie_details() << endl;
+    if(movie_list->size() > 0){
+        for(auto &movie : *movie_list){
+            if(movie.get_movie_name() == movie_name){
+                movie.increment_watched();
+                return true;
+            }
         }
     }
 
-    cout << "===============================\n" << endl;
-}
-
-// logic check if movie is already in collection
-bool Movies::in_movie_collection(string movie_name) const
-{
-    for (const Movie &movie: movie_collection)
-    {
-        if (movie_name == movie.get_movie_name())
-        {
-            cout << movie_name << " already in your collection..." << endl;
-            return true;
-        }
-    }
-
+    cout << "Movie not in library..";
     return false;
 }
 
-void Movies::increment_watched(string movie_name)
-{
-    for (Movie &movie: movie_collection)
-    {
-        if (movie_name == movie.get_movie_name())
-        {
-            movie.increment_watched();
+bool Movies::add_movie(string movie_name, string rating, int watched) {
+
+    if(movie_list->size() > 0) {
+        for(const auto &movie : *movie_list){
+            if(movie.get_movie_name() == movie_name){
+                return false;
+            }
         }
+    }
+
+    movie_list->push_back(Movie(movie_name, rating, watched));
+
+    return true;
+}
+
+void Movies::display() const{
+    if(movie_list->size() == 0){
+        cout << "Sorry, no movies to display\n" << endl;
+    } else {
+        cout << "\n===================================================" << endl;
+
+        for(const auto &movie : *movie_list) {
+            movie.display();
+        }
+
+        cout << "\n===================================================" << endl;
     }
 }
 
-int Movies::get_number_of_movies_in_collection()
-{
-    return number_of_movies_in_collection;
+Movies::Movies(){
+    movie_list = new vector<Movie>;
+
+    cout << "\nconstructor called\n" << endl;
 }
 
-Movies::~Movies() {}
+Movies::Movies(const Movies &source){
+    movie_list = new vector<Movie>;
+    *movie_list = *source.movie_list;
+
+    cout << "\ncopy constructor called\n" << endl;
+}
+
+Movies::Movies(Movies &&source) noexcept{
+    movie_list = source.movie_list;
+    source.movie_list = nullptr;
+
+    cout << "Move constructor - moving resource" << endl;
+}
+
+Movies::~Movies(){
+
+    cout << "\ndeconstructor called\n" << endl;
+
+    if(movie_list != nullptr){
+        cout << "destroying... movie_list" << endl;
+    } else {
+        cout << "destroying nullptrs" << endl;
+    }
+
+    delete movie_list;
+}

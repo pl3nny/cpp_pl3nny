@@ -2,22 +2,24 @@
 #define _MYSTRING_H_
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 using namespace std;
 
-class Mystring
-{
-private:
-    char *str; // cstyle string
-public:
-    Mystring();
-    Mystring(const char *s);
-    Mystring(const Mystring &source);
-    ~Mystring();
+class Mystring {
 
-    void display() const;
-    int get_length() const;
-    const char *get_str() const;
+    private:
+        char *str;
+
+    public:
+        Mystring();                         // No-args constructor
+        Mystring(const char *s);            // Overloaded constructor
+        Mystring(const Mystring &source);   // Copy constructor
+        ~Mystring();                        // Destructor
+
+        void display() const;
+        int get_length() const;             // getters
+        const char *get_str() const;
 };
+
 #endif

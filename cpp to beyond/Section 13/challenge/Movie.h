@@ -4,30 +4,25 @@
 #include <iostream>
 #include <string>
 
-class Movie
-{
-private:
-    std::string movie_name;
-    std::string movie_rating;
-    int watched;
+using namespace std;
 
-public:
-    Movie();                                                              // constructor
-    Movie(std::string movie_name, std::string movie_rating, int watched); // overloaded constructor
-
-    //setters and getters
-    void set_movie_name(std::string movie_name);
-    std::string get_movie_name() const;
-
-    void set_movie_rating(std::string movie_rating);
-    std::string get_movie_rating() const;
-
-    // watched counts how many times user has seen the movie
-    void increment_watched();
-    int get_watched_count() const;
-
-    std::string get_movie_details() const;
-    ~Movie();
+class Movie {
+    private:
+        string movie_name;
+        string rating;
+        int watched {0};
+    public:
+        void set_movie_name(string movie_name);
+        string get_movie_name() const;
+        void set_rating (string rating);
+        string get_rating() const;
+        void set_watched(int watched);
+        int get_watched() const;
+        void increment_watched();
+        void display() const;
+        Movie();
+        Movie(string movie_name, string rating, int watched);
+        ~Movie();
 };
 
 #endif
