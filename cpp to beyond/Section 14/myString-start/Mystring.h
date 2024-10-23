@@ -1,9 +1,6 @@
 #ifndef _MYSTRING_H_
 #define _MYSTRING_H_
 
-#include <iostream>
-#include <string>
-
 using namespace std;
 
 class Mystring {
