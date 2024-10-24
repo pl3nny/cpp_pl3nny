@@ -13,5 +13,5 @@ void Mystring::display() const {
 }
 
 int Mystring::get_length() const {
-    return std::strlen()
+    return strlen(str);
 }
