@@ -3273,3 +3273,110 @@ Type::Type(const Type &source) {
 
 //     return 0;
 // }
+
+
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// vector<int> twoSum(vector<int> &nums, int target);
+// void print(vector<int> &vec);
+
+// int main() {
+
+//     // vector<int> nums {2,7,11,15};
+//     // vector<int> nums {3,2,4};
+//     vector<int> nums {2,5,5,11};
+
+//     vector<int> result;
+
+//     int target {10};
+
+//     cout << "check indeces of vector.. " << endl << endl;
+
+//     print(nums);
+
+//     result = twoSum(nums, target);
+
+//     print(result);
+
+//     return 0;
+// }
+
+// vector<int> twoSum(vector<int> &nums, int target){
+    
+//     vector<int> result {};
+//     int current {0};
+//     int next {1};
+
+//     if(nums.size() == 2){
+//         if(nums.at(0) + nums.at(1) == target){
+//             result.push_back(0);
+//             result.push_back(1);
+//         }
+//     } else {
+//         while(current < nums.size() - 1){
+
+//             if(next > nums.size() - 1){
+//                 current++;
+//                 next = current + 1;
+//             } else {
+//                 if(nums.at(current) + nums.at(next) == target){
+//                     result.push_back(current);
+//                     result.push_back(next);
+//                     current++;
+//                     next++;
+//                 } else {
+//                     next++;
+//                 }
+//             }
+//         }
+//     }
+
+//     return result;
+// }
+
+// void print(vector<int> &vec){
+//     for(auto index : vec){
+//         cout << index << " ";
+//     }
+//     cout << endl;
+// }
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool isPalindrome(int x);
+
+int main() {
+
+    int x = -121;
+
+    if(isPalindrome(x)){
+        cout << x << " is palindrome" << endl;
+    } else {
+        cout << x << " is NOT palindrome" << endl;
+    }
+
+    return 0;
+}
+
+bool isPalindrome(int x){
+    string x_str = to_string(x);
+    int count {0};
+    int last_indx = x_str.size() - 1;
+
+    for(size_t i = 0; i < (x_str.size()) / 2; i++){
+        if(x_str.at(i) == x_str.at(last_indx - i)){
+            count++;
+        }
+    }
+
+    if(count == x_str.size() / 2)
+        return true;
+
+    return false;
+}
