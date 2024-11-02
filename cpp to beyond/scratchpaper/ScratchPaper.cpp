@@ -3344,39 +3344,97 @@ Type::Type(const Type &source) {
 //     cout << endl;
 // }
 
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// bool isPalindrome(int x);
+
+// int main() {
+
+//     int x = -121;
+
+//     if(isPalindrome(x)){
+//         cout << x << " is palindrome" << endl;
+//     } else {
+//         cout << x << " is NOT palindrome" << endl;
+//     }
+
+//     return 0;
+// }
+
+// bool isPalindrome(int x){
+//     string x_str = to_string(x);
+//     int count {0};
+//     int last_indx = x_str.size() - 1;
+
+//     for(size_t i = 0; i < (x_str.size()) / 2; i++){
+//         if(x_str.at(i) == x_str.at(last_indx - i)){
+//             count++;
+//         }
+//     }
+
+//     if(count == x_str.size() / 2)
+//         return true;
+
+//     return false;
+// }
+
+
+/*
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+Given a roman numeral, convert it to an integer.
+
+ */
+
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-bool isPalindrome(int x);
+int romanToInt(string s);
 
 int main() {
+    char selection {};
+    int roman_sum {};
+    string user_input{};
 
-    int x = -121;
 
-    if(isPalindrome(x)){
-        cout << x << " is palindrome" << endl;
-    } else {
-        cout << x << " is NOT palindrome" << endl;
-    }
 
     return 0;
 }
+int romanToInt(string s){
+    int result {0};
+    int current {};
+    int next{1};
 
-bool isPalindrome(int x){
-    string x_str = to_string(x);
-    int count {0};
-    int last_indx = x_str.size() - 1;
+    vector<string> roman_ints {};
 
-    for(size_t i = 0; i < (x_str.size()) / 2; i++){
-        if(x_str.at(i) == x_str.at(last_indx - i)){
-            count++;
+    for(size_t i = 0; i < s.length(); i++){
+        if(s.length() == 1){
+            roman_ints.push_back((to_string(s.at(0))));
         }
     }
 
-    if(count == x_str.size() / 2)
-        return true;
 
-    return false;
+
+    return result;
 }

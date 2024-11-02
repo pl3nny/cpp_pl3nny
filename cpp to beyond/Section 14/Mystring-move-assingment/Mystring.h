@@ -14,7 +14,7 @@ class Mystring {
         Mystring &operator=(const Mystring &rhs);   // Copy assignment
 
         void display() const;
-        void get_length() const;
+        int get_length() const;
         const char *get_str() const;
 };
 

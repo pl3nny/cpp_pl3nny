@@ -1,4 +1,5 @@
 #include "Mystring.h"
+#include <cstring>
 
 Mystring::Mystring(){}
 
