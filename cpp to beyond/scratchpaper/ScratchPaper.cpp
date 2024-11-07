@@ -3404,36 +3404,160 @@ Given a roman numeral, convert it to an integer.
 
  */
 
-#include <iostream>
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// int romanToInt(string s);
+
+// int main() {
+
+//     cout << "Author: Alex" << endl;
+//     cout << endl;
+
+//     string input {};
+
+//     cout << "Enter roman numberals to convert to int: ";
+//     input = "LVIII";
+    
+//     cout << "result: " << romanToInt(input) << endl << endl;
+
+//     return 0;
+// }
+
+// int romanToInt(string s) {
+
+//     int result {0};
+
+//     for(size_t i = 0; i < s.length(); i++) {
+//         switch (s.at(i))
+//         {
+//         case 'I':
+//             if((i + 1)< s.length() && s.at(i + 1) == 'V'){
+//                 result += 4;
+//                 i++;
+//             } else if ((i + 1)< s.length() && s.at(i + 1) == 'X') {
+//                 result += 9;
+//                 i++;
+//             } else {
+//                 result += 1;
+//             }
+//             break;
+//         case 'V':
+//             result += 5;
+//             break;
+
+//         case 'X':
+//             if((i + 1)< s.length() && s.at(i + 1) == 'L') {
+//                 result += 40;
+//                 i++;
+//             } else if ((i + 1)< s.length() && s.at(i + 1) == 'C') {
+//                 result += 90;
+//                 i++;
+//             } else {
+//                 result += 10;
+//             }
+//             break;
+        
+//         case 'L':
+//             result += 50;
+//             break;
+        
+//         case 'C':
+//             if((i + 1)< s.length() && s.at(i + 1) == 'D') {
+//                 result += 400;
+//                 i++;
+//             } else if ((i + 1)< s.length() && s.at(i + 1) == 'M') {
+//                 result += 900;
+//                 i++;
+//             } else {
+//                 result += 100;
+//             }
+//             break;
+
+//         case 'D':
+//             result += 500;
+//             break;
+
+//         case 'M':
+//             result += 1000;
+//             break;
+        
+//         default:
+//             break;
+//         }
+//     }
+
+//     return result;
+// }
+
+/*
+The Longest Prefix
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+ 
+
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+ 
+
+Constraints:
+
+1 <= strs.length <= 200
+0 <= strs[i].length <= 200
+strs[i] consists of only lowercase English letters.
+*/
+
+#include <iostream> 
 #include <string>
 #include <vector>
 
 using namespace std;
 
-int romanToInt(string s);
+string longestCommonPrefix(vector<string> &strs);
 
 int main() {
-    char selection {};
-    int roman_sum {};
-    string user_input{};
 
-
+     vector<string> input {"flower","flow","flight"};
 
     return 0;
 }
-int romanToInt(string s){
-    int result {0};
-    int current {};
-    int next{1};
 
-    vector<string> roman_ints {};
+string longestCommonPrefix(vector<string> &strs) {
+    string result {};
+    int count {0};
+    int strs_index {0};
+    char next {};
 
-    for(size_t i = 0; i < s.length(); i++){
-        if(s.length() == 1){
-            roman_ints.push_back((to_string(s.at(0))));
+    int min_length = strs.at(0).length();
+
+    for(size_t i = 1; i < strs.size(); i++){
+        if(min_length > strs.at(i).size()) {
+            min_length = strs.at(i).size();
         }
     }
 
+    next = strs.at(0).at(1);
+
+    while(count < min_length){
+        for(size_t i = 0; i < strs.size(); i++){
+            while(i < min_length && strs.at(i).at(strs_index) == next){
+                
+            }
+        }
+    }
 
 
     return result;
