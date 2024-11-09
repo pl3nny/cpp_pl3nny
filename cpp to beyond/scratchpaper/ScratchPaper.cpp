@@ -3532,6 +3532,8 @@ int main() {
 
      vector<string> input {"flower","flow","flight"};
 
+     cout << "test" << endl;
+
     return 0;
 }
 
@@ -3550,14 +3552,6 @@ string longestCommonPrefix(vector<string> &strs) {
     }
 
     next = strs.at(0).at(1);
-
-    while(count < min_length){
-        for(size_t i = 0; i < strs.size(); i++){
-            while(i < min_length && strs.at(i).at(strs_index) == next){
-                
-            }
-        }
-    }
 
 
     return result;
