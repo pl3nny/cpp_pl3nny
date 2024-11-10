@@ -3531,28 +3531,67 @@ string longestCommonPrefix(vector<string> &strs);
 int main() {
 
      vector<string> input {"flower","flow","flight"};
+     vector<string> test_case_4 {"flower","flower","flower","flower"};
 
-     cout << "test" << endl;
+     //cout << longestCommonPrefix(input) << endl;
+
+     string test_str = "";
+     cout << "test_str length: ";
+     cout << test_str.length() << endl;
+
+     vector<string> test_str_vec {test_case_4};
+     cout << "test_str length: ";
+     cout << test_str_vec.size() << endl;
+
+
+     cout << longestCommonPrefix(test_str_vec) << endl;
 
     return 0;
 }
 
 string longestCommonPrefix(vector<string> &strs) {
+
     string result {};
-    int count {0};
-    int strs_index {0};
     char next {};
+    int strs_count {0};
+    int char_count {0};
 
-    int min_length = strs.at(0).length();
+    if(strs.size() == 0){
+        return "";
+    } else if(strs.at(0).empty()){
+        return "";
+    } else if(strs.size() == 1){
+        return result += strs.at(0).at(0);
+    } else if(strs.at(1).empty()){
+        return "";
+    }
 
+    int list_size = strs.size();
+    int smallest_str = strs.at(0).size();
+
+
+    // get smallest str size
     for(size_t i = 1; i < strs.size(); i++){
-        if(min_length > strs.at(i).size()) {
-            min_length = strs.at(i).size();
+        if(smallest_str > strs.at(i).size()){
+            smallest_str = strs.at(i).size();
         }
     }
 
-    next = strs.at(0).at(1);
+    next = strs.at(1).at(0);
 
+    while(strs.at(strs_count).at(char_count) == next && char_count < smallest_str){
+        strs_count++;
+        if(strs_count == list_size){
+            result += strs.at(strs_count - 1).at(char_count);
+            strs_count = 0;
+            if(result.length() == smallest_str){
+                return result;
+            } else {
+                char_count++;
+                next = strs.at(strs_count).at(char_count);
+            }
+        }
+    }
 
     return result;
 }
