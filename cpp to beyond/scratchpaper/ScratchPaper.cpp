@@ -3642,7 +3642,10 @@ s consists of parentheses only '()[]{}'.
 */
 
 #include <iostream>
+#include <stack>
+#include <queue>
 #include <string>
+#include <string_view>
 
 using namespace std;
 
@@ -3661,6 +3664,7 @@ int main() {
     string test_9 {"({{{{}}}))"}; // false
     string test_10 {"(){}}{"}; // false
     string test_11 {"[([]])"}; // false
+    string test_12 {"}()"}; // false
 
     cout << "Test 1: " << test_1 << endl;
     cout << boolalpha << isValid(test_1) << endl;
@@ -3684,10 +3688,57 @@ int main() {
     cout << boolalpha << isValid(test_10) << endl;
     cout << "Test 11: " << test_11 << endl;
     cout << boolalpha << isValid(test_11) << endl;
+    cout << "Test 12: " << test_12 << endl;
+    cout << boolalpha << isValid(test_12) << endl;
+
+
+
+    // FOR TESTING
+
 
     return 0;
 }
 
 bool isValid(string s){
+
+    int str_length = s.length();
+    char next {};
+
+    // check for prerequisites before continuing
+    if(str_length < 1){
+        return false;
+    } else if(s.starts_with() || s.starts_with(']') || s.starts_with('}')){
+        return false;
+    } else if(s.ends_with('(') || s.ends_with('[') || s.ends_with('{')){
+        return false;
+    }
+
+    // used to check the upcoming char in string
+    size_t n = 1;
+    next = s.at(n); // n + 1
+
+    while(n < str_length){
+        // interate through chars in string
+        for(auto &c : s){
+            switch(c){
+                case '(': case ')':
+                    break;
+                case '[': case ']':
+                    break;
+                case '{': case '}':
+                    break;
+            }
+
+            // ensures we don't go out of bound for next
+            if(n+1 == str_length){
+                break;
+            } else {
+                n++;
+                next = s.at(n);
+            }
+        }
+        return true;
+    }
+
     return false;
 }
