@@ -3659,6 +3659,8 @@ int main() {
     string test_7 {"(["}; // false
     string test_8 {"([)]"}; // false;
     string test_9 {"({{{{}}}))"}; // false
+    string test_10 {"(){}}{"}; // false
+    string test_11 {"[([]])"}; // false
 
     cout << "Test 1: " << test_1 << endl;
     cout << boolalpha << isValid(test_1) << endl;
@@ -3678,81 +3680,14 @@ int main() {
     cout << boolalpha << isValid(test_8) << endl;
     cout << "Test 9: " << test_9 << endl;
     cout << boolalpha << isValid(test_9) << endl;
-
+    cout << "Test 10: " << test_10 << endl;
+    cout << boolalpha << isValid(test_10) << endl;
+    cout << "Test 11: " << test_11 << endl;
+    cout << boolalpha << isValid(test_11) << endl;
 
     return 0;
 }
 
-bool isValid(string s) {
-
-    // bool par_flag {false};
-    // bool bracket_flag {false};
-    // bool curly_flag {false};
-    int count_par_left {0};
-    int count_par_right {0};
-    int count_bracket_left {0};
-    int count_bracket_right {0};
-    int count_curly_left {0};
-    int count_curly_right {0};
-    char next {};
-
-    // check if string length is even or return false
-    if(s.length() % 2 == 0 && s.length() > 1){
-        size_t i = 1;
-        next = s.at(i);
-        // check starting char to continue reading string or return false
-        if(s.at(0) == '(' || s.at(0) == '[' || s.at(0) == '{'){
-            // count special characters and save their locations
-            for(auto c : s){
-                // check for left par if next is corrent right
-                if(c == '(' && (next == ']' || next == '}')){
-                    return false;
-                } else if(c == '[' && (next == ')' || next == '}')){
-                    return false;
-                } else if(c == '{' && (next == ')' || next == ']')){
-                    return false;
-                } else {
-                    switch(c){
-                        case '(': case ')':
-                            // if(c == '('){par_flag = true;}
-                            // if(c == ')'){par_flag = false;}
-                            if(c == '('){count_par_left++;}
-                            if(c == ')'){count_par_right++;}
-                            break;
-                        case '[': case ']':
-                            // if(c == '['){bracket_flag = true;}
-                            // if(c == ']'){bracket_flag = false;}
-                            if(c == '['){count_bracket_left++;}
-                            if(c == ']'){count_bracket_right++;}
-                            break;
-                        case '{': case '}':
-                            // if(c == '{'){curly_flag = true;}
-                            // if(c == '}'){curly_flag = false;}
-                            if(c == '{'){count_curly_left++;}
-                            if(c == '}'){count_curly_right++;}
-                            break;
-                    }
-                    while(i < s.length()){
-                        i++;
-                        if(i == s.length()){
-                            break;
-                        } else {
-                            next = s.at(i);
-                            break;
-                        }
-                    }
-               }
-            }
-            // if(par_flag == false && bracket_flag == false && curly_flag == false){
-            //     return true;
-            // } else {
-            //     return false;
-            // }
-
-            if(count_par_left == count_par_right && count_bracket_left == count_bracket_right && count_curly_left == count_curly_right){
-                return true;
-            }
-        }
-    }
+bool isValid(string s){
     return false;
 }
