@@ -3520,78 +3520,239 @@ Constraints:
 strs[i] consists of only lowercase English letters.
 */
 
-#include <iostream> 
+// #include <iostream> 
+// #include <string>
+// #include <vector>
+
+// using namespace std;
+
+// string longestCommonPrefix(vector<string> &strs);
+
+// int main() {
+
+//      vector<string> input {"flower","flow","flight"};
+//      vector<string> test_case_4 {"flower","flower","flower","flower"};
+
+//      //cout << longestCommonPrefix(input) << endl;
+
+//      string test_str = "";
+//      cout << "test_str length: ";
+//      cout << test_str.length() << endl;
+
+//      vector<string> test_str_vec {test_case_4};
+//      cout << "test_str length: ";
+//      cout << test_str_vec.size() << endl;
+
+
+//      cout << longestCommonPrefix(test_str_vec) << endl;
+
+//     return 0;
+// }
+
+// string longestCommonPrefix(vector<string> &strs) {
+
+//     string result {};
+//     char next {};
+//     int strs_count {0};
+//     int char_count {0};
+
+//     if(strs.size() == 0){
+//         return "";
+//     } else if(strs.at(0).empty()){
+//         return "";
+//     } else if(strs.size() == 1){
+//         return result += strs.at(0).at(0);
+//     } else if(strs.at(1).empty()){
+//         return "";
+//     }
+
+//     int list_size = strs.size();
+//     int smallest_str = strs.at(0).size();
+
+
+//     // get smallest str size
+//     for(size_t i = 1; i < strs.size(); i++){
+//         if(smallest_str > strs.at(i).size()){
+//             smallest_str = strs.at(i).size();
+//         }
+//     }
+
+//     next = strs.at(1).at(0);
+
+//     while(strs.at(strs_count).at(char_count) == next && char_count < smallest_str){
+//         strs_count++;
+//         if(strs_count == list_size){
+//             result += strs.at(strs_count - 1).at(char_count);
+//             strs_count = 0;
+//             if(result.length() == smallest_str){
+//                 return result;
+//             } else {
+//                 char_count++;
+//                 next = strs.at(strs_count).at(char_count);
+//             }
+//         }
+//     }
+
+//     return result;
+// }
+// ***********************************************************************************************************
+// ***********************************************************************************************************
+
+/*
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the 
+input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+ 
+
+Example 1:
+
+Input: s = "()"
+
+Output: true
+
+Example 2:
+
+Input: s = "()[]{}"
+
+Output: true
+
+Example 3:
+
+Input: s = "(]"
+
+Output: false
+
+Example 4:
+
+Input: s = "([])"
+
+Output: true
+
+ 
+
+Constraints:
+
+1 <= s.length <= 104
+s consists of parentheses only '()[]{}'.
+*/
+
+#include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
-string longestCommonPrefix(vector<string> &strs);
+bool isValid(string s);
 
 int main() {
 
-     vector<string> input {"flower","flow","flight"};
-     vector<string> test_case_4 {"flower","flower","flower","flower"};
+    string test_1 {"()"}; // true
+    string test_2 {"()[]{}"}; // true
+    string test_3 {"(]"}; // false
+    string test_4 {"([])"}; // true
+    string test_5 {"{"}; // false
+    string test_6 {"([)"}; // false
+    string test_7 {"(["}; // false
+    string test_8 {"([)]"}; // false;
+    string test_9 {"({{{{}}}))"}; // false
 
-     //cout << longestCommonPrefix(input) << endl;
+    cout << "Test 1: " << test_1 << endl;
+    cout << boolalpha << isValid(test_1) << endl;
+    cout << "Test 2: " << test_2 << endl;
+    cout << boolalpha << isValid(test_2) << endl;
+    cout << "test 3: " << test_3 << endl;
+    cout << boolalpha << isValid(test_3) << endl;
+    cout << "Test 4: " << test_4 << endl;
+    cout << boolalpha << isValid(test_4) << endl;
+    cout << "Test 5: " << test_5 << endl;
+    cout << boolalpha << isValid(test_5) << endl;
+    cout << "Test 6: " << test_6 << endl;
+    cout << boolalpha << isValid(test_6) << endl;
+    cout << "Test 7: " << test_7 << endl;
+    cout << boolalpha << isValid(test_7) << endl;
+    cout << "Test 8: " << test_8 << endl;
+    cout << boolalpha << isValid(test_8) << endl;
+    cout << "Test 9: " << test_9 << endl;
+    cout << boolalpha << isValid(test_9) << endl;
 
-     string test_str = "";
-     cout << "test_str length: ";
-     cout << test_str.length() << endl;
-
-     vector<string> test_str_vec {test_case_4};
-     cout << "test_str length: ";
-     cout << test_str_vec.size() << endl;
-
-
-     cout << longestCommonPrefix(test_str_vec) << endl;
 
     return 0;
 }
 
-string longestCommonPrefix(vector<string> &strs) {
+bool isValid(string s) {
 
-    string result {};
+    // bool par_flag {false};
+    // bool bracket_flag {false};
+    // bool curly_flag {false};
+    int count_par_left {0};
+    int count_par_right {0};
+    int count_bracket_left {0};
+    int count_bracket_right {0};
+    int count_curly_left {0};
+    int count_curly_right {0};
     char next {};
-    int strs_count {0};
-    int char_count {0};
 
-    if(strs.size() == 0){
-        return "";
-    } else if(strs.at(0).empty()){
-        return "";
-    } else if(strs.size() == 1){
-        return result += strs.at(0).at(0);
-    } else if(strs.at(1).empty()){
-        return "";
-    }
+    // check if string length is even or return false
+    if(s.length() % 2 == 0 && s.length() > 1){
+        size_t i = 1;
+        next = s.at(i);
+        // check starting char to continue reading string or return false
+        if(s.at(0) == '(' || s.at(0) == '[' || s.at(0) == '{'){
+            // count special characters and save their locations
+            for(auto c : s){
+                // check for left par if next is corrent right
+                if(c == '(' && (next == ']' || next == '}')){
+                    return false;
+                } else if(c == '[' && (next == ')' || next == '}')){
+                    return false;
+                } else if(c == '{' && (next == ')' || next == ']')){
+                    return false;
+                } else {
+                    switch(c){
+                        case '(': case ')':
+                            // if(c == '('){par_flag = true;}
+                            // if(c == ')'){par_flag = false;}
+                            if(c == '('){count_par_left++;}
+                            if(c == ')'){count_par_right++;}
+                            break;
+                        case '[': case ']':
+                            // if(c == '['){bracket_flag = true;}
+                            // if(c == ']'){bracket_flag = false;}
+                            if(c == '['){count_bracket_left++;}
+                            if(c == ']'){count_bracket_right++;}
+                            break;
+                        case '{': case '}':
+                            // if(c == '{'){curly_flag = true;}
+                            // if(c == '}'){curly_flag = false;}
+                            if(c == '{'){count_curly_left++;}
+                            if(c == '}'){count_curly_right++;}
+                            break;
+                    }
+                    while(i < s.length()){
+                        i++;
+                        if(i == s.length()){
+                            break;
+                        } else {
+                            next = s.at(i);
+                            break;
+                        }
+                    }
+               }
+            }
+            // if(par_flag == false && bracket_flag == false && curly_flag == false){
+            //     return true;
+            // } else {
+            //     return false;
+            // }
 
-    int list_size = strs.size();
-    int smallest_str = strs.at(0).size();
-
-
-    // get smallest str size
-    for(size_t i = 1; i < strs.size(); i++){
-        if(smallest_str > strs.at(i).size()){
-            smallest_str = strs.at(i).size();
-        }
-    }
-
-    next = strs.at(1).at(0);
-
-    while(strs.at(strs_count).at(char_count) == next && char_count < smallest_str){
-        strs_count++;
-        if(strs_count == list_size){
-            result += strs.at(strs_count - 1).at(char_count);
-            strs_count = 0;
-            if(result.length() == smallest_str){
-                return result;
-            } else {
-                char_count++;
-                next = strs.at(strs_count).at(char_count);
+            if(count_par_left == count_par_right && count_bracket_left == count_bracket_right && count_curly_left == count_curly_right){
+                return true;
             }
         }
     }
-
-    return result;
+    return false;
 }
