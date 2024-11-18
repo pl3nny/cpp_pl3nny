@@ -3642,103 +3642,39 @@ s consists of parentheses only '()[]{}'.
 */
 
 #include <iostream>
-#include <stack>
-#include <queue>
 #include <string>
-#include <string_view>
+#include <stack>
 
 using namespace std;
 
-bool isValid(string s);
+bool is_valid(string s);
 
-int main() {
+int main(){
 
-    string test_1 {"()"}; // true
-    string test_2 {"()[]{}"}; // true
-    string test_3 {"(]"}; // false
-    string test_4 {"([])"}; // true
-    string test_5 {"{"}; // false
-    string test_6 {"([)"}; // false
-    string test_7 {"(["}; // false
-    string test_8 {"([)]"}; // false;
-    string test_9 {"({{{{}}}))"}; // false
-    string test_10 {"(){}}{"}; // false
-    string test_11 {"[([]])"}; // false
-    string test_12 {"}()"}; // false
-
-    cout << "Test 1: " << test_1 << endl;
-    cout << boolalpha << isValid(test_1) << endl;
-    cout << "Test 2: " << test_2 << endl;
-    cout << boolalpha << isValid(test_2) << endl;
-    cout << "test 3: " << test_3 << endl;
-    cout << boolalpha << isValid(test_3) << endl;
-    cout << "Test 4: " << test_4 << endl;
-    cout << boolalpha << isValid(test_4) << endl;
-    cout << "Test 5: " << test_5 << endl;
-    cout << boolalpha << isValid(test_5) << endl;
-    cout << "Test 6: " << test_6 << endl;
-    cout << boolalpha << isValid(test_6) << endl;
-    cout << "Test 7: " << test_7 << endl;
-    cout << boolalpha << isValid(test_7) << endl;
-    cout << "Test 8: " << test_8 << endl;
-    cout << boolalpha << isValid(test_8) << endl;
-    cout << "Test 9: " << test_9 << endl;
-    cout << boolalpha << isValid(test_9) << endl;
-    cout << "Test 10: " << test_10 << endl;
-    cout << boolalpha << isValid(test_10) << endl;
-    cout << "Test 11: " << test_11 << endl;
-    cout << boolalpha << isValid(test_11) << endl;
-    cout << "Test 12: " << test_12 << endl;
-    cout << boolalpha << isValid(test_12) << endl;
-
-
-
-    // FOR TESTING
 
 
     return 0;
 }
 
-bool isValid(string s){
+bool is_valid(string s){
 
-    int str_length = s.length();
-    char next {};
+    stack<char> my_stack;
 
-    // check for prerequisites before continuing
-    if(str_length < 1){
-        return false;
-    } else if(s.starts_with() || s.starts_with(']') || s.starts_with('}')){
-        return false;
-    } else if(s.ends_with('(') || s.ends_with('[') || s.ends_with('{')){
-        return false;
-    }
-
-    // used to check the upcoming char in string
-    size_t n = 1;
-    next = s.at(n); // n + 1
-
-    while(n < str_length){
-        // interate through chars in string
-        for(auto &c : s){
-            switch(c){
-                case '(': case ')':
-                    break;
-                case '[': case ']':
-                    break;
-                case '{': case '}':
-                    break;
+    for(auto &c : s){
+        if(c == '(' || c == '{' || c == '['){
+            my_stack.push(c);
+        } else {
+            if(my_stack.empty() ||
+                (c == ')' && my_stack.top() != '(') ||
+                (c == '}' && my_stack.top() != '{') ||
+                (c == ']' && my_stack.top() != '[')){
+                
+                return false;
             }
-
-            // ensures we don't go out of bound for next
-            if(n+1 == str_length){
-                break;
-            } else {
-                n++;
-                next = s.at(n);
-            }
+            my_stack.pop();
         }
-        return true;
     }
-
-    return false;
+    return my_stack.empty();
 }
+
+
