@@ -3800,24 +3800,22 @@ vector<int> decrypt(vector<int> &code, int k){
             } else {
                 num_sum = 0;
                 count = 0;
+                int n = i;
 
-                for(size_t j = (i + count); j >= 0; j--){
-                    if(count < k){
-                        break;
-                    } else{
-                        num_sum += code.at(j);
-                        count--;
-                    }
+               if(count > k){
+                while(n != -1){
+                    num_sum += code.at(n);
+                    count--;
+                    n--;
                 }
+               }
 
                 if(count > k){
-                    for(int n = code.size() - 1; n >= 0; n--){
+                   n = code.size() - 1;
+                    while(n != 1){
                         num_sum += code.at(n);
-                        if(count < k){
-                            break;
-                        } else {
-                            count--;
-                        }
+                        n--;
+                        count--;
                     }
                 }
                 vec.at(i) = num_sum;
