@@ -3713,114 +3713,164 @@ Explanation: The decrypted code is [3+9, 2+3, 4+2, 9+4]. Notice that the numbers
 around again. If k is negative, the sum is of the previous numbers.
 */
 
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// vector<int> decrypt(vector<int> &code, int k);
+
+// int main(){
+//     //vector<int> vec {5,7,1,4};
+//     vector<int> vec {2,4,9,3};    
+
+//     for(auto &num : decrypt(vec, -2)){
+//         cout << num << " ";
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+// vector<int> decrypt(vector<int> &code, int k){
+
+//     int num_sum {0};
+//     int count {0};
+//     int index {1};
+//     vector<int> vec(code.size(), 0);
+
+//     if(k == 0){
+//         return vec;
+//     } else if(k > 0){
+//         for(size_t i = 0; i < code.size(); i++){
+//             if(i == 0){
+//                 for(size_t j = 1; j < code.size(); j++){
+                    
+//                     num_sum += code.at(j);
+                    
+//                     if(count == k){
+//                         break;
+//                     } else {
+//                         count++;
+//                     }
+//                 }
+//                 vec.at(i) = num_sum;
+
+//             } else if( i > 0) {
+//                 count = 0;
+//                 num_sum = 0;
+
+//                 for(size_t j = i; j < code.size(); j++){
+//                     num_sum += code.at(j);
+
+//                     if(count == k + 1){
+//                         break;
+//                     } else {
+//                         count++;
+//                     }
+//                 }
+
+//                 for(size_t n = 0; n < i; n++){
+//                     if(count == k + 1){
+//                         break;
+//                     } else {
+//                         num_sum += code.at(n);
+//                         count++;
+//                     }
+//                 }
+
+//                 vec.at(i) = (num_sum - code.at(i));
+//             }
+//         }
+//         return vec;
+//     } else{
+//         count = 0;
+//         num_sum = 0;
+//         for(size_t i = 0; i < code.size(); i++){
+//             cout << i << ": [" << code.at(i) << "]" << endl; 
+//             if(i == 0){
+//                 num_sum = 0;
+//                 count = 0;
+
+//                 while(count > k){
+//                     num_sum += code.at((code.size() - 1) + count);
+//                     count --;
+//                 }
+//                 vec.at(i) = num_sum;
+//             } else {
+//                 num_sum = 0;
+//                 count = 0;
+//                 int n = i;
+
+//                if(count > k){
+//                 while(n != -1){
+//                     num_sum += code.at(n);
+//                     count--;
+//                     n--;
+//                 }
+//                }
+
+//                 if(count > k){
+//                    n = code.size() - 1;
+//                     while(n != 1){
+//                         num_sum += code.at(n);
+//                         n--;
+//                         count--;
+//                     }
+//                 }
+//                 vec.at(i) = num_sum;
+//             }
+//         }
+//         return vec;
+//     }
+// }
+
+
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-vector<int> decrypt(vector<int> &code, int k);
+int removeDuplicates(vector<int> &nums);
 
 int main(){
-    //vector<int> vec {5,7,1,4};
-    vector<int> vec {2,4,9,3};    
 
-    for(auto &num : decrypt(vec, -2)){
-        cout << num << " ";
-    }
-    cout << endl;
+    vector<int> nums {1,1,2};
+
+    removeDuplicates(nums);
+
+
 
     return 0;
 }
 
-vector<int> decrypt(vector<int> &code, int k){
+int removeDuplicates(vector<int> &nums){
 
-    int num_sum {0};
-    int count {0};
-    int index {1};
-    vector<int> vec(code.size(), 0);
+    vector<int> non_dupe {};
 
-    if(k == 0){
-        return vec;
-    } else if(k > 0){
-        for(size_t i = 0; i < code.size(); i++){
-            if(i == 0){
-                for(size_t j = 1; j < code.size(); j++){
-                    
-                    num_sum += code.at(j);
-                    
-                    if(count == k){
+    if(nums.size() == 1){
+        return nums.size();
+    } else {
+            for(size_t i = 0; i < nums.size(); i++){
+                while(i+1 <= nums.size() - 1){
+                    if(nums.at(i) == nums.at(i + 1)){
                         break;
                     } else {
-                        count++;
-                    }
-                }
-                vec.at(i) = num_sum;
-
-            } else if( i > 0) {
-                count = 0;
-                num_sum = 0;
-
-                for(size_t j = i; j < code.size(); j++){
-                    num_sum += code.at(j);
-
-                    if(count == k + 1){
+                        non_dupe.push_back(nums.at(i));
                         break;
-                    } else {
-                        count++;
                     }
                 }
-
-                for(size_t n = 0; n < i; n++){
-                    if(count == k + 1){
-                        break;
-                    } else {
-                        num_sum += code.at(n);
-                        count++;
-                    }
-                }
-
-                vec.at(i) = (num_sum - code.at(i));
+            if((i == nums.size() - 1) && nums.at(nums.size() - 1) != nums.at(i - 1)){
+                non_dupe.push_back(nums.at(i));
             }
         }
-        return vec;
-    } else{
-        count = 0;
-        num_sum = 0;
-        for(size_t i = 0; i < code.size(); i++){
-            cout << i << ": [" << code.at(i) << "]" << endl; 
-            if(i == 0){
-                num_sum = 0;
-                count = 0;
-
-                while(count > k){
-                    num_sum += code.at((code.size() - 1) + count);
-                    count --;
-                }
-                vec.at(i) = num_sum;
-            } else {
-                num_sum = 0;
-                count = 0;
-                int n = i;
-
-               if(count > k){
-                while(n != -1){
-                    num_sum += code.at(n);
-                    count--;
-                    n--;
-                }
-               }
-
-                if(count > k){
-                   n = code.size() - 1;
-                    while(n != 1){
-                        num_sum += code.at(n);
-                        n--;
-                        count--;
-                    }
-                }
-                vec.at(i) = num_sum;
-            }
-        }
-        return vec;
     }
+
+    cout << non_dupe.size() << ", [";
+    for(auto &n : non_dupe){
+        cout << n << ", ";
+    }
+    cout <<"]" << endl;
+
+    return non_dupe.size();
 }
