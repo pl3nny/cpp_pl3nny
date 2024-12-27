@@ -10,51 +10,57 @@ int main(){
     Mystring a {"Hello"};       // overloaded constructor
     Mystring b;                 // no-args constructor
     b = a;                      // copy assignemnt
+
+    std::cout << a.get_str() << std::endl;
+    std::cout << b.get_str() << std::endl;
                                 //b.operator=(a)
     b = "This is a test";       // b.operator=("This is a test")
 
-    a.display();
-    b.display();
+    std::cout << a.get_str() << std::endl;
+    std::cout << b.get_str() << std::endl;
 
-    // more examples to go through
-    Mystring empty;             // no-args constructor
-    Mystring larry("Larry");    // overloaded constructor
-    Mystring stooge {larry};    // copy constructor
-    Mystring stooges;           // no-args constructor
+    // a.display();
+    // b.display(); 
 
-    empty = stooge;             // copy assignment operator
+    // // more examples to go through
+    // Mystring empty;             // no-args constructor
+    // Mystring larry("Larry");    // overloaded constructor
+    // Mystring stooge {larry};    // copy constructor
+    // Mystring stooges;           // no-args constructor
 
-    empty.display();            // Larry : 5
-    larry.display();            // Larry : 5
-    stooge.display();           // Larry : 5
-    empty.display();            // Larry : 5
+    // empty = stooge;             // copy assignment operator
 
-    stooges = "Larry, Moe, and Curly";
-    stooges.display();          // Larry, Moe, and Curly : 21
+    // empty.display();            // Larry : 5
+    // larry.display();            // Larry : 5
+    // stooge.display();           // Larry : 5
+    // empty.display();            // Larry : 5
 
-    vector<Mystring> stooges_vec;    
-    stooges_vec.push_back("Larry");
-    stooges_vec.push_back("Moe");
-    stooges_vec.push_back("Curly");
+    // stooges = "Larry, Moe, and Curly";
+    // stooges.display();          // Larry, Moe, and Curly : 21
 
-    cout << "==== Loop 1 ============================" << endl;
-    for(const Mystring &s : stooges_vec){
-        s.display();            // Larry
-                                // Moe
-                                // Curly
-    }
+    // vector<Mystring> stooges_vec;    
+    // stooges_vec.push_back("Larry");
+    // stooges_vec.push_back("Moe");
+    // stooges_vec.push_back("Curly");
 
-    cout << "=== Loop 2 ============================" << endl;
-    for(Mystring &s : stooges_vec){
-        s = "Changed";          // copy assignment
-    }
+    // cout << "==== Loop 1 ============================" << endl;
+    // for(const Mystring &s : stooges_vec){
+    //     s.display();            // Larry
+    //                             // Moe
+    //                             // Curly
+    // }
 
-    cout << "=== Loop 3 ============================" << endl;
-    for(const Mystring &s : stooges_vec){
-        s.display();            // Changed
-                                // Changed
-                                // Changed
-    }
+    // cout << "=== Loop 2 ============================" << endl;
+    // for(Mystring &s : stooges_vec){
+    //     s = "Changed";          // copy assignment
+    // }
+
+    // cout << "=== Loop 3 ============================" << endl;
+    // for(const Mystring &s : stooges_vec){
+    //     s.display();            // Changed
+    //                             // Changed
+    //                             // Changed
+    // }
 
     return 0;
 }

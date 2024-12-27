@@ -1,4 +1,4 @@
-#include "Mystring.H"
+#include "Mystring.h"
 
 Mystring::Mystring()
     : str{nullptr}{
@@ -27,16 +27,15 @@ Mystring::~Mystring(){
 }
 
 Mystring &Mystring::operator=(const Mystring &rhs) {
-    cout << "Copy assignemnt" << endl;
+    std::cout << "Copy assignment" << std::endl;
 
     if(this == &rhs){
         return *this;
     }
 
-    delete [] str;
-    str = new char[strlen(rhs.str) + 1];
-    str = strcpy(str,rhs.str);
-
+    delete [] this->str;
+    str = new char[std::strlen(rhs.str) + 1];
+    std::strcpy(this->str, rhs.str);
     return *this;
 }
 
