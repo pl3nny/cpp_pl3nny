@@ -65,7 +65,6 @@ Mystring &Mystring::operator=( Mystring &&rhs) {
     return *this;
 }
 
-
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;
@@ -81,12 +80,12 @@ std::ostream &operator<<(std::ostream &os, const Mystring &rhs) {
     return os;
 }
 
-// overloaded extraction operator
+// overlaoded extraction operator
 std::istream &operator>>(std::istream &in, Mystring &rhs) {
     char *buff = new char[1000];
     in >> buff;
-    rhs = Mystring{buff};
+    rhs = Mystring {buff};
+
     delete [] buff;
     return in;
 }
-
