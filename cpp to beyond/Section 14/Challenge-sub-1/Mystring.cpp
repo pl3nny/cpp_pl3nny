@@ -65,7 +65,6 @@ Mystring &Mystring::operator=( Mystring &&rhs) {
     return *this;
 }
 
-
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;
@@ -134,8 +133,40 @@ bool Mystring::operator>(const Mystring &rhs) const {
     return this->str > rhs.str;
 }
 
-// DOES NOT WORK CORRECTLY -- GO BACK AND FIX
 // overloaded += operator
 Mystring Mystring::operator+=(const Mystring &rhs) {
-    return operator+(rhs.str);
+    return operator=(operator+(rhs.str));
+}
+
+// overloaded * operator
+Mystring Mystring::operator*(const int &rhs) const {
+    char *buff = new char [(strlen(this->str) + rhs) + 1];
+    strcpy(buff, this->str);
+    for(size_t i = 1; i < rhs; i++) {
+        strcat(buff, this->str);
+    }
+    Mystring temp {buff};
+    delete [] buff;
+    return temp;
+}
+
+Mystring Mystring::operator*=(const int &rhs) {
+    return operator=(operator*(rhs));
+}
+
+Mystring Mystring::operator++() const {
+    char *buff = new char[std::strlen(this->str) + 1];
+    std::strcpy(buff, this->str);
+    for(size_t i = 0; i < std::strlen(this->str); i++) {
+        buff[i] = std::toupper(buff[i]);
+    }
+    std::strcpy(this->str, buff);
+    delete [] buff;
+    return *this;
+}
+
+Mystring Mystring::operator++(int) {
+    Mystring temp {*this};  // make copy
+    operator++();    // call pre-increment
+    return temp;
 }

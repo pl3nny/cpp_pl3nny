@@ -18,6 +18,7 @@ public:
     Mystring &operator=(const Mystring &rhs);     // Copy assignment
     Mystring &operator=(Mystring &&rhs);           // Move assignment
     
+    
     void display() const;
     
     int get_length() const;                                      // getters
@@ -32,6 +33,13 @@ public:
     bool operator>(const Mystring &rhs) const;      // overloaded greater than operator
 
     Mystring operator+=(const Mystring &rhs);       // overlaoded += operator
+    Mystring operator*(const int &rhs) const;        // overloaded * operator
+    Mystring operator*=(const int &rhs);        // overlaoded *= operator
+
+    // pre increment 
+    Mystring operator++() const;   // overloaed ++ operator pre increment
+    // post increment
+    Mystring operator++(int);       // overlaoded ++ operator post increment
 };
 
 #endif // _MYSTRING_H_
