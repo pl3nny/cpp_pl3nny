@@ -135,7 +135,8 @@ bool Mystring::operator>(const Mystring &rhs) const {
 
 // overloaded += operator
 Mystring Mystring::operator+=(const Mystring &rhs) {
-    return operator=(operator+(rhs.str));
+    *this = *this + rhs;
+    return *this;
 }
 
 // overloaded * operator
@@ -151,7 +152,8 @@ Mystring Mystring::operator*(const int &rhs) const {
 }
 
 Mystring Mystring::operator*=(const int &rhs) {
-    return operator=(operator*(rhs));
+    *this = *this * rhs;
+    return *this;
 }
 
 Mystring Mystring::operator++() const {

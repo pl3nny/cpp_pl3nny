@@ -144,6 +144,37 @@ Mystring operator+(const Mystring &lhs, const Mystring &rhs) {
 }
 
 // non member fucntion overladed += operator
-Mystring operator+=(const Mystring &lhs, const Mystring &rhs) {
-    
+Mystring &operator+=(Mystring &lhs, const Mystring &rhs) {
+    lhs = lhs + rhs;
+    return lhs;
+}
+
+// non member function overloaded * operator
+Mystring operator*(const Mystring &lhs, const int &n) {
+    Mystring temp;
+    for(size_t i = 0; i < n; i++){
+        temp = temp + lhs;
+    }
+    return temp;
+}
+
+// non member fucntion overlaoded *= operator
+Mystring &operator*=(Mystring &lhs, const int &n) {
+    lhs = lhs * n;
+    return lhs;
+}
+
+// non member fucntion overlaoded ++ pre increment
+Mystring &operator++(Mystring &obj) {
+    for(size_t i = 0; i < std::strlen(obj.str); i++){
+        obj.str[i] = std::toupper(obj.str[i]);
+    }
+    return obj;
+}
+
+// non member function overlaoded ++ post increment
+Mystring operator++(Mystring &obj, int n) {
+    Mystring temp {obj};
+    ++obj;
+    return temp;
 }
