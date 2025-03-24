@@ -108,9 +108,9 @@ void deposit(std::vector<Trust_Account> &accounts, double amount) {
     std::cout << "\n=== Depositing to Trust Accounts ==========================" << std::endl;
     for (auto &acc:accounts)  {
         if (acc.deposit(amount)) 
-            std::cout << "Deposited " << amount << " to " << acc << std::endl;
+            std::cout << "Deposited with additional bonus: " << amount + acc.get_bonus_amount() << " to " << acc << std::endl;
         else
-            std::cout << "Failed Deposit of " << amount << " to " << acc << std::endl;
+            std::cout << "Deposit only deposit amount " << amount << " to " << acc << std::endl;
     }
 }
 

@@ -41,7 +41,7 @@ int main() {
     check_accounts.push_back(Checkings_Account {});
     check_accounts.push_back(Checkings_Account {"Burter"});
     check_accounts.push_back(Checkings_Account {"Guldo", 2000});
-    check_accounts.push_back(Checkings_Account {"Jaice", 7000, 1.5});
+    check_accounts.push_back(Checkings_Account {"Jaice", 7000});
 
     display(check_accounts);
     deposit(check_accounts, 1000);
@@ -56,6 +56,14 @@ int main() {
 
     display(trust_accounts);
     deposit(trust_accounts, 1000);
+    withdraw(trust_accounts, 200);
+ 
+    display(trust_accounts);
+    deposit(trust_accounts, 1000);
+    withdraw(trust_accounts, 200);
+
+    display(trust_accounts);
+    deposit(trust_accounts, 5000);
     withdraw(trust_accounts, 200);
     
 

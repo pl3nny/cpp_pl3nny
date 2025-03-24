@@ -7,11 +7,11 @@ class Checkings_Account: public Account {
     private:
         static constexpr const char *def_name = "Unnamed Checkings Account";
         static constexpr double def_balance = 0.0;
-        static constexpr double def_withdraw_fee = 0.0;
+        static constexpr double def_withdraw_fee = 1.5;
     protected:
         double withdraw_fee;
     public: 
-        Checkings_Account(std::string name = def_name, double balance = def_balance, double fee = def_withdraw_fee);
+        Checkings_Account(std::string name = def_name, double balance = def_balance);
         bool withdraw(double amount);
         // inherits Account::deposit methods
 };
