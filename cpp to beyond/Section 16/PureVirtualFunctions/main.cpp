@@ -44,15 +44,52 @@ public:
     }
 
     virtual void rotate() override {
-        std::cout << "Rotatin a sqaure" << std::endl;
+        std::cout << "Rotating a sqaure" << std::endl;
     }
 
     virtual ~Square() {}
 };
 
+class Circle: public Closed_Shape {
+
+public:
+    virtual void draw() override {
+        std::cout << "Drawing a Circle" << std::endl;
+    }
+
+    virtual void rotate() override {
+        std::cout << "Rotating a Circle" << std::endl;
+    }
+
+    std::string name = "Crystal";
+
+    void set_name(std::string name) {
+        this->name = name;
+    }
+
+    std::string get_name() const {
+        return name;
+    }
+
+    virtual ~Circle() {}
+};
+
+void refresh_screen(const std::vector<Shape *> &shape) {
+    std::cout << "Refreshing Screen" << std::endl;
+    for(const auto p: shape) {
+        p->draw();
+    }
+}
 
 int main() {
 
+    Shape *s1 = new Circle();
+    Shape *s2 = new Line();
+    Shape *s3 = new Square();
+
+    Circle c;
+
+    std::cout << c.get_name() << std::endl;
 
     return 0;
 }
