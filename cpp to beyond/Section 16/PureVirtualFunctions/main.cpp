@@ -87,9 +87,9 @@ int main() {
     Shape *s2 = new Line();
     Shape *s3 = new Square();
 
-    Circle c;
+    std::vector<Shape *> shape {s1,s2,s3};
 
-    std::cout << c.get_name() << std::endl;
+    refresh_screen(shape);
 
     return 0;
 }

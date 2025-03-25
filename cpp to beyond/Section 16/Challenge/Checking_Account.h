@@ -11,9 +11,10 @@ private:
     static constexpr double def_balance = 0.0;
     static constexpr double per_check_fee = 1.5;
 public:
-    Checking_Account(std::string name = def_name, double balance = def_balance);    
-    bool withdraw(double);
-    // Inherits the Account::deposit method
+    Checking_Account(std::string name = def_name, double balance = def_balance);
+    virtual ~Checking_Account() = default;
+    virtual bool deposit(double) override;  
+    virtual bool withdraw(double) override;
 };
 
 #endif // _CHECKING_ACCOUNT_H_
