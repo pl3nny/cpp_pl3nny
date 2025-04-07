@@ -64,6 +64,7 @@ public:
 };
 
 // Function prototypes
+// auto make(); ---- also works and automatically sets the return type 
 std::unique_ptr<std::vector<std::shared_ptr<Test>>> make();
 void fill(std::vector<std::shared_ptr<Test>> &vec, int num);
 void display(const std::vector<std::shared_ptr<Test>>&vec);
@@ -77,4 +78,35 @@ int main() {
     fill(*vec_ptr, num);
     display(*vec_ptr);
     return 0;
+}
+
+// auto make()
+std::unique_ptr<std::vector<std::shared_ptr<Test>>> make() {
+    std::unique_ptr<std::vector<std::shared_ptr<Test>>> u_ptr;
+
+    u_ptr = std::make_unique<std::vector<std::shared_ptr<Test>>> ();
+
+    return u_ptr;
+}
+
+void fill(std::vector<std::shared_ptr<Test>> &vec, int num) {
+    int user_input;
+    for(size_t i = 1; i <= num; i++) {
+        std::cout << "Enter data point [" << i  << "] : ";
+        std::cin >> user_input;
+        // std::shared_ptr<Test> s_ptr = std::make_shared<Test>(user_input);
+        // vec.push_back(s_ptr);
+        vec.push_back(std::make_shared<Test>(user_input));
+    }
+}
+
+void display(const std::vector<std::shared_ptr<Test>> &vec) {
+    std::cout << "\nDisplaying vector Data" << std::endl;
+    std::cout << "=====================================" << std::endl;
+
+    for(const auto &ptr: vec) {
+        std::cout << ptr->get_data() << std::endl;
+    }
+
+    std::cout << "=====================================" << std::endl;
 }

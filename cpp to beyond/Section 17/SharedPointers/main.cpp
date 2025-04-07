@@ -30,10 +30,10 @@ int main() {
    
 //    std::shared_ptr<int> p1 {new int {100} };
 //    std::cout << "Use count: "<< p1.use_count () << std::endl; 		// 1
-//   
+  
 //    std::shared_ptr<int> p2 { p1 };			// shared ownwership
 //    std::cout << "Use count: "<< p1.use_count () << std::endl; 		// 2
-//
+
 //    p1.reset();	// decrement the use_count; p1 is nulled out
 //    std::cout << "Use count: "<< p1.use_count() << std::endl; 		// 0 
 //    std::cout << "Use count: "<< p2.use_count() << std::endl; 		// 1
@@ -51,7 +51,7 @@ int main() {
 //            ptr.reset();
 //        }
 //        std::cout << "Use count: " << ptr.use_count() << std::endl;      
-//
+
 //    }
 //    std::cout << "Use count: " << ptr.use_count() <<std:: endl;
 
