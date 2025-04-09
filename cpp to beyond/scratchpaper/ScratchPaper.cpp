@@ -3826,51 +3826,310 @@ around again. If k is negative, the sum is of the previous numbers.
 // }
 
 
+// #include <iostream>
+// #include <vector>
+
+// using namespace std;
+
+// int removeDuplicates(vector<int> &nums);
+
+// int main(){
+
+//     vector<int> nums {1,1,2};
+
+//     removeDuplicates(nums);
+
+
+
+//     return 0;
+// }
+
+// int removeDuplicates(vector<int> &nums){
+
+//     vector<int> non_dupe {};
+
+//     if(nums.size() == 1){
+//         return nums.size();
+//     } else {
+//             for(size_t i = 0; i < nums.size(); i++){
+//                 while(i+1 <= nums.size() - 1){
+//                     if(nums.at(i) == nums.at(i + 1)){
+//                         break;
+//                     } else {
+//                         non_dupe.push_back(nums.at(i));
+//                         break;
+//                     }
+//                 }
+//             if((i == nums.size() - 1) && nums.at(nums.size() - 1) != nums.at(i - 1)){
+//                 non_dupe.push_back(nums.at(i));
+//             }
+//         }
+//     }
+
+//     cout << non_dupe.size() << ", [";
+//     for(auto &n : non_dupe){
+//         cout << n << ", ";
+//     }
+//     cout <<"]" << endl;
+
+//     return non_dupe.size();
+// }
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+// int main() {
+
+    // PPP Ch 2 : Exercises
+    //1. 
+
+    // double d = 0;
+    // while (cin >> d) {
+    //     int i = d;
+    //     char c = i;
+    //     cout << "d == " << d
+    //     << " i == " << i
+    //     << " c == " << c
+    //     << " char(" << c << ")\n";
+    // }
+
+    // PPP Ch 2 : Exercises
+    //2.
+    // int user_input;
+    // double in_kilometers;
+    // cout << "Enter the number of miles to convert to kilometers: ";
+    // cin >> user_input;
+
+    // cout << endl;
+    // in_kilometers = user_input * 1.609; 
+
+    // cout << user_input << " in kilometers is: " << in_kilometers << endl;
+
+    // PPP Ch 2 : Exercises
+    //3.
+
+    // int double = 0;
+
+    // PPP Ch 2 : Exercises
+    //4.
+
+    // int val1;
+    // int val2;
+    // int smaller;
+    // int larger;
+
+    // cout << "Enter two integers: ";
+    // cin >> val1 >> val2;
+    // cout << endl;
+
+    // if(val1 > val2) {
+    //     larger = val1;
+    //     smaller = val2;
+    // } else {
+    //     smaller = val1;
+    //     larger = val2;
+    // }
+
+    // cout << "smaller: " << smaller << endl;
+    // cout << "larger: " << larger << endl;
+    // cout << "sum: " << val1 + val2 << endl;
+    // cout << "difference: " << larger - smaller << endl;
+    // cout << "product: " << val1 * val2 << endl;
+    // cout << "Ratio: " << double (larger / smaller) << endl;
+    
+    // // PPP Ch 2 : Exercises
+    // //5.
+    // double f_val1, f_val2;
+
+    // cout << "Enter floting point value: ";
+    // cin >> f_val1 >> f_val2;
+    // cout << endl;
+
+    // double f_smaller, f_larger;
+    // if(f_val1 > f_val2) {
+    //     f_larger = f_val1;
+    //     f_smaller = f_val2;
+    // } else {
+    //     f_larger = f_val2;
+    //     f_smaller = f_val1;
+    // }
+
+    // cout << "smaller: " << f_smaller << endl;
+    // cout << "larger: " << f_larger << endl;
+    // cout << "sum: " << f_val1 + f_val2 << endl;
+    // cout << "difference: " << f_larger - f_smaller << endl;
+    // cout << "product: " << f_val1 * f_val2 << endl;
+    // cout << "Ratio: " << f_larger / f_smaller << endl;
+    
+
+    // // PPP Ch 2 : Exercises
+    // //6.
+
+    // cout << endl;
+    // for(size_t i = 0; i < 20; i++){
+    //     cout << "=";
+    // }
+    // cout << endl;
+
+    // int input_1, input_2, input_3;
+    // cout << "Enter 3 values: ";
+    // cin >> input_1 >> input_2 >> input_3;
+    // cout << endl;
+    
+    // int first, second, third;
+    // if(input_1 <= input_2 && input_1 <= input_3){
+    //     first = input_1;
+    //     if(input_2 <= input_3){
+    //         second = input_2;
+    //         third = input_3;
+    //     } else {
+    //         second = input_3;
+    //         third = input_2;
+    //     }
+    // } else if(input_2 <= input_1 && input_2 <= input_3){
+    //     first = input_2;
+    //     if(input_1 <= input_3) {
+    //         second = input_2;
+    //         third <= input_3;
+    //     } else {
+    //         second = input_3;
+    //         third = input_2;
+    //     }
+    // } else if(input_3 <= input_1 && input_3 <= input_2) {
+    //     first = input_3;
+    //     if(input_1 <= input_2) {
+    //         second = input_1;
+    //         third = input_2;
+    //     } else {
+    //         second = input_2;
+    //         third = input_1;
+    //     }
+    // }
+
+    // cout << first << " " << second << " " << third << endl;
+    
+
+    // PPP Ch 2 : Exercises
+    //7.
+
+    // cout << endl;
+    // for(size_t i = 0; i < 50; i++){
+    //     cout << "=";
+    // }
+    // cout << endl;
+
+    // string input_1, input_2, input_3;
+    // cout << "Enter 3 different strings: ";
+    // cin >> input_1 >> input_2 >> input_3;
+
+    // string first, second, third;
+
+    // if(input_1 <= input_2 && input_1 <= input_3){
+    //     first = input_1;
+    //     if(input_2 <= input_3){
+    //         second = input_2;
+    //         third = input_3;
+    //     } else {
+    //         second = input_3;
+    //         third = input_2;
+    //     }
+    // } else if(input_2 <= input_1 && input_2 <= input_3){
+    //     first = input_2;
+    //     if(input_1 <= input_3) {
+    //         second = input_2;
+    //         third <= input_3;
+    //     } else {
+    //         second = input_3;
+    //         third = input_2;
+    //     }
+    // } else if(input_3 <= input_1 && input_3 <= input_2) {
+    //     first = input_3;
+    //     if(input_1 <= input_2) {
+    //         second = input_1;
+    //         third = input_2;
+    //     } else {
+    //         second = input_2;
+    //         third = input_1;
+    //     }
+    // }
+
+    // cout << first << " " << second << " " << third << endl;
+
+
+    // PPP Ch 2 : Exercises
+    //8.
+
+//     cout << endl;
+//     for(size_t i = 0; i < 50; i++){
+//         cout << "=";
+//     }
+//     cout << endl;
+
+//     // odd or even
+//     // examnple: The value 4 is an even number
+
+//     int value;
+//     cout << "Enter a value: ";
+//     cin >> value;
+//     cout << endl;
+//     if(value % 2 == 0) {
+//         cout << "The value " << value << " is an even number." << endl;
+//     } else {
+//         cout << "the value " << value << " is an odd number." << endl;
+//     }
+
+//     // PPP Ch 2 : Exercises
+//     //9.
+
+
+
+//     // PPP Ch 2 : Exercises
+//     //10.
+
+
+//     return 0;
+// }
+
+
+// Section 3.6.3
+
 #include <iostream>
+#include <ranges>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-int removeDuplicates(vector<int> &nums);
+int main() {
 
-int main(){
+    std::vector<double> temps {72, 78, 75, 81, 99, 65};
+    // for(double temp; std::cin >> temp;) {
+    //     temps.push_back(temp);
+    // }
 
-    vector<int> nums {1,1,2};
+    double sum = 0;
+    for(double x : temps) {
+        sum += x;
+    }
+    
 
-    removeDuplicates(nums);
+    for(auto &t:temps) {
+        cout << t << " ";
+    }
+    cout << endl;
 
+    std::cout << "Average temperature: " << sum / temps.size() << std::endl;
 
+    std::ranges::sort(temps);
+
+    for(auto &t:temps) {
+        cout << t << " ";
+    }
+    cout << endl;
+
+    cout << "Median temperature: " << temps[temps.size() / 2] << endl;
 
     return 0;
-}
-
-int removeDuplicates(vector<int> &nums){
-
-    vector<int> non_dupe {};
-
-    if(nums.size() == 1){
-        return nums.size();
-    } else {
-            for(size_t i = 0; i < nums.size(); i++){
-                while(i+1 <= nums.size() - 1){
-                    if(nums.at(i) == nums.at(i + 1)){
-                        break;
-                    } else {
-                        non_dupe.push_back(nums.at(i));
-                        break;
-                    }
-                }
-            if((i == nums.size() - 1) && nums.at(nums.size() - 1) != nums.at(i - 1)){
-                non_dupe.push_back(nums.at(i));
-            }
-        }
-    }
-
-    cout << non_dupe.size() << ", [";
-    for(auto &n : non_dupe){
-        cout << n << ", ";
-    }
-    cout <<"]" << endl;
-
-    return non_dupe.size();
 }
