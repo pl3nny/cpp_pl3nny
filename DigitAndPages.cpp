@@ -3,9 +3,6 @@
 * e.g. page 1 take 1 didigt page 10 takes 2 digits page 100 takes 3 digits
 */
 
-
-
-
 #include <iostream>
 
 using namespace std;
